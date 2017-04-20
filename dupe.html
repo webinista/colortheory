@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ColorTheory</title>
+  <style>
+  html {
+    font: 10px / 1.5 sans-serif;
+  }
+
+  body {
+    font-size: 1.6rem;
+    background: whitesmoke;
+    color: #121212;
+  }
+
+  label {
+    display: block;
+  }
+
+  [type=range] {
+    display: block;
+    width: 80%;
+  }
+
+  form {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 2.4rem;
+    width: 50%;
+  }
+
+  form > div {
+    padding: 1.6rem 0;
+  }
+
+  .output {
+    width: 3ch;
+  }
+
+  button {
+    background: #333;
+    border: 0;
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    padding: 1rem;
+  }
+
+  #swatch {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  </style>
+</head>
+<body>
+
+<div id="swatch" style="background-color: hsl(0, 100%, 50%);"></div>
+
+<h1><code id="color">hsl(0, 100%, 50%)</code></h1>
+
+<form id="ranges" action="#">
+  <div>
+    <label for="hue">Hue</label>
+    <input type="range" id="a" name="a" value="0" min="0" max="360">
+  </div>
+
+  <div>
+    <label for="saturation">Saturation</label>
+    <input type="range" id="b" name="b" value="100" min="0" max="100">
+  </div>
+
+  <div>
+    <label for="lightness">Lightness</label>
+    <input type="range" id="c" name="c" value="50" min="0" max="100">
+  </div>
+  <button type="reset">Reset</button>
+</form>
+
+<script type="text/javascript" src="./script/js.js"></script>
+
+</body>
+</html>

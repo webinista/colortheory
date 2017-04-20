@@ -1,0 +1,43 @@
+{
+  "name": "colors",
+  "version": "0.0.1",
+  "description": "A color scheme creator.",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --config config/webpack.config.js",
+    "watch": "./node_modules/.bin/webpack-dev-server --open --config config/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webinista/colors.git"
+  },
+  "author": "Tiffany B. Brown, Webinista, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webinista/colors/issues"
+  },
+  "engines": {
+    "node": "6.10.2",
+    "npm": "4.5.0"
+  },
+  "homepage": "https://github.com/webinista/colors#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-es5": "^0.5.0",
+    "node-sass": "^4.5.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "sass-lint": "^1.10.2",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0"
+  }
+}
