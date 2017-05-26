@@ -18,8 +18,8 @@
     "url": "https://github.com/webinista/colors/issues"
   },
   "engines": {
-    "node": "6.10.2",
-    "npm": "4.5.0"
+    "node": "6.10.3",
+    "npm": "4.6.1"
   },
   "homepage": "https://github.com/webinista/colors#readme",
   "devDependencies": {
@@ -36,10 +36,12 @@
     "eslint-plugin-react": "^7.0.1",
     "node-sass": "^4.5.2",
     "sass-lint": "^1.10.2",
-    "webpack": "^2.5.1"
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",

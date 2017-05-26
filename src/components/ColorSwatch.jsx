@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class ColorSwatch extends React.Component {
   render() {
@@ -9,5 +10,9 @@ class ColorSwatch extends React.Component {
     );    
   }
 }
+
+ColorSwatch.propTypes = {
+  fill:  PropTypes.string.isRequired
+};
 
 export default ColorSwatch;
