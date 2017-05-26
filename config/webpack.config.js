@@ -1,33 +1,30 @@
-const path = require('path'); // Include path module from node.js
-const babel = require('babel-loader');
-const babelpolyfill = require("babel-polyfill");
+const path = require('path');  // Include path module from node.js
 
 const entryConf = [
-  "babel-polyfill",
-  "react",
-  "react-dom",
-  "redux",
-  "react-redux",
-  "./src/"
-]
-
+  'babel-polyfill',
+  'react',
+  'react-dom',
+  'redux',
+  'react-redux',
+  './src/',
+];
 
 const config = {
   entry: entryConf,
   output: {
     path: path.resolve(__dirname, '../script'),
     filename: 'js.js',
-    publicPath: 'script/'
+    publicPath: 'script/',
   },
   devtool: 'source-map',
   module: {
     rules: [
-      { 
-        test: /\.(js|jsx)$/, 
+      {
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          cacheDirectory: '.babelcache'
+          cacheDirectory: '.babelcache',
         }
       }
     ]

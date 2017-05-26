@@ -1,6 +1,19 @@
+// These override airbnb eslint configuration options
 {
+  "extends": "airbnb",
   "parser": "babel-eslint",
   "rules": {
-    "strict": 0
+    "strict": 0,
+    'comma-dangle': 0,
+    'no-console': 2,
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }
