@@ -1,0 +1,185 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  color: #121212;
+  font: 120% / 1.5 'Source Sans Pro',sans-serif;
+  padding: 1rem;
+}
+
+header,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 50rem) {
+  header,
+  footer {
+    padding: 0 1rem;
+  }
+}
+
+footer {
+  text-align: right;
+}
+
+h1 {
+  margin: 0;
+  font-size: 8vw;
+}
+
+@media (min-width: 30rem) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+a {
+  color: #2196f3;
+  padding: 0 4px;
+}
+
+a:focus,
+a:hover {
+  background: #00bcd4;
+  color: #fff;
+  text-decoration: none;
+}
+
+.component-palette {
+  display: flex;
+  justify-content: space-between;
+  max-width: 63rem;
+  padding: 2rem .5rem;
+}
+
+@media (min-width: 50rem) {
+  .component-palette {
+    padding: 2rem 1rem;
+  }
+}
+
+.component-swatch {
+  border: 1vw solid #fff;
+}
+
+.component-swatch:first-child {
+  border-left-width: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent url(../img/chevron.svg) right 1rem center no-repeat;
+  background-size: 1rem auto;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+[type=text],
+select {
+  width: 100%;
+}
+
+input, select, button {
+  border-radius: 0;
+  border: 1px solid hsl(204, 12%, 25%);
+  height: 3rem;
+  font-family: inherit;
+  padding: .5rem;
+}
+
+.input-button {
+  margin: 1rem .5rem;
+}
+
+button {
+  background: hsl(204, 12%, 25%);
+  color: whitesmoke;
+  margin: 1px 0;
+  padding: .5rem 1rem;
+  width: 100%;
+}
+
+@media (min-width: 50rem) {
+  button {
+    margin: -1px 0 0;
+    width: auto;
+  }
+}
+
+[id=controls] {
+  padding: 1rem 0 0;
+  position: relative;
+}
+
+[id=controls]::after {
+  clear: both;
+  content: '\00a0';
+  display: block;
+  height: 0;
+  padding: 0;
+}
+
+.input-text-errorable,
+.input-select {
+  padding: .5rem;
+}
+
+@media (min-width: 50rem) {
+  .input-text-errorable,
+  .input-select {
+    padding: .5rem 1rem;
+    width: 33%;
+  }
+
+  .input-text-errorable,
+  .input-select,
+  button {
+    float: left;
+  }
+
+  .input-select {
+    padding: .5rem 2rem .5rem 1rem;
+  }
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  padding-bottom: .5rem;
+}
+
+button:hover {
+  background: hsl(204, 12%, 40%);
+  border-color: hsl(204, 12%, 40%);
+}
+
+@media (min-width: 50rem) {
+  .input-button {
+    margin: 1px 0;
+    position: relative;
+    top: 2.7rem;
+    width: auto;
+  }
+
+  button {
+    padding: .5rem 1rem;
+  }
+}
+
+.input-text-errorable--haserror {
+  background: hsl(12, 100%, 90%);
+}
+
+.error:not([hidden]) {
+  color: hsl(12, 100%, 30%);
+  display: inline-block;
+  font-style: italic;
+  padding-top: .5rem;
+}
