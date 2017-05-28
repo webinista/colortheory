@@ -4,8 +4,8 @@
   "description": "A color scheme creator.",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config config/webpack.config.js",
-    "watch": "./node_modules/.bin/webpack-dev-server --open --config config/webpack.config.js",
+    "build": "webpack -p --config config/webpack.config.js",
+    "watch": "webpack-dev-server --open --config config/webpack.config.js",
     "lint:js": "eslint --quiet --ext .js --ext .jsx ."
   },
   "repository": {
