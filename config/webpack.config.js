@@ -1,4 +1,5 @@
 const path = require('path');  // Include path module from node.js
+const webpack = require('webpack');
 
 const entryConf = [
   'babel-polyfill',
@@ -10,13 +11,13 @@ const entryConf = [
 ];
 
 const config = {
+  devtool: 'source-map',
   entry: entryConf,
   output: {
     path: path.resolve(__dirname, '../script'),
     filename: 'js.js',
     publicPath: 'script/',
   },
-  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -29,6 +30,16 @@ const config = {
       }
     ]
   },
+  plugins:[
+    new webpack.optimize.UglifyJsPlugin({
+      // TODO: Figure out why this doesn't work
+      // This does not match the documentation, but
+      // using way from documentation causes errors.
+      // See https://webpack.js.org/guides/production-build/#the-manual-way
+      sourceMap: true,
+      comments: false,
+    })
+  ],
   resolve: {
     extensions: ['.js', '.jsx']
   },
