@@ -38,7 +38,13 @@ const config = {
       // See https://webpack.js.org/guides/production-build/#the-manual-way
       sourceMap: true,
       comments: false,
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx']

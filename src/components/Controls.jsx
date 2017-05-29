@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import SelectMenu from '../components/SelectMenu';
-import ErrorableTextInput from '../components/ErrorableTextInput';
 import Button from '../components/Button';
+import SelectMenu from '../components/SelectMenu';
+import LinkedColorInput from '../components/LinkedColorInput';
+
 
 class Controls extends React.Component {
   render() {
@@ -12,8 +13,12 @@ class Controls extends React.Component {
         className="component-controls"
         id="controls"
         method="post"
+        name="controls"
         onSubmit={this.props.onSubmitHandler}>
-        <ErrorableTextInput name="color" labelText="Enter a color: " />
+        <LinkedColorInput
+          cssClass="input-color-linked"
+          name="color"
+          labelText="Enter a color: " />
         <SelectMenu name="scheme" labelText="Choose a scheme type: " options={this.props.options} />
         <Button type="submit" text="Generate scheme" />
       </form>

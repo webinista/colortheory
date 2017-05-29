@@ -2,10 +2,14 @@
   box-sizing: border-box;
 }
 
+html {
+  font: 120% / 1.5 'Source Sans Pro',sans-serif;
+}
+
 body {
+  font-size: 1rem;
   background: #fff;
   color: #121212;
-  font: 120% / 1.5 'Source Sans Pro',sans-serif;
   padding: 1rem;
 }
 
@@ -126,18 +130,58 @@ button {
   padding: 0;
 }
 
-.input-text-errorable,
-.input-select {
-  padding: .5rem;
+.input-color-linked-group {
+  display: flex;
+}
+
+.input-color-linked-group label {
+  position: absolute;
+  left: -9999em;
+}
+
+.input-color-linked-text {
+  flex: 1 1 80%;
+}
+
+.input-notice {
+  font-size: .9rem;
+  font-style: italic;
+  color: #555;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+legend {
+  padding-bottom: .5rem;
+  font-weight: bold;
+}
+
+[type=color] {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 3rem;
+  padding: 0;
+}
+
+[type=color]:hover,
+[type=color]:focus {
+  outline: none;
+  box-shadow: 0 0 5px 4px rgb(51,153,255);
 }
 
 @media (min-width: 50rem) {
   .input-text-errorable,
-  .input-select {
+  .input-select,
+  .input-color-linked {
     padding: .5rem 1rem;
     width: 33%;
   }
 
+  .input-color-linked,
   .input-text-errorable,
   .input-select,
   button {

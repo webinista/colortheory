@@ -4,11 +4,10 @@ import classNames from 'classnames';
 
 class TextInput extends React.Component {
   render() {
-    const cssClasses = classNames('input', this.props.cssClass);
     const id = this.props.id || this.props.name;
 
     return (
-      <div className={cssClasses}>
+      <div className={this.props.cssClass}>
         <label htmlFor={id}>{this.props.labelText}</label>
         <input
           type="text"
@@ -28,7 +27,8 @@ TextInput.defaultProps = {
   onChangeHandler: null,
   onBlurHandler: null,
   onFocusHandler: null,
-  labelText: 'Needs a label'
+  labelText: 'Needs a label',
+  value: ''
 };
 
 TextInput.propTypes = {
@@ -38,7 +38,8 @@ TextInput.propTypes = {
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,
   onFocusHandler: PropTypes.func,
-  onBlurHandler: PropTypes.func
+  onBlurHandler: PropTypes.func,
+  value: PropTypes.string.isRequired
 };
 
 export default TextInput;

@@ -4,11 +4,11 @@ import classNames from 'classnames';
 
 class ColorInput extends React.Component {
   render() {
-    const cssClasses = classNames('input', this.props.cssClass);
+
     const id = this.props.id || this.props.name;
 
     return (
-      <div className={cssClasses}>
+      <div className={this.props.cssClass}>
         <label htmlFor={id}>{this.props.labelText}</label>
         <input
           type="color"
@@ -16,7 +16,8 @@ class ColorInput extends React.Component {
           name={this.props.name}
           onChange={this.props.onChangeHandler}
           onFocus={this.props.onFocusHandler}
-          onBlur={this.props.onBlurHandler} />
+          onBlur={this.props.onBlurHandler}
+          defaultValue={this.props.value} />
       </div>
     );
   }
@@ -28,7 +29,8 @@ ColorInput.defaultProps = {
   id: null,
   onChangeHandler: null,
   onBlurHandler: null,
-  onFocusHandler: null
+  onFocusHandler: null,
+  value: '#000000'
 };
 
 ColorInput.propTypes = {
@@ -38,7 +40,8 @@ ColorInput.propTypes = {
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,
   onFocusHandler: PropTypes.func,
-  onBlurHandler: PropTypes.func
+  onBlurHandler: PropTypes.func,
+  value: PropTypes.string.isRequired
 };
 
 export default ColorInput;
