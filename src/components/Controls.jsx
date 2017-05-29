@@ -5,7 +5,6 @@ import Button from '../components/Button';
 import SelectMenu from '../components/SelectMenu';
 import LinkedColorInput from '../components/LinkedColorInput';
 
-
 class Controls extends React.Component {
   render() {
     return (
@@ -17,9 +16,14 @@ class Controls extends React.Component {
         onSubmit={this.props.onSubmitHandler}>
         <LinkedColorInput
           cssClass="input-color-linked"
+          labelText="Enter a color: "
           name="color"
-          labelText="Enter a color: " />
-        <SelectMenu name="scheme" labelText="Choose a scheme type: " options={this.props.options} />
+          onChangeHandler={this.props.onColorChangeHandler} />
+        <SelectMenu
+          labelText="Choose a scheme type: "
+          name="scheme"
+          onChangeHandler={this.props.onSelectChangeHandler}
+          options={this.props.options} />
         <Button type="submit" text="Generate scheme" />
       </form>
     );
@@ -29,11 +33,16 @@ class Controls extends React.Component {
 Controls.defaultProps = {
   onSubmitHandler: (domEvent) => { 
     domEvent.preventDefault() 
+  },
+  onSelectChangeHandler: (domEvent) => { 
+    domEvent.preventDefault() 
   }
 };
 
 Controls.propTypes = {
   onSubmitHandler: PropTypes.func,
+  onColorChangeHandler:  PropTypes.func.isRequired,
+  onSelectChangeHandler:  PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string

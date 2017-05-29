@@ -39,13 +39,14 @@ class LinkedColorInput extends React.Component {
 }
 
 LinkedColorInput.defaultProps = {
+  error: '',
   cssClass: null,
-  onChangeHandler: null,
+  id: null,
+  onChangeHandler: () => {},
   onBlurHandler: null,
   onErrorHandler: null,
   onFocusHandler: null,
-  error: '',
-  id: null
+  value: '#000000'
 };  
 
 LinkedColorInput.propTypes = {
@@ -57,7 +58,8 @@ LinkedColorInput.propTypes = {
   onChangeHandler: PropTypes.func.isRequired,
   onFocusHandler: PropTypes.func,
   onBlurHandler: PropTypes.func,
-  onErrorHandler: PropTypes.func
+  onErrorHandler: PropTypes.func,
+  value: PropTypes.string.isRequired
 };
 
 export default LinkedColorInput;
