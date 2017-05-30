@@ -163,4 +163,4 @@ export const OPTIONS_CSS_NAMED_COLORS = [
   { name: 'yellowgreen', hex: '#9acd32' }
 ];
 
-export const OPTIONS_COLOR_INPUT_MESSAGE = 'Use any valid CSS color value, except those with an alpha component.';
+export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts hexadecimal, rgb(), and hsl() values. No alpha support.';
