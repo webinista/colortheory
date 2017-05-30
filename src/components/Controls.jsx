@@ -16,14 +16,18 @@ class Controls extends React.Component {
         onSubmit={this.props.onSubmitHandler}>
         <LinkedColorInput
           cssClass="input-color-linked"
-          labelText="Enter a color: "
+          labelColorInput="Or use the color picker"
+          labelTextInput="Enter a CSS color value"
+          legendText="Pick a starting color: "
           name="color"
-          onChangeHandler={this.props.onColorChangeHandler} />
+          onChangeHandler={this.props.onColorChangeHandler}
+          value={this.props.color} />
         <SelectMenu
           labelText="Choose a scheme type: "
           name="scheme"
           onChangeHandler={this.props.onSelectChangeHandler}
-          options={this.props.options} />
+          options={this.props.options}
+          value={this.props.scheme} />
         <Button type="submit" text="Generate scheme" />
       </form>
     );
@@ -31,22 +35,25 @@ class Controls extends React.Component {
 }
 
 Controls.defaultProps = {
-  onSubmitHandler: (domEvent) => { 
-    domEvent.preventDefault() 
+  onSubmitHandler: (domEvent) => {
+    domEvent.preventDefault();
   },
-  onSelectChangeHandler: (domEvent) => { 
-    domEvent.preventDefault() 
-  }
+  onSelectChangeHandler: (domEvent) => {
+    domEvent.preventDefault();
+  },
+  scheme: ''
 };
 
 Controls.propTypes = {
+  color: PropTypes.string.isRequired,
   onSubmitHandler: PropTypes.func,
-  onColorChangeHandler:  PropTypes.func.isRequired,
-  onSelectChangeHandler:  PropTypes.func.isRequired,
+  onColorChangeHandler: PropTypes.func.isRequired,
+  onSelectChangeHandler: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
   })).isRequired,
+  scheme: PropTypes.string
 };
 
 export default Controls;

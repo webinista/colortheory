@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 class ColorInput extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
 
+  handleChange(domEvent) {
+    this.props.onChangeHandler(domEvent.target.value);
+  }
+
+  render() {
     const id = this.props.id || this.props.name;
 
     return (
@@ -14,10 +21,10 @@ class ColorInput extends React.Component {
           type="color"
           id={id}
           name={this.props.name}
-          onChange={this.props.onChangeHandler}
+          onChange={this.handleChange}
           onFocus={this.props.onFocusHandler}
           onBlur={this.props.onBlurHandler}
-          defaultValue={this.props.value} />
+          value={this.props.value} />
       </div>
     );
   }
@@ -29,8 +36,7 @@ ColorInput.defaultProps = {
   id: null,
   onChangeHandler: null,
   onBlurHandler: null,
-  onFocusHandler: null,
-  value: '#000000'
+  onFocusHandler: null
 };
 
 ColorInput.propTypes = {

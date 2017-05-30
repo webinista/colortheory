@@ -8,19 +8,19 @@ export function updateInputColor(value) {
   return {
     type: UPDATE_FORM_COLOR_VALUE,
     value
-  }
+  };
 }
 
 export function updateSchemeType(value) {
   return {
     type: UPDATE_FORM_COLOR_SCHEME_VALUE,
     value
-  }
+  };
 }
 
 export function updatePalette(arrayValues) {
   return {
     type: UPDATE_PALETTE,
     arrayValues
-  }
+  };
 }

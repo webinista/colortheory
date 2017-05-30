@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 import Controls from '../components/Controls';
 import Palette from '../components/Palette';
-import { OPTIONS_COLOR_SCHEME } from '../utils/constants';
+import { OPTIONS_COLOR_SCHEME } from '../utils/conf';
 
 import {
   updateInputColor,
@@ -11,35 +11,35 @@ import {
   updatePalette
 } from '../actions/';
 
-class AppDisplay extends React.Component  {
+class AppDisplay extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <Controls
-          onColorChangeHandler={(domEvent) => {this.props.updateInputColor(domEvent.target.value)} }
+          onColorChangeHandler={this.props.updateInputColor}
+          onSelectChangeHandler={(domEvent) => {}}
           error="error message!"
           options={this.props.options}
-          value={this.props.currentColor} />
+          color={this.props.currentColor}
+          scheme={this.props.scheme} />
         <Palette swatches={this.props.swatches} />
       </div>
     );
   }
-};
-
+}
 
 const mapStateToProps = (state) => {
   return {
     options: OPTIONS_COLOR_SCHEME,
-    currentColor: '#000000',
-    swatches: ['#000000']
+    currentColor: state.currentColor,
+    swatches: state.swatches
   };
 };
 
 const mapDispatchToProps = {
-  updateInputColor
-}
-
-
+  updateInputColor,
+  updateSchemeType,
+  updatePalette
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppDisplay);

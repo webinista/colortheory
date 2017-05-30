@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import TextInput from './TextInput';
 import ColorInput from './ColorInput';
+
+import {
+  OPTIONS_COLOR_INPUT_MESSAGE
+} from '../utils/conf';
+
 
 class LinkedColorInput extends React.Component {
   render() {
@@ -12,27 +16,23 @@ class LinkedColorInput extends React.Component {
     return (
       <fieldset className={this.props.cssClass}>
         <div>
-          <legend>Enter or pick a color:</legend>
-          <span className="input-notice">Use any valid CSS color value.</span>
+          <legend>{this.props.legendText}</legend>
           <div className={`${this.props.cssClass}-group`}>
             <TextInput
-              cssClass={`${this.props.cssClass}-text`}
               id={id}
-              name="color"
-              labelText={this.props.labelText}
+              labelText={this.props.labelTextInput}
+              name={this.props.name}
               onChangeHandler={this.props.onChangeHandler}
-              onFocusHandler={this.props.onFocusHandler}
-              onBlurHandler={this.props.onBlurHandler} />
+              value={this.props.value} />
             <ColorInput
-              cssClass={`${this.props.cssClass}-picker`}
               id={`${id}-vis`}
-              name="color"
-              labelText="Color picker:"
+              labelText={this.props.labelColorInput}
+              name={this.props.name}
               onChangeHandler={this.props.onChangeHandler}
-              onFocusHandler={this.props.onFocusHandler}
-              onBlurHandler={this.props.onBlurHandler}/>
+              value={this.props.value} />
           </div>
           <span className="error" hidden={!this.props.error}>{this.props.error}</span>
+          <span className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</span>
         </div>
       </fieldset>);
   }
@@ -42,23 +42,17 @@ LinkedColorInput.defaultProps = {
   error: '',
   cssClass: null,
   id: null,
-  onChangeHandler: () => {},
-  onBlurHandler: null,
-  onErrorHandler: null,
-  onFocusHandler: null,
-  value: '#000000'
-};  
+};
 
 LinkedColorInput.propTypes = {
   id: PropTypes.string,
   error: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
+  labelTextInput: PropTypes.string.isRequired,
+  labelColorInput: PropTypes.string.isRequired,
+  legendText: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func.isRequired,
-  onFocusHandler: PropTypes.func,
-  onBlurHandler: PropTypes.func,
-  onErrorHandler: PropTypes.func,
   value: PropTypes.string.isRequired
 };
 

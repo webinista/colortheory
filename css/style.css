@@ -134,6 +134,10 @@ button {
   display: flex;
 }
 
+.input-color-linked-group > div:first-child {
+  flex: 1 1 80%;
+}
+
 .input-color-linked-group label {
   position: absolute;
   left: -9999em;
