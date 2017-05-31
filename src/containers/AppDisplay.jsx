@@ -36,9 +36,9 @@ class AppDisplay extends React.Component {
 
 AppDisplay.propTypes = {
   updateInputColor: PropTypes.func.isRequired,
-  options: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
   currentColor: PropTypes.string.isRequired,
-  scheme: PropTypes.string.isRequired,
+  scheme: PropTypes.string,
   swatches: PropTypes.array.isRequired
 };
 

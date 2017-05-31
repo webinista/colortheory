@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import ColorInput from '../../src/components/ColorInput';
+import TextInput from '../../src/components/TextInput';
 
 const props = {
   cssClass: 'hoopla',
@@ -13,14 +13,13 @@ const props = {
   value: '#ff0000'
 };
 
-describe('<ColorInput />', () => {
-  const tree = SkinDeep.shallowRender(<ColorInput {...props} />);
+describe('<TextInput />', () => {
+  const tree = SkinDeep.shallowRender(<TextInput {...props} />);
   const inp = tree.subTree('input');
 
   it('expect a div element', () => {
     expect(tree.type).to.equal('div');
   });
-
 
   it(`class name should match ${props.cssClass}`, () => {
     expect(tree.props.className).to.equal(props.cssClass);
@@ -37,8 +36,8 @@ describe('<ColorInput />', () => {
   });
 
   // Tests input.type value
-  it('it should be an input[type=color] field.', () => {
-    expect(inp.props.type).to.equal('color');
+  it('it should be an input[type=text] field.', () => {
+    expect(inp.props.type).to.equal('text');
   });
 
   it(`id should be "${props.id}"`, () => {
