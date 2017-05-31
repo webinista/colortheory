@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import {
   UPDATE_FORM_COLOR_VALUE,
   UPDATE_FORM_COLOR_SCHEME_VALUE,

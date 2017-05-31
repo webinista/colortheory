@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --config config/webpack.config.js",
-    "watch": "webpack-dev-server --open --config config/webpack.config.js",
-    "lint:js": "eslint --quiet --ext .js --ext .jsx ."
+    "lint:js": "eslint --quiet --ext .js --ext .jsx .",
+    "test": "mocha --recursive --compilers js:babel-core/register './test/**/*.unit.test.js?(x)'",
+    "watch": "webpack-dev-server --open --config config/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   },
   "engines": {
     "node": "6.10.3",
-    "npm": "4.6.1"
+    "npm": "5.0.0"
   },
   "homepage": "https://github.com/webinista/colors#readme",
   "devDependencies": {
@@ -28,6 +29,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-es5": "^0.5.0",
@@ -36,7 +38,9 @@
     "eslint-plugin-react": "^7.0.1",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.2",
+    "react-test-renderer": "^15.5.4",
     "sass-lint": "^1.10.2",
+    "skin-deep": "^1.0.0",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },

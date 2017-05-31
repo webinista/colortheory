@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Controls from '../components/Controls';
@@ -17,7 +18,7 @@ class AppDisplay extends React.Component {
       <div>
         <Controls
           onColorChangeHandler={this.props.updateInputColor}
-          onSelectChangeHandler={(domEvent) => {}}
+          onSelectChangeHandler={() => {}}
           error="error message!"
           options={this.props.options}
           color={this.props.currentColor}
@@ -27,6 +28,19 @@ class AppDisplay extends React.Component {
     );
   }
 }
+
+/*
+ * Current eslint config throw errors if we don't define PropTypes, but these
+ * are passed in as part of Redux. NBD. All probably should be required.
+ */
+
+AppDisplay.propTypes = {
+  updateInputColor: PropTypes.func.isRequired,
+  options: PropTypes.string.isRequired,
+  currentColor: PropTypes.string.isRequired,
+  scheme: PropTypes.string.isRequired,
+  swatches: PropTypes.array.isRequired
+};
 
 const mapStateToProps = (state) => {
   return {

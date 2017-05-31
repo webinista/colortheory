@@ -9,7 +9,7 @@ export const OPTIONS_COLOR_SCHEME = [
   // Two complementary pairs
   { label: 'Tetradic / Rectangular', value: '4' },
   { label: 'Diad', value: '2' },
-  { label: 'Random', value: '4'}
+  { label: 'Random', value: '4' }
 ];
 
 export const OPTIONS_CSS_NAMED_COLORS = [

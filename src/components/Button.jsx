@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 class Button extends React.Component {
   render() {
+    const cssClasses = classNames('input-button', this.props.cssClass);
+
     return (
-      <div className="input-button">
-        <button
-          className={this.props.cssClass}
-          id={this.props.id}
-          onClick={this.props.onClickHandler}
-          onFocus={this.props.onFocusHandler}
-          type={this.props.type}>
-          {this.props.text}
-        </button>
-      </div>
+      <button
+        className={cssClasses}
+        id={this.props.id}
+        onClick={this.props.onClickHandler}
+        onFocus={this.props.onFocusHandler}
+        type={this.props.type}>
+        {this.props.text}
+      </button>
     );
   }
 }
 
 Button.defaultProps = {
   type: 'button',
-  text: 'Submit',
+  text: 'Change default text',
   cssClass: null,
   id: null,
   onClickHandler: null,

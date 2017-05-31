@@ -3,7 +3,7 @@
  * @param {string} string: the string to clean up.
  */
 const removeSpaces = (string) => {
-  return string.replace(' ','');
+  return string.replace(' ', '');
 };
 
 /* ===================================
@@ -27,11 +27,13 @@ const isNamedColor = (string, namedColorList) => {
   return !!namedColorList.find((color) => {
     return string.toLowerCase() === color.name.toLowerCase();
   });
-};
+}
 
+/* 
 const isColorFunction = (string) => {
   return (/(?:rgb|hsl)/i);
 };
+*/
 
 export function validateColorSyntax(colorString, namedColorList) {
 }
