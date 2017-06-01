@@ -10,31 +10,22 @@ const removeSpaces = (string) => {
  * Color validation functions.
  * =================================== */
 
-/*
- Test whether the string is a 3 or 6 character hex color
- TODO: Figure out how to combine these into one RegExp
+/**
+ * Tests whether this is a supported (for the purposes of this project)
+ * color value without checking whether it's an actual valid value.
  */
-const isHex = (string) => {
-  return (/#(?:[A-F0-9]{6}$)/i).test(string) || (/#(?:[A-F0-9]{3}$)/i).test(string);
-};
+export const isRoughlyValid = (string) => {
+  const wontWork = (/(?:lab|gray|hwb|hsla|rgba)\(|#[a-f0-9]{8}/i).test(string);
+  return !wontWork;
+}
 
 /**
- * Return true/false if the provided string is in the named color list.
- * @param {Array} namedColorList - should be an array of Objects
- * with name, hex keys.
+ * Tests whether the provided color is a valid one.
+ * Works in browsers only.
  */
-const isNamedColor = (string, namedColorList) => {
-  return !!namedColorList.find((color) => {
-    return string.toLowerCase() === color.name.toLowerCase();
-  });
-}
-
-/* 
-const isColorFunction = (string) => {
-  return (/(?:rgb|hsl)/i);
+export const isValidColor = (string) => {
+  const testEl = document.createElement('testEl');
+  testEl.style.color =  string;
+  return !!testEl.style.color;
 };
-*/
-
-export function validateColorSyntax(colorString, namedColorList) {
-}
 
