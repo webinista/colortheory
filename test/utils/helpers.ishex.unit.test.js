@@ -2,6 +2,7 @@ import { expect } from 'chai';
 import { JSDOM } from 'jsdom';
 
 import {
+  expandRGB,
   isRoughlyValid,
   isValidColor,
   isValidInputColor
@@ -92,6 +93,16 @@ const isValid = [
   }
 ];
 
+const rgb = [
+  {
+    color: '#0c0',
+    expectation: '#00cc00',
+  },
+  {
+    color: '#ff0000',
+    expectation: '#ff0000',
+  }
+]
 
 const isRoughlyValidTests = (vals) => {
   vals.forEach((v) => {
@@ -133,5 +144,17 @@ const isValidColorTests = (vals) => {
 
 describe('isValidColor function helper', () => {
   isValidColorTests(isValid);
+});
+
+const expandRGBTest = (vals) => {
+  vals.forEach((v) => {
+    it(`should return ${v.expectation} for ${v.color}`, () => {
+      expect(expandRGB(v.color)).to.equal(v.expectation);
+    });
+  });
+}
+
+describe('expandRGB function helper', () => {
+  expandRGBTest(rgb);
 });
 

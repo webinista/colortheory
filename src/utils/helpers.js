@@ -15,7 +15,7 @@ const removeSpaces = (string) => {
  * color value without checking whether it's an actual valid value.
  */
 export const isRoughlyValid = (string) => {
-  const wontWork = (/(?:lab|gray|hwb|hsla|rgba)\(|#[a-f0-9]{8}/i).test(string);
+  const wontWork = (/(?:lab|gray|hwb|hsla|rgba)\(|#[a-f0-9]{8}$/i).test(string);
   return !wontWork;
 }
 
@@ -31,4 +31,13 @@ export const isValidInputColor = (string) => {
 
 export function isValidColor(string) {
   return isRoughlyValid(string) && isValidInputColor(string);
+}
+
+export function expandRGB(string) {
+  if(!(/#[a-f0-9]{3}$/i).test(string)) return string;
+
+  const rrggbb = [];
+  const rgb = string.split('');
+  
+  return `#${rgb[1]}${rgb[1]}${rgb[2]}${rgb[2]}${rgb[3]}${rgb[3]}`;
 }

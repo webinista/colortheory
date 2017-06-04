@@ -9,6 +9,9 @@ import {
   OPTIONS_START_COLOR
 } from '../utils/conf';
 
+
+import { expandRGB } from '../utils/helpers';
+
 /*
  * currentColor and the first item in swatches need to have the
  * value for UI consistency's sake.
@@ -25,7 +28,7 @@ const dataSource = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_FORM_COLOR_VALUE:
       return {
-        currentColor: action.value,
+        currentColor: expandRGB(action.value),
         swatches: [action.value]
       };
 
