@@ -6,33 +6,10 @@ const removeSpaces = (string) => {
   return string.replace(' ', '');
 };
 
-/* ===================================
- * Color validation functions.
- * =================================== */
-
 /**
- * Tests whether this is a supported (for the purposes of this project)
- * color value without checking whether it's an actual valid value.
- */
-export const isRoughlyValid = (string) => {
-  const wontWork = (/(?:lab|gray|hwb|hsla|rgba)\(|#[a-f0-9]{8}$/i).test(string);
-  return !wontWork;
-}
-
-/**
- * Tests whether the provided color is a valid one.
+ * Expand an RGB value to an RRGGB value
  * Works in browsers only.
  */
-export const isValidInputColor = (string) => {
-  const testEl = document.createElement('testEl');
-  testEl.style.color =  string;
-  return !!testEl.style.color;
-};
-
-export function isValidColor(string) {
-  return isRoughlyValid(string) && isValidInputColor(string);
-}
-
 export function expandRGB(string) {
   if(!(/#[a-f0-9]{3}$/i).test(string)) return string;
 
@@ -40,4 +17,29 @@ export function expandRGB(string) {
   const rgb = string.split('');
   
   return `#${rgb[1]}${rgb[1]}${rgb[2]}${rgb[2]}${rgb[3]}${rgb[3]}`;
+}
+
+/**
+ * Sorts options in an array of objects
+ * Objects must have a label property.
+ * Used to sort the Select a scheme menu options
+ */
+
+export function sortOptions(a, b) {
+ 
+  const aLabel = a.label.toLowerCase();
+  const bLabel = b.label.toLowerCase();
+  
+  if (aLabel < bLabel) {
+    return -1;
+  }
+  if (aLabel > bLabel) {
+    return 1;
+  }
+  // names must be equal
+  return 0; 
+}
+
+export function hexToHsl(string) {
+  
 }

@@ -37,7 +37,7 @@ class LinkedColorInput extends React.Component {
               onChangeHandler={this.props.onChangeHandler}
               value={this.props.value} />
           </div>
-          <p className="error-message" hidden={!this.props.error}>{OPTIONS_COLOR_INPUT_ERROR_MESSAGE}</p>
+          <p className="error-message" role="alert" hidden={!this.props.error}>{OPTIONS_COLOR_INPUT_ERROR_MESSAGE}</p>
           <p className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</p>
         </div>
       </fieldset>);

@@ -5,7 +5,7 @@ import Button from '../components/Button';
 import SelectMenu from '../components/SelectMenu';
 import LinkedColorInput from '../components/LinkedColorInput';
 
-import { isValidColor } from '../utils/helpers';
+import { isValidColor } from '../utils/validators';
 
 class Controls extends React.Component {
   render() {

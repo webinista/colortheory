@@ -213,7 +213,7 @@ legend {
 
   .input-select {
     margin-top: 0;
-    padding: .5rem 2rem .5rem 1rem;
+    padding: .5rem 1.5rem .5rem 1rem;
   }
 }
 
@@ -227,7 +227,7 @@ label {
   .input-button {
     margin: 0 .5rem;
     position: relative;
-    top: 2.35rem;
+    top: 1.45rem;
     width: auto;
   }
 
