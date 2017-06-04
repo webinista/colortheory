@@ -16,6 +16,7 @@ class Controls extends React.Component {
         onSubmit={this.props.onSubmitHandler}>
         <LinkedColorInput
           cssClass="input-color-linked"
+          error="hi bae"
           labelColorInput="Or use the color picker"
           labelTextInput="Enter a CSS color value"
           legendText="Pick a starting color: "
@@ -28,7 +29,7 @@ class Controls extends React.Component {
           onChangeHandler={this.props.onSelectChangeHandler}
           options={this.props.options}
           value={this.props.scheme} />
-        <Button type="submit" text="Generate scheme" />
+          <Button type="submit" text="Generate scheme" />
       </form>
     );
   }

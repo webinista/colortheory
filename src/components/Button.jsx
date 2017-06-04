@@ -7,14 +7,16 @@ class Button extends React.Component {
     const cssClasses = classNames('input-button', this.props.cssClass);
 
     return (
-      <button
-        className={cssClasses}
-        id={this.props.id}
-        onClick={this.props.onClickHandler}
-        onFocus={this.props.onFocusHandler}
-        type={this.props.type}>
-        {this.props.text}
-      </button>
+      <div className='input-button-wrap'>
+        <button
+          className={cssClasses}
+          id={this.props.id}
+          onClick={this.props.onClickHandler}
+          onFocus={this.props.onFocusHandler}
+          type={this.props.type}>
+          {this.props.text}
+        </button>
+      </div>
     );
   }
 }

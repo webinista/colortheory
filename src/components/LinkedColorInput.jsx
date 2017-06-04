@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import TextInput from './TextInput';
 import ColorInput from './ColorInput';
@@ -12,9 +13,13 @@ import {
 class LinkedColorInput extends React.Component {
   render() {
     const id = this.props.id || this.props.name;
+    const cssClasses = classNames(
+      this.props.cssClass,
+      {'input-color-linked--has-error': this.props.error}
+    );
 
     return (
-      <fieldset className={this.props.cssClass}>
+      <fieldset className={cssClasses}>
         <div>
           <legend>{this.props.legendText}</legend>
           <div className={`${this.props.cssClass}-group`}>
@@ -31,8 +36,8 @@ class LinkedColorInput extends React.Component {
               onChangeHandler={this.props.onChangeHandler}
               value={this.props.value} />
           </div>
-          <span className="error" hidden={!this.props.error}>{this.props.error}</span>
-          <span className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</span>
+          <p className="error-message" hidden={!this.props.error}>{this.props.error}</p>
+          <p className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</p>
         </div>
       </fieldset>);
   }
