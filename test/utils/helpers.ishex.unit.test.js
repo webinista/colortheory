@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import { JSDOM } from 'jsdom';
 
 import {
   isRoughlyValid,
@@ -73,6 +74,9 @@ describe('isRoughlyValid function helper', () => {
 });
 
 const isValidColorTests = (vals) => {
+  const window = (new JSDOM(`...`)).window;
+  global.document = window.document;
+ 
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
       expect(isValidColor(v.color)).to.equal(v.expectation);
