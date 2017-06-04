@@ -164,3 +164,4 @@ export const OPTIONS_CSS_NAMED_COLORS = [
 ];
 
 export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb(), and hsl() values. No alpha support.';
+export const OPTIONS_COLOR_INPUT_ERROR_MESSAGE = "The value you entered isn't supported."

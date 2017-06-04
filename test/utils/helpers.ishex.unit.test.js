@@ -3,7 +3,8 @@ import { JSDOM } from 'jsdom';
 
 import {
   isRoughlyValid,
-  isValidColor
+  isValidColor,
+  isValidInputColor
 } from '../../src/utils/helpers.js';
 
 const roughlyValid = [
@@ -60,6 +61,37 @@ const browserValid = [
   }
 ];
 
+const isValid = [
+  {
+    color: '#0c0',
+    expectation: true,
+  },
+  {
+    color: '#ff0000',
+    expectation: true,
+  },
+  {
+    color: '#ff0000cc',
+    expectation: false,
+  },
+  {
+    color: 'rgba(0,0,255,1)',
+    expectation: false,
+  },
+  {
+    color: '#aafk',
+    expectation: false,
+  },
+  {
+    color: 'hsla(0,10%,90%,.5)',
+    expectation: false,
+  },
+  {
+    color: 'rgb(0,255,255)',
+    expectation: true,
+  }
+];
+
 
 const isRoughlyValidTests = (vals) => {
   vals.forEach((v) => {
@@ -73,10 +105,25 @@ describe('isRoughlyValid function helper', () => {
   isRoughlyValidTests(roughlyValid);
 });
 
-const isValidColorTests = (vals) => {
+const isValidInputColorTests = (vals) => {
   const window = (new JSDOM(`...`)).window;
   global.document = window.document;
  
+  vals.forEach((v) => {
+    it(`should return ${v.expectation} for ${v.color}`, () => {
+      expect(isValidInputColor(v.color)).to.equal(v.expectation);
+    });
+  });
+};
+
+describe('isValidInputColor function helper', () => {
+  isValidInputColorTests(browserValid);
+});
+
+const isValidColorTests = (vals) => {
+  const window = (new JSDOM(`...`)).window;
+  global.document = window.document;
+  
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
       expect(isValidColor(v.color)).to.equal(v.expectation);
@@ -85,6 +132,6 @@ const isValidColorTests = (vals) => {
 };
 
 describe('isValidColor function helper', () => {
-  isValidColorTests(browserValid);
+  isValidColorTests(isValid);
 });
 

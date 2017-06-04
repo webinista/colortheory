@@ -6,7 +6,8 @@ import TextInput from './TextInput';
 import ColorInput from './ColorInput';
 
 import {
-  OPTIONS_COLOR_INPUT_MESSAGE
+  OPTIONS_COLOR_INPUT_MESSAGE,
+  OPTIONS_COLOR_INPUT_ERROR_MESSAGE
 } from '../utils/conf';
 
 
@@ -36,7 +37,7 @@ class LinkedColorInput extends React.Component {
               onChangeHandler={this.props.onChangeHandler}
               value={this.props.value} />
           </div>
-          <p className="error-message" hidden={!this.props.error}>{this.props.error}</p>
+          <p className="error-message" hidden={!this.props.error}>{OPTIONS_COLOR_INPUT_ERROR_MESSAGE}</p>
           <p className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</p>
         </div>
       </fieldset>);
@@ -44,14 +45,14 @@ class LinkedColorInput extends React.Component {
 }
 
 LinkedColorInput.defaultProps = {
-  error: '',
+  error: false,
   cssClass: null,
   id: null,
 };
 
 LinkedColorInput.propTypes = {
   id: PropTypes.string,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.bool.isRequired,
   labelTextInput: PropTypes.string.isRequired,
   labelColorInput: PropTypes.string.isRequired,
   legendText: PropTypes.string.isRequired,

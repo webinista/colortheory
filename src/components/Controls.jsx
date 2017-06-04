@@ -5,6 +5,8 @@ import Button from '../components/Button';
 import SelectMenu from '../components/SelectMenu';
 import LinkedColorInput from '../components/LinkedColorInput';
 
+import { isValidColor } from '../utils/helpers';
+
 class Controls extends React.Component {
   render() {
     return (
@@ -16,7 +18,7 @@ class Controls extends React.Component {
         onSubmit={this.props.onSubmitHandler}>
         <LinkedColorInput
           cssClass="input-color-linked"
-          error="hi bae"
+          error={!isValidColor(this.props.color)}
           labelColorInput="Or use the color picker"
           labelTextInput="Enter a CSS color value"
           legendText="Pick a starting color: "

@@ -23,9 +23,12 @@ export const isRoughlyValid = (string) => {
  * Tests whether the provided color is a valid one.
  * Works in browsers only.
  */
-export const isValidColor = (string) => {
+export const isValidInputColor = (string) => {
   const testEl = document.createElement('testEl');
   testEl.style.color =  string;
   return !!testEl.style.color;
 };
 
+export function isValidColor(string) {
+  return isRoughlyValid(string) && isValidInputColor(string);
+}
