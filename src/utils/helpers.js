@@ -39,7 +39,3 @@ export function sortOptions(a, b) {
   // names must be equal
   return 0; 
 }
-
-export function hexToHsl(string) {
-  
-}

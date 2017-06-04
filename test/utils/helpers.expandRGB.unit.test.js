@@ -24,7 +24,7 @@ const expandRGBTest = (vals) => {
   });
 }
 
-describe('expandRGB function helper', () => {
+describe('expandRGB helper function', () => {
   expandRGBTest(rgb);
 });
 

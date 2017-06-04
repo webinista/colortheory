@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { sortOptions } from '../utils/helpers';
+
 class SelectMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,9 @@ class SelectMenu extends React.Component {
   }
 
   makeOptions(arrayOfObjects) {
-    return arrayOfObjects.map((o, x) => {
+    const ao = arrayOfObjects.sort(sortOptions);
+
+    return ao.map((o, x) => {
       return <option value={o.value} key={x.toString()}>{o.label}</option>;
     });
   }

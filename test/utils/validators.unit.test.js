@@ -115,7 +115,7 @@ const isValidInputColorTests = (vals) => {
   });
 };
 
-describe('isValidInputColor function helper', () => {
+describe('isValidInputColor helper function ', () => {
   isValidInputColorTests(browserValid);
 });
 
@@ -130,6 +130,6 @@ const isValidColorTests = (vals) => {
   });
 };
 
-describe('isValidColor function helper', () => {
+describe('isValidColor helper function', () => {
   isValidColorTests(isValid);
 });
