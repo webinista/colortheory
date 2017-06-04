@@ -164,5 +164,5 @@ export const OPTIONS_CSS_NAMED_COLORS = [
   { name: 'yellowgreen', hex: '#9acd32' }
 ];
 
-export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb(), and hsl() values. No alpha support.';
-export const OPTIONS_COLOR_INPUT_ERROR_MESSAGE = "The value you entered isn't supported."
+export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb(), and hsl() values. No alpha support. No named colors.';
+export const OPTIONS_COLOR_INPUT_ERROR_MESSAGE = "The value you entered isn't supported.";

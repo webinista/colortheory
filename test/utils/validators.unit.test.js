@@ -5,7 +5,7 @@ import {
   isRoughlyValid,
   isValidColor,
   isValidInputColor
-} from '../../src/utils/validators.js';
+} from '../../src/utils/validators';
 
 const roughlyValid = [
   {
@@ -105,9 +105,9 @@ describe('isRoughlyValid function helper', () => {
 });
 
 const isValidInputColorTests = (vals) => {
-  const window = (new JSDOM(`...`)).window;
+  const window = (new JSDOM('...')).window;
   global.document = window.document;
- 
+
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
       expect(isValidInputColor(v.color)).to.equal(v.expectation);
@@ -120,9 +120,9 @@ describe('isValidInputColor helper function ', () => {
 });
 
 const isValidColorTests = (vals) => {
-  const window = (new JSDOM(`...`)).window;
+  const window = (new JSDOM('...')).window;
   global.document = window.document;
-  
+
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
       expect(isValidColor(v.color)).to.equal(v.expectation);

@@ -16,7 +16,7 @@ class LinkedColorInput extends React.Component {
     const id = this.props.id || this.props.name;
     const cssClasses = classNames(
       this.props.cssClass,
-      {'input-color-linked--has-error': this.props.error}
+      { 'input-color-linked--has-error': this.props.error }
     );
 
     return (

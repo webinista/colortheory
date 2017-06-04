@@ -11,11 +11,8 @@ const removeSpaces = (string) => {
  * Works in browsers only.
  */
 export function expandRGB(string) {
-  if(!(/#[a-f0-9]{3}$/i).test(string)) return string;
-
-  const rrggbb = [];
+  if (!(/#[a-f0-9]{3}$/i).test(string)) return string;
   const rgb = string.split('');
-  
   return `#${rgb[1]}${rgb[1]}${rgb[2]}${rgb[2]}${rgb[3]}${rgb[3]}`;
 }
 
@@ -26,10 +23,9 @@ export function expandRGB(string) {
  */
 
 export function sortOptions(a, b) {
- 
   const aLabel = a.label.toLowerCase();
   const bLabel = b.label.toLowerCase();
-  
+
   if (aLabel < bLabel) {
     return -1;
   }
@@ -37,5 +33,5 @@ export function sortOptions(a, b) {
     return 1;
   }
   // names must be equal
-  return 0; 
+  return 0;
 }

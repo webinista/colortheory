@@ -7,7 +7,7 @@ class Button extends React.Component {
     const cssClasses = classNames('input-button', this.props.cssClass);
 
     return (
-      <div className='input-button-wrap'>
+      <div className="input-button-wrap">
         <button
           className={cssClasses}
           id={this.props.id}

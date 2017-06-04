@@ -9,7 +9,7 @@
 export const isRoughlyValid = (string) => {
   const wontWork = (/(?:lab|gray|hwb|hsla|rgba)\(|#[a-f0-9]{8}$/i).test(string);
   return !wontWork;
-}
+};
 
 /**
  * Tests whether the provided color is a valid one.
@@ -17,7 +17,7 @@ export const isRoughlyValid = (string) => {
  */
 export const isValidInputColor = (string) => {
   const testEl = document.createElement('testEl');
-  testEl.style.color =  string;
+  testEl.style.color = string;
   return !!testEl.style.color;
 };
 

@@ -31,7 +31,7 @@ class Controls extends React.Component {
           onChangeHandler={this.props.onSelectChangeHandler}
           options={this.props.options}
           value={this.props.scheme} />
-          <Button type="submit" text="Generate scheme" />
+        <Button type="submit" text="Generate scheme" />
       </form>
     );
   }

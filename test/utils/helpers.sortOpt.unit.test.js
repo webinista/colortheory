@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import { JSDOM } from 'jsdom';
 
 import {
   sortOptions
@@ -43,4 +42,4 @@ describe('sortOptions helper function', () => {
     expect(so[5].label).to.equal('Egret');
   });
 });
- 
+

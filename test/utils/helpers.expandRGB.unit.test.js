@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import { JSDOM } from 'jsdom';
 
 import {
   expandRGB,
@@ -14,7 +13,7 @@ const rgb = [
     color: '#ff0000',
     expectation: '#ff0000',
   }
-]
+];
 
 const expandRGBTest = (vals) => {
   vals.forEach((v) => {
@@ -22,7 +21,7 @@ const expandRGBTest = (vals) => {
       expect(expandRGB(v.color)).to.equal(v.expectation);
     });
   });
-}
+};
 
 describe('expandRGB helper function', () => {
   expandRGBTest(rgb);

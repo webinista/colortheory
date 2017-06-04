@@ -7,7 +7,12 @@ import { sortOptions } from '../utils/helpers';
 class SelectMenu extends React.Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
     this.makeOptions = this.makeOptions.bind(this);
+  }
+
+  handleChange(domEvent) {
+    this.props.onChangeHandler(domEvent.target.value);
   }
 
   makeOptions(arrayOfObjects) {
@@ -30,9 +35,7 @@ class SelectMenu extends React.Component {
         <select
           id={id}
           name={this.props.name}
-          onChange={this.props.onChangeHandler}
-          onFocus={this.props.onFocusHandler}
-          onBlur={this.props.onBlurHandler}>
+          onChange={this.handleChange}>
           <option>Select</option>
           {options}
         </select>
@@ -45,8 +48,6 @@ SelectMenu.defaultProps = {
   cssClass: null,
   id: null,
   onChangeHandler: null,
-  onBlurHandler: null,
-  onFocusHandler: null,
   options: [{ label: 'Empty Menu', value: '' }]
 };
 
@@ -56,8 +57,6 @@ SelectMenu.propTypes = {
   name: PropTypes.string.isRequired,
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,
-  onBlurHandler: PropTypes.func,
-  onFocusHandler: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string

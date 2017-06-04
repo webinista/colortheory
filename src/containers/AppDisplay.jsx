@@ -18,7 +18,7 @@ class AppDisplay extends React.Component {
       <div>
         <Controls
           onColorChangeHandler={this.props.updateInputColor}
-          onSelectChangeHandler={() => {}}
+          onSelectChangeHandler={this.props.updateSchemeType}
           error="error message!"
           options={this.props.options}
           color={this.props.currentColor}
@@ -31,11 +31,16 @@ class AppDisplay extends React.Component {
 
 /*
  * Current eslint config throw errors if we don't define PropTypes, but these
- * are passed in as part of Redux. NBD. All probably should be required.
+ * are passed in as part of Redux. NBD.
  */
+
+AppDisplay.defaultProps = {
+  scheme: ''
+}
 
 AppDisplay.propTypes = {
   updateInputColor: PropTypes.func.isRequired,
+  updateSchemeType: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   currentColor: PropTypes.string.isRequired,
   scheme: PropTypes.string,
