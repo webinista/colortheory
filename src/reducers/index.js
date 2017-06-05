@@ -30,7 +30,7 @@ const dataSource = (state = initialState, action) => {
 
   switch (action.type) {
     case UPDATE_FORM_COLOR_VALUE:
-      newState = set('currentColor', expandRGB(action.value), state);
+      newState = set('currentColor', action.value, state);
       newState = set('swatches', [action.value], newState);
       return newState;
 

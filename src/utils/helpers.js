@@ -51,6 +51,11 @@ export function rgbToHex(string) {
   return `#${rr}${gg}${bb}`;
 }
 
+
+
+/**
+* Converts RGB values to hex, or returns a hex string.
+*/
 export function convertToHex(string) {
   let hex;
 
@@ -60,5 +65,5 @@ export function convertToHex(string) {
     hex = string;
   }
 
-  return hex;
+  return expandRGB(hex);
 }
