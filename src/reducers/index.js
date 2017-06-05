@@ -11,8 +11,6 @@ import {
   OPTIONS_START_COLOR
 } from '../utils/conf';
 
-import { expandRGB } from '../utils/helpers';
-
 /*
  * currentColor and the first item in swatches need to have the
  * value for UI consistency's sake.

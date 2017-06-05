@@ -10,7 +10,7 @@ class ColorInput extends React.Component {
   handleChange(domEvent) {
     this.props.onChangeHandler(domEvent.target.value);
   }
-  
+
   render() {
     const id = this.props.id || this.props.name;
 
@@ -32,7 +32,6 @@ class ColorInput extends React.Component {
 
 ColorInput.defaultProps = {
   cssClass: null,
-  hasError: false,
   labelText: null,
   id: null,
   onChangeHandler: null,
@@ -41,7 +40,6 @@ ColorInput.defaultProps = {
 };
 
 ColorInput.propTypes = {
-  hasError: PropTypes.bool,
   id: PropTypes.string,
   labelText: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

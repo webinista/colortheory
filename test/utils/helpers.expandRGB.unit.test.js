@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 
 import {
-  expandRGB,
+  expandRgb,
 } from '../../src/utils/helpers';
 
 const rgb = [
@@ -15,15 +15,15 @@ const rgb = [
   }
 ];
 
-const expandRGBTest = (vals) => {
+const expandRgbTest = (vals) => {
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(expandRGB(v.color)).to.equal(v.expectation);
+      expect(expandRgb(v.color)).to.equal(v.expectation);
     });
   });
 };
 
-describe('expandRGB helper function', () => {
-  expandRGBTest(rgb);
+describe('expandRgb helper function', () => {
+  expandRgbTest(rgb);
 });
 
