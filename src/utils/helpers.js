@@ -1,12 +1,4 @@
 /**
- * Strips spaces out of rgb, hsl, lab parameters to normalize for comparisons.
- * @param {string} string: the string to clean up.
- */
-const removeSpaces = (string) => {
-  return string.replace(' ', '');
-};
-
-/**
  * Expand an RGB value to an RRGGB value
  * Works in browsers only.
  */
@@ -34,4 +26,39 @@ export function sortOptions(a, b) {
   }
   // names must be equal
   return 0;
+}
+
+
+export function hexToRGB(string) {
+  const rr = parseInt(string.substr(-6, 2), 16);
+  const gg = parseInt(string.substr(-4, 2), 16);
+  const bb = parseInt(string.substr(-2, 2), 16);
+
+  return `rgb(${rr}, ${gg}, ${bb})`;
+}
+
+/**
+* Does not yet handle space-separated rgb values
+*/
+export function rgbToHex(string) {
+  const normalize = string.replace('rgb(', '').replace(')', '');
+  const rgb = normalize.split(',');
+
+  const rr = (rgb[0] == 0) ? '00' : (+rgb[0]).toString(16);
+  const gg = (rgb[1] == 0) ? '00' : (+rgb[1]).toString(16);
+  const bb = (rgb[2] == 0) ? '00' : (+rgb[2]).toString(16)
+
+  return `#${rr}${gg}${bb}`;
+}
+
+export function convertToHex(string) {
+  let hex;
+
+  if((/rgb/i).test(string)) {
+    hex = rgbToHex(string);
+  } else {
+    hex = string;
+  }
+
+  return hex;
 }

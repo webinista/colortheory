@@ -99,7 +99,7 @@ input, select, button {
 }
 
 .input-button-wrap {
-  margin: 1rem .5rem;
+  margin: 1rem 0;
 }
 
 .input-button {
@@ -116,6 +116,10 @@ input, select, button {
 }
 
 @media (min-width: 50rem) {
+  .input-button-wrap {
+    margin: 1rem .5rem;
+  }
+
   .input-button {
     margin: -1px 0 0;
     width: auto;
@@ -136,7 +140,13 @@ input, select, button {
 }
 
 .input-color-linked {
-  padding: .5rem;
+  transition: background 250ms ease-in;
+}
+
+@media (min-width: 50rem) {
+  .input-color-linked {
+    padding: .5rem;
+  }
 }
 
 .input-color-linked--has-error {

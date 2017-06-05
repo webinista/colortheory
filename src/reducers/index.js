@@ -35,7 +35,6 @@ const dataSource = (state = initialState, action) => {
       return newState;
 
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
-      console.log(action.value);
       return set('scheme', action.value, state);
 
     case UPDATE_PALETTE:

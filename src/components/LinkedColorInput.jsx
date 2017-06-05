@@ -10,6 +10,10 @@ import {
   OPTIONS_COLOR_INPUT_ERROR_MESSAGE
 } from '../utils/conf';
 
+import {
+  convertToHex
+} from '../utils/helpers';
+
 
 class LinkedColorInput extends React.Component {
   render() {
@@ -35,7 +39,7 @@ class LinkedColorInput extends React.Component {
               labelText={this.props.labelColorInput}
               name={this.props.name}
               onChangeHandler={this.props.onChangeHandler}
-              value={this.props.value} />
+              value={convertToHex(this.props.value)} />
           </div>
           <p className="error-message" role="alert" hidden={!this.props.error}>{OPTIONS_COLOR_INPUT_ERROR_MESSAGE}</p>
           <p className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</p>
@@ -47,7 +51,7 @@ class LinkedColorInput extends React.Component {
 LinkedColorInput.defaultProps = {
   error: false,
   cssClass: null,
-  id: null,
+  id: null
 };
 
 LinkedColorInput.propTypes = {

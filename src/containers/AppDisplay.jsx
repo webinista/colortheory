@@ -36,7 +36,7 @@ class AppDisplay extends React.Component {
 
 AppDisplay.defaultProps = {
   scheme: ''
-}
+};
 
 AppDisplay.propTypes = {
   updateInputColor: PropTypes.func.isRequired,
