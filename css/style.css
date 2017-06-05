@@ -57,7 +57,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   max-width: 63rem;
-  padding: 2rem .5rem;
+  padding: 2rem 0;
 }
 
 @media (min-width: 50rem) {
@@ -192,8 +192,7 @@ legend {
 }
 
 .input-select {
-  margin-top: 1.1rem;
-  padding: .5rem
+  margin-top: 1.6rem;
 }
 
 @media (min-width: 50rem) {
