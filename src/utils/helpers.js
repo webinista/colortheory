@@ -106,29 +106,39 @@ const hueToRgb = (t1, t2, hue) => {
  */
 
 export function hslToRgb(string) {
+  let rgb;
   const color = string.replace('hsl(', '').replace(')', '');
   const [hue, sat, light] = color.split(',');
 
-  /*
-   * Convert hue value to an angle. Not sure why we're dividing by 60. I think
-   * it's related to hueToRgb using +/-6. It works though!
-   * Parse percentage values into floats so 40% becomes 0.4
-   */
+/*
+ * Convert hue value to an angle. Not sure why we're dividing by 60. I think
+ * it's related to hueToRgb using +/-6. It works though!
+ * Parse percentage values into floats so 40% becomes 0.4
+ */
   const [h, s, l] = [hue / 60, percentToFloat(sat), percentToFloat(light)];
 
-  // temp1 and temp2 don't really need names. they're just holders for these
-  // calculations
-  const temp1 = (l <= 0.5) ? l * (s + 1) : (l + s) - (l * s);
-  const temp2 = (l * 2) - temp1;
+/*
+ * If there's no saturation, it's a gray. Need to multiply the lightness
+ * value by 255 and set r,g,b to that value.
+ */
+  if(s === 0) {
+    const gray = Math.round(l * 255);
+    rgb = [gray, gray, gray]; 
 
-  const rgb = [
-    hueToRgb(temp2, temp1, h + 2, true),
-    hueToRgb(temp2, temp1, h, true),
-    hueToRgb(temp2, temp1, h - 2, true)
-  ];
+  } else {
+    // temp1 and temp2 don't really need names. they're just holders for these
+    // calculations
+    const temp1 = (l <= 0.5) ? l * (s + 1) : (l + s) - (l * s);
+    const temp2 = (l * 2) - temp1;
+
+    rgb = [
+      hueToRgb(temp2, temp1, h + 2, true),
+      hueToRgb(temp2, temp1, h, true),
+      hueToRgb(temp2, temp1, h - 2, true)
+    ];
+  }
 
   const rgbStr = `rgb(${rgb.join(', ')})`;
-
   return rgbStr;
 }
 
