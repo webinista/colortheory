@@ -9,6 +9,7 @@
     "test": "mocha --recursive --compilers js:babel-core/register './test/**/*.unit.test.js?(x)'",
     "test:validators": "mocha --recursive --compilers js:babel-core/register './test/utils/validators.unit.test.js'",
     "test:helpers": "mocha --recursive --compilers js:babel-core/register './test/utils/helpers.*.unit.test.js'",
+    "test:conversions": "mocha --recursive --compilers js:babel-core/register './test/utils/conversions.*.unit.test.js'",
     "watch": "webpack-dev-server --open --config config/webpack.config.js"
   },
   "repository": {

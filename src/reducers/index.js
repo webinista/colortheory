@@ -11,6 +11,7 @@ import {
   OPTIONS_START_COLOR
 } from '../utils/conf';
 
+import { normalizeColorString } from '../utils/helpers';
 /*
  * currentColor and the first item in swatches need to have the
  * value for UI consistency's sake.
@@ -29,7 +30,7 @@ const dataSource = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_FORM_COLOR_VALUE:
       newState = set('currentColor', action.value, state);
-      newState = set('swatches', [action.value], newState);
+      newState = set('swatches', [normalizeColorString(action.value)], newState);
       return newState;
 
     case UPDATE_FORM_COLOR_SCHEME_VALUE:

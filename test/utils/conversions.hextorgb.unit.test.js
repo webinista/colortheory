@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import {
   hexToRGB,
-} from '../../src/utils/helpers';
+} from '../../src/utils/conversions';
 
 const colors = [
   {

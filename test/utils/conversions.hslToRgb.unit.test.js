@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import {
   hslToRgb,
-} from '../../src/utils/helpers';
+} from '../../src/utils/conversions';
 
 const rgb = [
   {

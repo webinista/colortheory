@@ -12,7 +12,7 @@ import {
 
 import {
   convertToHex
-} from '../utils/helpers';
+} from '../utils/conversions';
 
 
 class LinkedColorInput extends React.Component {
