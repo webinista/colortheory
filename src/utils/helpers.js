@@ -64,13 +64,14 @@ export function hexToRGB(string) {
 
 export function rgbToHex(string) {
   const color = string.replace('rgb(', '').replace(')', '');
-  const rgb = color.split(', ');
+  const rgb = color.split(',');
 
   // Assign rgb[0] to r, etc
   const [r, g, b] = rgb;
 
   // Convert each component to a number so that we can do === instead of
-  // == comparisons. (thanks, eslint!)
+  // === comparisons. (thanks, eslint!)
+  // If the component is zero, pad the string to be double zeroes
   const rr = (+r === 0) ? '00' : dec2Hex(r);
   const gg = (+g === 0) ? '00' : dec2Hex(g);
   const bb = (+b === 0) ? '00' : dec2Hex(b);
@@ -145,6 +146,7 @@ export function convertToHex(string) {
   } else {
     hex = string;
   }
+
   return expandRgb(hex);
 }
 
