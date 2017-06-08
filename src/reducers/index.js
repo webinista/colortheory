@@ -17,6 +17,7 @@ import {
 
 import {
   getComplement,
+  getSplitComplement,
   getSquare,
   getTriad
 } from '../utils/colorschemes';
@@ -38,6 +39,10 @@ const makePalette = (startColor, type) => {
   switch (type) {
     case 'complementary':
       palette = getComplement(startColor);
+      break;
+
+    case 'splitcomp':
+      palette = getSplitComplement(startColor);
       break;
 
     case 'square':

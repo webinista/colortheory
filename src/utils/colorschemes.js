@@ -47,17 +47,38 @@ export function getSquare(colorString) {
   const cs = convertToHsl(colorString);
   const [h, s, l] = getColorParts(cs);
 
-  const square1 = +h + degree;
-  const square2 = +h + (degree * 2);
-
+  let square1 = +h + degree;
+  let square2 = +h + (degree * 2);
   let square3 = +h - degree;
 
+  square1 = (square1 < 0) ? (360 + square1) : square1;
+  square2 = (square2 < 0) ? (360 + square2) : square2;
   square3 = (square3 < 0) ? (360 + square3) : square3;
 
   palette[0] = cs;
   palette[1] = `hsl(${square1}, ${s}%, ${l}%)`;
   palette[2] = `hsl(${square2}, ${s}%, ${l}%)`;
   palette[3] = `hsl(${square3}, ${s}%, ${l}%)`;
+
+  return palette;
+}
+
+export function getSplitComplement(colorString) {
+  const degree = 180;
+  const degreeDiff = 30;
+  const palette = [];
+  const cs = convertToHsl(colorString);
+  const [h, s, l] = getColorParts(cs);
+
+  let sc1 = +h + (degree + degreeDiff);
+  let sc2 = +h - (degree + degreeDiff);
+
+  sc1 = (sc1 < 0) ? (360 + sc1) : sc1;
+  sc2 = (sc2 < 0) ? (360 + sc2) : sc2;
+
+  palette[0] = cs;
+  palette[1] = `hsl(${sc1}, ${s}%, ${l}%)`;
+  palette[2] = `hsl(${sc2}, ${s}%, ${l}%)`;
 
   return palette;
 }
