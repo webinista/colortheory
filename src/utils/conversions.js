@@ -7,24 +7,83 @@ import {
   percentToFloat,
 } from './helpers';
 
+const getHue = (rgb) => {
+  let hue;
+  const max = Math.max.apply(null, rgb);
+  const min = Math.min.apply(null, rgb);
 
-/* oops... wip export function rgbToHsl(string) {
+  const r = rgb[0];
+  const g = rgb[1];
+  const b = rgb[2];
+
+  // Determine which index and color channel is the max value.
+  // That will determine which calculation we use.
+  const whichChannelIsMax = rgb.findIndex((obj) => {
+    return obj === max;
+  });
+
+  switch (whichChannelIsMax) {
+    // if red is the max value
+    case 0:
+      hue = (g - b) / (max - min);
+      break;
+    // if green is the max value
+    case 1:
+      hue = ((b - r) / (max - min)) + 2;
+      break;
+    // if blue is the max value
+    case 2:
+      hue = ((r - g) / (max - min)) + 4;
+      break;
+    default:
+      hue = 0;
+  }
+
+  hue = Math.round(hue * 60);
+
+  // If hue is negative, add 360, otherwise, return hue.
+  return hue < 0 ? (360 + hue) : hue;
+};
+
+const getSaturation = (lightness, min, max) => {
+  let sat;
+
+  if (lightness < 0.5) {
+    sat = (max - min) / (max + min);
+  } else {
+    sat = (max - min) / (2 - (max - min));
+  }
+
+  return sat;
+};
+
+export function rgbToHsl(string) {
+  let hue;
+  let sat;
   const col = normalizeColorString(string);
+  const RGB_MAX = 255;
+
   // getColorParts returns an array. Sets each item [r,g,b] to the
   // corresponding part of the getColorParts(string) array.
-  const [r, g, b] = getColorParts(col);
+  const [rval, gval, bval] = getColorParts(col);
 
-  // Convert each component to a number so that we can do === instead of
-  // === comparisons. (thanks, eslint!)
-  // If the component is zero, pad the string to be double zeroes
-  const rr = (+r === 0) ? '00' : dec2Hex(r);
-  const gg = (+g === 0) ? '00' : dec2Hex(g);
-  const bb = (+b === 0) ? '00' : dec2Hex(b);
+  const rgb = [rval / RGB_MAX, gval / RGB_MAX, bval / RGB_MAX];
 
-  return `#${rr}${gg}${bb}`;
-} */
+  const min = Math.min.apply(null, rgb);
+  const max = Math.max.apply(null, rgb);
 
+  const light = (min + max) / 2;
 
+  if (max === min) {
+    hue = 0;
+    sat = 0;
+  } else {
+    sat = getSaturation(light, min, max);
+    hue = getHue(rgb);
+  }
+
+  return `hsl(${hue}, ${Math.round(sat * 100)}%, ${Math.round(light * 100)}%)`;
+}
 
 export function hexToRGB(string) {
   const len = 2;
@@ -89,17 +148,17 @@ export function hslToRgb(string) {
   const color = normalizeColorString(string);
   const [hue, sat, light] = getColorParts(color);
 
-/*
- * Convert hue value to an angle. Not sure why we're dividing by 60. I think
- * it's related to hueToRgb using +/-6 (since 6 * 60 = 360). It works though!
- * Parse percentage values into floats so 40% becomes 0.4
- */
+  /*
+   * Convert hue value to an angle. Not sure why we're dividing by 60. I think
+   * it's related to hueToRgb using +/-6 (since 6 * 60 = 360). It works though!
+   * Parse percentage values into floats so 40% becomes 0.4
+   */
   const [h, s, l] = [hue / 60, percentToFloat(sat), percentToFloat(light)];
 
-/*
- * If there's no saturation, it's a gray. Need to multiply the lightness
- * value by 255 and set r,g,b to that value.
- */
+  /*
+   * If there's no saturation, it's a gray. Need to multiply the lightness
+   * value by 255 and set r,g,b to that value.
+   */
   if (s === 0) {
     const gray = Math.round(l * 255);
     rgb = [gray, gray, gray];
@@ -120,7 +179,6 @@ export function hslToRgb(string) {
   return rgbStr;
 }
 
-
 /**
 * Converts RGB values to hex, or returns a hex string.
 */
@@ -138,3 +196,20 @@ export function convertToHex(string) {
   return expandRgb(hex);
 }
 
+export function convertToHsl(string) {
+  let color;
+
+  if (string.toLowerCase().indexOf('hsl') > -1) {
+    color = string;
+  }
+
+  if (string.indexOf('#') > -1) {
+    color = rgbToHsl(hexToRGB(string));
+  }
+
+  if (string.toLowerCase().indexOf('rgb') > -1) {
+    color = rgbToHsl(string);
+  }
+
+  return color;
+}

@@ -18,12 +18,12 @@ export const getColorParts = (colorString) => {
 
 // Add commas if there aren't any.
 export const normalizeColorString = (colorString) => {
-  // if there's a comma, return the color 
-  if(colorString.indexOf(',') > -1) return colorString;
+  // if there's a comma, return the color
+  if (colorString.indexOf(',') > -1) return colorString;
 
   // Otherwise return a string with commas
   return colorString.replace(/\s/g, ', ');
-}
+};
 
 /**
  * Expand an RGB value to an RRGGB value
