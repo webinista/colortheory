@@ -55,7 +55,7 @@ a:hover {
 
 .component-palette {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 63rem;
   padding: 2rem 0;
 }

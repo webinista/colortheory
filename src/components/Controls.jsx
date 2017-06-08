@@ -8,6 +8,16 @@ import LinkedColorInput from '../components/LinkedColorInput';
 import { isValidColor } from '../utils/validators';
 
 class Controls extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(domEvent) {
+    domEvent.preventDefault();
+    this.props.onSubmitHandler(domEvent.target);
+  }
+
   render() {
     return (
       <form
@@ -15,7 +25,7 @@ class Controls extends React.Component {
         id="controls"
         method="post"
         name="controls"
-        onSubmit={this.props.onSubmitHandler}>
+        onSubmit={this.handleSubmit}>
         <LinkedColorInput
           cssClass="input-color-linked"
           error={!isValidColor(this.props.color)}

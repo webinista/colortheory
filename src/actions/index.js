@@ -18,9 +18,9 @@ export function updateSchemeType(value) {
   };
 }
 
-export function updatePalette(arrayValues) {
+export function updatePalette(form) {
   return {
     type: UPDATE_PALETTE,
-    arrayValues
+    form: form
   };
 }

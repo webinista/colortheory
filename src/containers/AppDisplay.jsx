@@ -19,6 +19,7 @@ class AppDisplay extends React.Component {
         <Controls
           onColorChangeHandler={this.props.updateInputColor}
           onSelectChangeHandler={this.props.updateSchemeType}
+          onSubmitHandler={this.props.updatePalette}
           error="error message!"
           options={this.props.options}
           color={this.props.currentColor}
@@ -40,6 +41,7 @@ AppDisplay.defaultProps = {
 
 AppDisplay.propTypes = {
   updateInputColor: PropTypes.func.isRequired,
+  updatePalette: PropTypes.func.isRequired,
   updateSchemeType: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   currentColor: PropTypes.string.isRequired,

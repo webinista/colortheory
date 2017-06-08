@@ -11,7 +11,14 @@ import {
   OPTIONS_START_COLOR
 } from '../utils/conf';
 
-import { normalizeColorString } from '../utils/helpers';
+import {
+  normalizeColorString
+} from '../utils/helpers';
+
+import {
+  getComplement
+} from '../utils/colorschemes';
+
 /*
  * currentColor and the first item in swatches need to have the
  * value for UI consistency's sake.
@@ -24,8 +31,21 @@ const initialState = {
   scheme: ''
 };
 
+const makePalette = (startColor, type) => {
+  let palette;
+  switch (type) {
+    case 'complementary':
+      palette = getComplement(startColor);
+      break;
+    default:
+      palette = ['#000000'];
+  }
+  return palette;
+};
+
 const dataSource = (state = initialState, action) => {
   let newState;
+  let colors;
 
   switch (action.type) {
     case UPDATE_FORM_COLOR_VALUE:
@@ -34,10 +54,14 @@ const dataSource = (state = initialState, action) => {
       return newState;
 
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
-      return set('scheme', action.value, state);
+      colors = makePalette(state.currentColor, action.value);
+      newState = set('swatches', colors, state);
+      return newState;
 
     case UPDATE_PALETTE:
-      return set('swatches', action.value, state);
+      colors = makePalette(state.currentColor, action.form.scheme.value);
+      newState = set('swatches', colors, state);
+      return newState;
 
     default:
       return state;
