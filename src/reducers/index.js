@@ -1,6 +1,8 @@
 import set from 'lodash/fp/set';
 
 import {
+  CLOSE_MODAL,
+  OPEN_MODAL,
   UPDATE_FORM_COLOR_VALUE,
   UPDATE_FORM_COLOR_SCHEME_VALUE,
   UPDATE_PALETTE
@@ -29,6 +31,9 @@ import {
 
 const initialState = {
   currentColor: OPTIONS_START_COLOR,
+  modal: {
+    isVisible: false
+  },
   options: OPTIONS_COLOR_SCHEME,
   swatches: [OPTIONS_START_COLOR],
   scheme: ''
@@ -65,6 +70,13 @@ const dataSource = (state = initialState, action) => {
   let colors;
 
   switch (action.type) {
+    case CLOSE_MODAL:
+      newState = set('modal.isVisible', false, state);
+      return newState;
+
+    case OPEN_MODAL:
+      return set('modal.isVisible', true, state);
+
     case UPDATE_FORM_COLOR_VALUE:
       newState = set('currentColor', action.value, state);
       newState = set('swatches', [normalizeColorString(action.value)], newState);
