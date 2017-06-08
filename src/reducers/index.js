@@ -17,6 +17,7 @@ import {
 
 import {
   getComplement,
+  getSquare,
   getTriad
 } from '../utils/colorschemes';
 
@@ -38,6 +39,11 @@ const makePalette = (startColor, type) => {
     case 'complementary':
       palette = getComplement(startColor);
       break;
+
+    case 'square':
+      palette = getSquare(startColor);
+      break;
+
     case 'triad':
       palette = getTriad(startColor);
       break;
@@ -45,6 +51,7 @@ const makePalette = (startColor, type) => {
     default:
       palette = ['#000000'];
   }
+
   return palette;
 };
 

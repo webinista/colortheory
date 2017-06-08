@@ -2,15 +2,15 @@ export const OPTIONS_START_COLOR = '#000000';
 
 export const OPTIONS_COLOR_SCHEME = [
   { label: 'Complementary', value: 'complementary' },
-  { label: 'Analagous', value: 'analagous' },
+  // { label: 'Analagous', value: 'analagous' },
   { label: 'Triad', value: 'triad' },
-  { label: 'Split Complementary', value: 'splitcomp' },
+  // { label: 'Split Complementary', value: 'splitcomp' },
   { label: 'Square', value: 'square' },
   // Two complementary pairs
-  { label: 'Tetradic / Rectangular', value: 'tetrad' },
-  { label: 'Diad', value: 'diad' },
-  { label: 'Random', value: 'random' },
-  { label: 'Monochromatic', value: 'mono' }
+  // { label: 'Tetradic / Rectangular', value: 'tetrad' },
+  // { label: 'Diad', value: 'diad' },
+  // { label: 'Random', value: 'random' },
+  // { label: 'Monochromatic', value: 'mono' }
 ];
 
 export const OPTIONS_CSS_NAMED_COLORS = [

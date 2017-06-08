@@ -21,6 +21,6 @@ export function updateSchemeType(value) {
 export function updatePalette(form) {
   return {
     type: UPDATE_PALETTE,
-    form: form
+    form
   };
 }
