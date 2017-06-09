@@ -72,6 +72,9 @@ a:hover {
 
 .component-swatch {
   border: 1vw solid #fff;
+  height: 100%;
+  width: 25%;
+
 }
 
 .component-swatch:first-child {

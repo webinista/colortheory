@@ -7,8 +7,8 @@ class ColorSwatch extends React.Component {
     const cssClasses = classNames('component-swatch', this.props.cssClass);
 
     return (
-      <svg className={cssClasses}>
-        <rect x="0" y="0" width="100%" height="100%" fill={this.props.fill} />
+      <svg className={cssClasses} viewBox="0 0 100 100" pointerEvents="none">
+        <rect x="0" y="0" width="100" height="100" fill={this.props.fill} />
       </svg>
     );
   }
