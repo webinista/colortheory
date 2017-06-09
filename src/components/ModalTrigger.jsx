@@ -31,7 +31,7 @@ ModalTrigger.defaultProps = {
 };
 
 ModalTrigger.propTypes = {
-  cssClass: PropTypes.func.isRequired,
+  cssClass: PropTypes.string,
   onClickHandler: PropTypes.func.isRequired,
   id: PropTypes.string,
   opens: PropTypes.string.isRequired

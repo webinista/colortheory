@@ -2,7 +2,7 @@ export const OPTIONS_START_COLOR = '#000000';
 
 export const OPTIONS_COLOR_SCHEME = [
   { label: 'Complementary', value: 'complementary' },
-  // { label: 'Analagous', value: 'analagous' },
+  { label: 'Analogous', value: 'analogous' },
   { label: 'Triad', value: 'triad' },
   { label: 'Split Complementary', value: 'splitcomp' },
   { label: 'Square', value: 'square' },
@@ -166,3 +166,5 @@ export const OPTIONS_CSS_NAMED_COLORS = [
 
 export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb(), and hsl() values. No alpha support. No named colors.';
 export const OPTIONS_COLOR_INPUT_ERROR_MESSAGE = "The value you entered isn't supported.";
+
+export const GLOSSARY = [];

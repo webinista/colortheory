@@ -31,17 +31,6 @@ const config = {
     ]
   },
   plugins:[
-    new webpack.optimize.UglifyJsPlugin({
-      // TODO: Figure out why this doesn't work
-      // This does not match the documentation, but
-      // using way from documentation causes errors.
-      // See https://webpack.js.org/guides/production-build/#the-manual-way
-      sourceMap: true,
-      comments: false,
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
-    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
     }),
