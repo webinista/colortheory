@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../components/Button';
-import SelectMenu from '../components/SelectMenu';
+import SchemeMenu from '../components/SchemeMenu';
 import LinkedColorInput from '../components/LinkedColorInput';
 
 import { isValidColor } from '../utils/validators';
@@ -35,10 +35,11 @@ class Controls extends React.Component {
           name="color"
           onChangeHandler={this.props.onColorChangeHandler}
           value={this.props.color} />
-        <SelectMenu
+        <SchemeMenu
           labelText="Choose a scheme type: "
           name="scheme"
           onChangeHandler={this.props.onSelectChangeHandler}
+          onModalClickHandler={this.props.onModalTriggerClickHandler}
           options={this.props.options}
           value={this.props.scheme} />
         <Button type="submit" text="Generate scheme" />
@@ -62,6 +63,7 @@ Controls.propTypes = {
   onSubmitHandler: PropTypes.func,
   onColorChangeHandler: PropTypes.func.isRequired,
   onSelectChangeHandler: PropTypes.func.isRequired,
+  onModalTriggerClickHandler: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string

@@ -10,6 +10,7 @@ import { OPTIONS_COLOR_SCHEME } from '../utils/conf';
 
 import {
   closeModal,
+  openModal,
   updateInputColor,
   updateSchemeType,
   updatePalette
@@ -24,6 +25,7 @@ class AppDisplay extends React.Component {
         <div>
           <Controls
             onColorChangeHandler={this.props.updateInputColor}
+            onModalTriggerClickHandler={this.props.openModal}
             onSelectChangeHandler={this.props.updateSchemeType}
             onSubmitHandler={this.props.updatePalette}
             error="error message!"
@@ -33,6 +35,7 @@ class AppDisplay extends React.Component {
           <Palette swatches={this.props.swatches} />
         </div>
         <Modal
+          id="glossary"
           onClose={this.props.closeModal}
           content={content}
           visible={this.props.modal.isVisible} />
@@ -55,6 +58,7 @@ AppDisplay.propTypes = {
   modal: PropTypes.shape({
     isVisible: PropTypes.bool
   }).isRequired,
+  openModal: PropTypes.func.isRequired,
   updateInputColor: PropTypes.func.isRequired,
   updatePalette: PropTypes.func.isRequired,
   updateSchemeType: PropTypes.func.isRequired,
@@ -75,6 +79,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   closeModal,
+  openModal,
   updateInputColor,
   updateSchemeType,
   updatePalette

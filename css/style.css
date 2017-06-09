@@ -323,3 +323,20 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
   height: 100%;
   width: 100%;
 }
+
+.button-stripped {
+  background: transparent;
+  border: 0;
+  height: auto;
+  padding: .3rem 0;
+}
+
+.button-modal-trigger {
+  color: #2196f3;
+  text-decoration: underline hsl(117, 70%, 54%);
+  text-decoration-skip: ink;
+}
+
+.button-modal-trigger {
+  color: #2196f3;
+}

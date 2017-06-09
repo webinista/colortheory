@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import ModalTrigger from '../components/ModalTrigger';
+
 import { sortOptions } from '../utils/helpers';
 
-class SelectMenu extends React.Component {
+class SchemeMenu extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -39,28 +41,33 @@ class SelectMenu extends React.Component {
           <option>Select</option>
           {options}
         </select>
+        <ModalTrigger
+          onClickHandler={this.props.onModalClickHandler}
+          opens="glossary" />
       </div>
     );
   }
 }
 
-SelectMenu.defaultProps = {
+SchemeMenu.defaultProps = {
   cssClass: null,
   id: null,
   onChangeHandler: null,
+  onModalClickHandler: null,
   options: [{ label: 'Empty Menu', value: '' }]
 };
 
-SelectMenu.propTypes = {
+SchemeMenu.propTypes = {
   id: PropTypes.string,
   labelText: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,
+  onModalClickHandler: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
   })).isRequired
 };
 
-export default SelectMenu;
+export default SchemeMenu;
