@@ -27,6 +27,7 @@ class ModalTrigger extends React.Component {
 }
 
 ModalTrigger.defaultProps = {
+  cssClass: null,
   id: null
 };
 
