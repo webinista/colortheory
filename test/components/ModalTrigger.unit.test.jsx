@@ -29,7 +29,7 @@ describe('<ModalTrigger />', () => {
   });
 
   it(`value of opens should be "${props.opens}"`, () => {
-    expect(button.props['data-show']).to.equal(props.opens);
+    expect(button).to.have.property('data-show').equal(props.opens);
   });
 
   it(`its id should be "${props.id}"`, () => {
