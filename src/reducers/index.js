@@ -18,6 +18,7 @@ import {
 } from '../utils/helpers';
 
 import {
+  getAnalogous,
   getComplement,
   getRandom,
   getSplitComplement,
@@ -43,6 +44,10 @@ const initialState = {
 const makePalette = (startColor, type) => {
   let palette;
   switch (type) {
+    case 'analogous':
+      palette = getAnalogous(startColor);
+      break;
+
     case 'complementary':
       palette = getComplement(startColor);
       break;

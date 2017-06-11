@@ -6,6 +6,26 @@ import {
   getColorParts
 } from './helpers';
 
+export function getAnalogous(colorString, colors = 4) {
+  const increment = 30;
+  const palette = [];
+  const cs = convertToHsl(colorString);
+  const hsl = getColorParts(cs);
+
+  palette[0] = cs;
+
+  let i = 1;
+  let hue;
+
+  while (i < colors) {
+    hue = increment * i;
+    palette[i] = `hsl(${hue}, ${hsl[1]}%, ${hsl[2]}%)`;
+    i++;
+  }
+
+  return palette;
+}
+
 export function getComplement(colorString) {
   const degree = 180;
   const palette = [];
