@@ -16,7 +16,15 @@ const rgb = [
   {
     color: 'rgb(153, 0, 255)',
     expectation: 'hsl(276, 100%, 50%)'
-  }
+  },
+  {
+    color: 'rgb(148, 255, 250)',
+    expectation: 'hsl(177, 100%, 79%)'
+  },
+  {
+    color: 'rgb(148, 204, 249)',
+    expectation: 'hsl(207, 89%, 78%)'
+  },
 ];
 
 const rgbToHslTest = (vals) => {

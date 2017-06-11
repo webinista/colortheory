@@ -29,7 +29,14 @@ const colors = [
     color: 'rgb(128,128,128)',
     expectation: 'hsl(0, 0%, 50%)'
   },
-
+  {
+    color: '#94fff9',
+    expectation: 'hsl(177, 100%, 79%)'
+  },
+  {
+    color: '#94ccf9',
+    expectation: 'hsl(207, 89%, 78%)'
+  },
 ];
 
 const convertToHslTest = (vals) => {
