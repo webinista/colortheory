@@ -82,3 +82,24 @@ export function getSplitComplement(colorString) {
 
   return palette;
 }
+
+// Pick four colors with the same saturation and lightness
+// but a random hue betwen 0 and 359 degrees.
+export function getRandom(colorString, colors = 4) {
+  const min = 0;
+  const max = 359;
+  const palette = [];
+  const cs = convertToHsl(colorString);
+  const hsl = getColorParts(cs);
+
+  palette[0] = cs;
+
+  let i = 1;
+  while (i < colors) {
+    const hue = Math.floor(Math.random() * (max - min)) + min;
+    palette[i] = `hsl(${hue}, ${hsl[1]}%, ${hsl[2]}%)`;
+    i++;
+  }
+
+  return palette;
+}

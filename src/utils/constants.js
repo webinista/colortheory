@@ -4,4 +4,3 @@ export const UPDATE_PALETTE = 'UPDATE_PALETTE';
 
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const OPEN_MODAL = 'OPEN_MODAL';
-

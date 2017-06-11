@@ -19,6 +19,7 @@ import {
 
 import {
   getComplement,
+  getRandom,
   getSplitComplement,
   getSquare,
   getTriad
@@ -56,6 +57,10 @@ const makePalette = (startColor, type) => {
 
     case 'triad':
       palette = getTriad(startColor);
+      break;
+
+    case 'random':
+      palette = getRandom(startColor);
       break;
 
     default:
