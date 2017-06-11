@@ -71,7 +71,6 @@ const makePalette = (startColor, type) => {
     default:
       palette = ['#000000'];
   }
-
   return palette;
 };
 

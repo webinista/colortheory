@@ -11,6 +11,7 @@
     "arrow-body-style": 0,
     "no-compare-neg-zero": 2,
     "one-var-declaration-per-line": 0,
+    "no-plusplus": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-closing-bracket-location": [1, "after-props"],
     "react/forbid-prop-types": [1, {"forbid": ["any","object"]}],
