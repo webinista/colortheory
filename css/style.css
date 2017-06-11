@@ -78,7 +78,7 @@ a:hover {
 }
 
 .component-swatch:first-child {
-  border-left-width: 0;
+  /* border-left-width: 0; */
 }
 
 select {
