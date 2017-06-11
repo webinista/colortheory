@@ -41,9 +41,6 @@ class SchemeMenu extends React.Component {
           <option>Select</option>
           {options}
         </select>
-        <ModalTrigger
-          onClickHandler={this.props.onModalClickHandler}
-          opens="glossary" />
       </div>
     );
   }
