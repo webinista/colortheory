@@ -8,7 +8,7 @@ class ColorSwatch extends React.Component {
 
     return (
       <svg className={cssClasses} pointerEvents="none">
-        <rect x="0" y="0" fill={this.props.fill} />
+        <rect x="0" y="0" width="100%" height="100%" fill={this.props.fill} />
       </svg>
     );
   }
