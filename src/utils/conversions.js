@@ -55,13 +55,13 @@ export function rgbToHsl(string) {
   let hue;
   let sat;
   const col = normalizeColorString(string);
-  const RGB_MAX = 255;
+  const rgb_max = 255;
 
   // getColorParts returns an array. Sets each item [r,g,b] to the
   // corresponding part of the getColorParts(string) array.
   const [rval, gval, bval] = getColorParts(col);
 
-  const rgb = [rval / RGB_MAX, gval / RGB_MAX, bval / RGB_MAX];
+  const rgb = [rval / rgb_max, gval / rgb_max, bval / rgb_max];
 
   const min = Math.min.apply(null, rgb);
   const max = Math.max.apply(null, rgb);
