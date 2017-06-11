@@ -2,7 +2,7 @@ export const OPTIONS_START_COLOR = '#000000';
 
 export const OPTIONS_COLOR_SCHEME = [
   { label: 'Complementary', value: 'complementary' },
-  { label: 'Analogous', value: 'analogous' },
+ // { label: 'Analogous', value: 'analogous' },
   { label: 'Triad', value: 'triad' },
   { label: 'Split Complementary', value: 'splitcomp' },
   { label: 'Square', value: 'square' },
