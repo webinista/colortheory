@@ -108,18 +108,27 @@ select::-ms-expand {
   display: none;
 }
 
+input, select, button {
+  border-radius: 3px;
+  border: 1px solid hsl(204, 12%, 65%);
+  height: 3rem;
+  font-family: inherit;
+  padding: .5rem;
+}
+
 [type=text],
 select {
   width: 100%;
 }
 
-input, select, button {
-  border-radius: 0;
-  border: 1px solid hsl(204, 12%, 25%);
-  height: 3rem;
-  font-family: inherit;
-  padding: .5rem;
+[type=text] {
+  border-radius: 2px 0 0 2px;
 }
+
+button {
+  border-color: hsl(204, 12%, 25%);
+}
+
 
 .input-button-wrap {
   margin: 1rem 0;
