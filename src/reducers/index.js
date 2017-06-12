@@ -24,6 +24,7 @@ import {
   getRandom,
   getSplitComplement,
   getSquare,
+  getTetrad,
   getTriad
 } from '../utils/colorschemes';
 
@@ -67,6 +68,10 @@ const makePalette = (startColor, type) => {
 
     case 'square':
       palette = getSquare(startColor);
+      break;
+
+    case 'tetrad':
+      palette = getTetrad(startColor);
       break;
 
     case 'triad':

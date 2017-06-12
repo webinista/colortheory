@@ -57,7 +57,6 @@ export function getDiad(colorString) {
   return palette;
 }
 
-
 // Pick four colors with the same saturation and lightness
 // but a random hue betwen 0 and 359 degrees.
 export function getRandom(colorString, colors = 4) {
@@ -117,6 +116,18 @@ export function getSquare(colorString) {
   palette[1] = `hsl(${square1}, ${s}%, ${l}%)`;
   palette[2] = `hsl(${square2}, ${s}%, ${l}%)`;
   palette[3] = `hsl(${square3}, ${s}%, ${l}%)`;
+
+  return palette;
+}
+
+export function getTetrad(colorString) {
+  const degree = 180;
+  const palette = getDiad(colorString);
+  const [h0, s0, l0] = getColorParts(palette[0]);
+  const [h1, s1, l1] = getColorParts(palette[1]);
+
+  palette[2] = `hsl(${+h0 + degree}, ${s0}%, ${l0}%)`;
+  palette[3] = `hsl(${+h1 + degree}, ${s1}%, ${l1}%)`;
 
   return palette;
 }
