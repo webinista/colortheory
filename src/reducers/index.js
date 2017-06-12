@@ -20,6 +20,7 @@ import {
 import {
   getAnalogous,
   getComplement,
+  getDiad,
   getRandom,
   getSplitComplement,
   getSquare,
@@ -52,6 +53,14 @@ const makePalette = (startColor, type) => {
       palette = getComplement(startColor);
       break;
 
+    case 'diad':
+      palette = getDiad(startColor);
+      break;
+
+    case 'random':
+      palette = getRandom(startColor);
+      break;
+
     case 'splitcomp':
       palette = getSplitComplement(startColor);
       break;
@@ -62,10 +71,6 @@ const makePalette = (startColor, type) => {
 
     case 'triad':
       palette = getTriad(startColor);
-      break;
-
-    case 'random':
-      palette = getRandom(startColor);
       break;
 
     default:

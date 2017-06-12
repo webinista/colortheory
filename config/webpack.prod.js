@@ -30,7 +30,7 @@ const config = {
       }
     ]
   },
-  plugins:[
+  plugins: [
     new webpack.optimize.UglifyJsPlugin({
       // TODO: Figure out why this doesn't work
       // This does not match the documentation, but

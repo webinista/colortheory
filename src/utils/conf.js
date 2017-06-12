@@ -8,7 +8,7 @@ export const OPTIONS_COLOR_SCHEME = [
   { label: 'Square', value: 'square' },
   // Two complementary pairs
   // { label: 'Tetradic / Rectangular (Compound)', value: 'tetrad' },
-  // { label: 'Diad', value: 'diad' },
+  { label: 'Diad', value: 'diad' },
   { label: 'Random', value: 'random' },
   // { label: 'Monochromatic', value: 'mono' }
 ];

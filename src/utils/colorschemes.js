@@ -42,21 +42,59 @@ export function getComplement(colorString) {
   return palette;
 }
 
-export function getTriad(colorString) {
-  const degree = 120;
+export function getDiad(colorString) {
+  // Each color is 30 degrees. Two colors apart = 60 degrees
+  const degree = 60;
   const palette = [];
   const cs = convertToHsl(colorString);
   const [h, s, l] = getColorParts(cs);
 
-  const triad1 = +h + degree;
-  let triad2 = +h - degree;
-
-  // 360 = number of degrees in an HSL wheel
-  triad2 = (triad2 < 0) ? (360 + triad2) : triad2;
+  const newHue = (+h + degree);
 
   palette[0] = cs;
-  palette[1] = `hsl(${triad1}, ${s}%, ${l}%)`;
-  palette[2] = `hsl(${triad2}, ${s}%, ${l}%)`;
+  palette[1] = `hsl(${newHue}, ${s}%, ${l}%)`;
+
+  return palette;
+}
+
+
+// Pick four colors with the same saturation and lightness
+// but a random hue betwen 0 and 359 degrees.
+export function getRandom(colorString, colors = 4) {
+  const min = 0;
+  const max = 359;
+  const palette = [];
+  const cs = convertToHsl(colorString);
+  const hsl = getColorParts(cs);
+
+  palette[0] = cs;
+
+  let i = 1;
+  while (i < colors) {
+    const hue = Math.floor(Math.random() * (max - min)) + min;
+    palette[i] = `hsl(${hue}, ${hsl[1]}%, ${hsl[2]}%)`;
+    i++;
+  }
+
+  return palette;
+}
+
+export function getSplitComplement(colorString) {
+  const degree = 180;
+  const degreeDiff = 30;
+  const palette = [];
+  const cs = convertToHsl(colorString);
+  const [h, s, l] = getColorParts(cs);
+
+  let sc1 = +h + (degree + degreeDiff);
+  let sc2 = +h - (degree + degreeDiff);
+
+  sc1 = (sc1 < 0) ? (360 + sc1) : sc1;
+  sc2 = (sc2 < 0) ? (360 + sc2) : sc2;
+
+  palette[0] = cs;
+  palette[1] = `hsl(${sc1}, ${s}%, ${l}%)`;
+  palette[2] = `hsl(${sc2}, ${s}%, ${l}%)`;
 
   return palette;
 }
@@ -83,43 +121,22 @@ export function getSquare(colorString) {
   return palette;
 }
 
-export function getSplitComplement(colorString) {
-  const degree = 180;
-  const degreeDiff = 30;
+export function getTriad(colorString) {
+  const degree = 120;
   const palette = [];
   const cs = convertToHsl(colorString);
   const [h, s, l] = getColorParts(cs);
 
-  let sc1 = +h + (degree + degreeDiff);
-  let sc2 = +h - (degree + degreeDiff);
+  const triad1 = +h + degree;
+  let triad2 = +h - degree;
 
-  sc1 = (sc1 < 0) ? (360 + sc1) : sc1;
-  sc2 = (sc2 < 0) ? (360 + sc2) : sc2;
+  // 360 = number of degrees in an HSL wheel
+  triad2 = (triad2 < 0) ? (360 + triad2) : triad2;
 
   palette[0] = cs;
-  palette[1] = `hsl(${sc1}, ${s}%, ${l}%)`;
-  palette[2] = `hsl(${sc2}, ${s}%, ${l}%)`;
+  palette[1] = `hsl(${triad1}, ${s}%, ${l}%)`;
+  palette[2] = `hsl(${triad2}, ${s}%, ${l}%)`;
 
   return palette;
 }
 
-// Pick four colors with the same saturation and lightness
-// but a random hue betwen 0 and 359 degrees.
-export function getRandom(colorString, colors = 4) {
-  const min = 0;
-  const max = 359;
-  const palette = [];
-  const cs = convertToHsl(colorString);
-  const hsl = getColorParts(cs);
-
-  palette[0] = cs;
-
-  let i = 1;
-  while (i < colors) {
-    const hue = Math.floor(Math.random() * (max - min)) + min;
-    palette[i] = `hsl(${hue}, ${hsl[1]}%, ${hsl[2]}%)`;
-    i++;
-  }
-
-  return palette;
-}
