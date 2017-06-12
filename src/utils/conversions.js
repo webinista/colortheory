@@ -82,9 +82,11 @@ export function rgbToHsl(string) {
 export function hexToRGB(string) {
   const len = 2;
 
-  const rr = hex2Dec(string.substr(-6, len));
-  const gg = hex2Dec(string.substr(-4, len));
-  const bb = hex2Dec(string.substr(-2, len));
+  const hexStr = expandRgb(string);
+
+  const rr = hex2Dec(hexStr.substr(-6, len));
+  const gg = hex2Dec(hexStr.substr(-4, len));
+  const bb = hex2Dec(hexStr.substr(-2, len));
 
   return `rgb(${rr}, ${gg}, ${bb})`;
 }
