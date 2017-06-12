@@ -14,7 +14,6 @@ body {
   font-size: 1rem;
   background: #fff;
   color: #121212;
-  padding: 1rem;
 }
 
 header,
@@ -29,32 +28,30 @@ footer {
   background: #fff;
   bottom: 0;
   font-size: .8rem;
-  padding: 0 .2rem;
-  right: 1rem;
-  position: fixed;
+  padding: .2rem 0;
+  text-align: right;
+}
+
+@media (min-width: 50rem) {
+  footer {
+    padding: 0 .2rem;
+    right: 1rem;
+    position: fixed;
+    z-index: 1;
+  }
 }
 
 footer p {
   margin: 0;
 }
 
-
-footer {
-  text-align: right;
-}
-
 h1 {
-  background: #fff;
-  padding: 0 .5rem;
+  background: rgba(255,255,255,.98);
+  display: inline-block;
+  font-size: .8rem;
   margin: 0;
-  font-size: 8vw;
-}
-
-@media (min-width: 30rem) {
-  h1 {
-    display: inline-block;
-    font-size: 2rem;
-  }
+  padding: .5rem .8rem .5rem .5rem;
+  text-transform: uppercase;
 }
 
 a {
@@ -72,6 +69,7 @@ a:hover {
 .component-palette {
   align-items: stretch;
   display: flex;
+  height: 15rem;
   width: 100%;
 }
 
@@ -86,13 +84,52 @@ a:hover {
   }
 }
 
-.component-swatch {
-  display: inline-block;
-  height: 100%;
+.component-swatch-holder {
   flex: 1 1 100%;
+  position: relative;
 }
 
-.component-swatch rect {
+.component-copy {
+  background: rgb(255,255,255);
+  bottom: 0;
+  border: 0;
+  cursor: pointer;
+  height: 2rem;
+  left: 0;
+  margin: auto auto 5rem auto;
+  padding: 2px .5rem;
+  position: absolute;
+  right: 0;
+  width: 3.2rem;
+  z-index: 2;
+}
+
+.component-copy b {
+  position: absolute;
+  left: -9999rem;
+}
+
+@media (min-width: 50rem) {
+  .component-copy {
+    width: 12rem;
+  }
+  .component-copy b {
+    position: static;
+  }
+  .component-copy span {
+    position: absolute;
+    left: -9999rem;
+  }
+}
+
+
+.component-swatch {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.component-swatch > rect {
   height: 100%;
   width: 100%;
 }
@@ -131,14 +168,25 @@ button {
 
 
 .input-button-wrap {
-  margin: 1rem 0;
+  flex: 0 0 100%;
+  margin: 1rem 0 0;
 }
+
+@media (min-width: 50rem) {
+  .input-button-wrap {
+    flex: 1 1 140px;
+    margin: .25rem 0;
+  }
+}
+
+
 
 .input-button {
   background: hsl(204, 12%, 25%);
   color: whitesmoke;
   margin: 1px 0;
   padding: .5rem 1rem;
+  white-space: nowrap;
   width: 100%;
 }
 
@@ -148,10 +196,6 @@ button {
 }
 
 @media (min-width: 50rem) {
-  .input-button-wrap {
-    margin: 1rem .5rem;
-  }
-
   .input-button {
     margin: -1px 0 0;
     width: auto;
@@ -159,17 +203,16 @@ button {
 }
 
 [id=controls] {
-  display: inline-block;
-  background: #fff;
-  margin: 1rem 0;
-  padding: 1rem 1rem 0;
+  background: rgba(255,255,255,.98);
+  display: flex;
+  padding: .5rem;
   position: relative;
   z-index: 1;
 }
 
-@media (min-width: 50rem) {
-  [id=controls] {
-    padding-bottom: 0;
+@media (max-width: 50rem) {
+	[id=controls] {
+    flex-wrap: wrap;
   }
 }
 
@@ -182,12 +225,16 @@ button {
 }
 
 .input-color-linked {
+  flex: 1 1 100%;
+  margin-bottom: 1rem;
   transition: background 250ms ease-in;
 }
 
 @media (min-width: 50rem) {
-  .input-color-linked {
-    padding: .5rem;
+	.input-color-linked {
+    flex-basis: 40%;
+    margin-bottom: 0;
+    padding: 0 1rem 0 0;
   }
 }
 
@@ -213,9 +260,9 @@ button {
 }
 
 .input-notice {
-  font-size: .9rem;
+  font-size: .8rem;
   font-style: italic;
-  color: #555;
+  color: #444;
   margin: 0 .2rem;
 }
 
@@ -225,7 +272,7 @@ fieldset {
 }
 
 legend {
-  padding-bottom: .5rem;
+  padding-bottom: .25rem;
   font-weight: bold;
 }
 
@@ -244,39 +291,27 @@ legend {
 }
 
 .input-select {
-  margin-top: 1.6rem;
+  padding: 0;
+  flex: 0 1 100%;
 }
 
+
 @media (min-width: 50rem) {
-  .input-text-errorable,
-  .input-select,
-  .input-color-linked {
-    padding: .5rem 1rem;
-    width: 33%;
-  }
-
-  .input-color-linked,
-  .input-text-errorable,
-  .input-select,
-  button {
-    float: left;
-  }
-
   .input-select {
-    margin-top: 0;
-    padding: .5rem 1.5rem .5rem 1rem;
+    padding: 0 1rem 0 0;
+    flex-basis: 40%;
   }
 }
 
 label {
   display: block;
   font-weight: bold;
-  padding-bottom: .5rem;
+  padding-bottom: .25rem;
 }
 
 @media (min-width: 50rem) {
   .input-button {
-    margin: 0 .5rem;
+    margin: 0;
     position: relative;
     top: 1.45rem;
     width: auto;

@@ -2,6 +2,7 @@ const path = require('path');  // Include path module from node.js
 const webpack = require('webpack');
 
 const entryConf = [
+  'clipboard',
   'babel-polyfill',
   'react',
   'react-dom',

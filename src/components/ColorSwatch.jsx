@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import CopyButton from './CopyButton';
+
 class ColorSwatch extends React.Component {
   render() {
     const cssClasses = classNames('component-swatch', this.props.cssClass);
 
     return (
-      <svg className={cssClasses} pointerEvents="none">
-        <rect x="0" y="0" width="100%" height="100%" fill={this.props.fill} />
-      </svg>
+      <div className="component-swatch-holder">
+        <svg className={cssClasses} pointerEvents="none">
+          <rect x="0" y="0" width="100%" height="100%" fill={this.props.fill} />
+        </svg>
+        <CopyButton text={this.props.fill} />
+      </div>
     );
   }
 }

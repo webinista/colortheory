@@ -4,12 +4,12 @@ import classNames from 'classnames';
 
 class Button extends React.Component {
   render() {
-    const cssClasses = classNames('input-button', this.props.cssClass);
+    const cssClasses = classNames('input-button-wrap', this.props.cssClass);
 
     return (
-      <div className="input-button-wrap">
+      <div className={cssClasses}>
         <button
-          className={cssClasses}
+          className="input-button"
           id={this.props.id}
           onClick={this.props.onClickHandler}
           onFocus={this.props.onFocusHandler}

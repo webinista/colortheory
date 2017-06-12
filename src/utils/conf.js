@@ -4,13 +4,12 @@ export const OPTIONS_COLOR_SCHEME = [
   { label: 'Complementary', value: 'complementary' },
   { label: 'Analogous', value: 'analogous' },
   { label: 'Triad', value: 'triad' },
-  { label: 'Split Complementary', value: 'splitcomp' },
+  { label: 'Split complementary', value: 'splitcomp' },
   { label: 'Square', value: 'square' },
   // Two complementary pairs
-  { label: 'Tetradic / Rectangular (Compound)', value: 'tetrad' },
+  { label: 'Tetrad', value: 'tetrad' },
   { label: 'Diad', value: 'diad' },
-  { label: 'Random', value: 'random' },
-  // { label: 'Monochromatic', value: 'mono' }
+  { label: 'Random', value: 'random' }
 ];
 
 export const OPTIONS_CSS_NAMED_COLORS = [
