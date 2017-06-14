@@ -111,6 +111,7 @@ a:hover {
 
 @media (min-width: 50rem) {
   .component-copy {
+    box-shadow: 0 0 20px -6px #000;
     width: 12rem;
   }
   .component-copy b {

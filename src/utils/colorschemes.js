@@ -3,7 +3,8 @@ import {
 } from './conversions';
 
 import {
-  getColorParts
+  getColorParts,
+  limit360
 } from './helpers';
 
 export function getAnalogous(colorString, colors = 4) {
@@ -15,10 +16,10 @@ export function getAnalogous(colorString, colors = 4) {
   palette[0] = cs;
 
   let i = 1;
-  let hue;
+  let hue = 0;
 
   while (i < colors) {
-    hue = +hsl[0] + (increment * i);
+    hue = limit360(+hsl[0] + (increment * i));
     palette[i] = `hsl(${hue}, ${hsl[1]}%, ${hsl[2]}%)`;
     i++;
   }
@@ -52,7 +53,7 @@ export function getDiad(colorString) {
   const newHue = (+h + degree);
 
   palette[0] = cs;
-  palette[1] = `hsl(${newHue}, ${s}%, ${l}%)`;
+  palette[1] = `hsl(${limit360(newHue)}, ${s}%, ${l}%)`;
 
   return palette;
 }
@@ -92,8 +93,8 @@ export function getSplitComplement(colorString) {
   sc2 = (sc2 < 0) ? (360 + sc2) : sc2;
 
   palette[0] = cs;
-  palette[1] = `hsl(${sc1}, ${s}%, ${l}%)`;
-  palette[2] = `hsl(${sc2}, ${s}%, ${l}%)`;
+  palette[1] = `hsl(${limit360(sc1)}, ${s}%, ${l}%)`;
+  palette[2] = `hsl(${limit360(sc2)}, ${s}%, ${l}%)`;
 
   return palette;
 }
@@ -113,9 +114,9 @@ export function getSquare(colorString) {
   square3 = (square3 < 0) ? (360 + square3) : square3;
 
   palette[0] = cs;
-  palette[1] = `hsl(${square1}, ${s}%, ${l}%)`;
-  palette[2] = `hsl(${square2}, ${s}%, ${l}%)`;
-  palette[3] = `hsl(${square3}, ${s}%, ${l}%)`;
+  palette[1] = `hsl(${limit360(square1)}, ${s}%, ${l}%)`;
+  palette[2] = `hsl(${limit360(square2)}, ${s}%, ${l}%)`;
+  palette[3] = `hsl(${limit360(square3)}, ${s}%, ${l}%)`;
 
   return palette;
 }
@@ -126,8 +127,8 @@ export function getTetrad(colorString) {
   const [h0, s0, l0] = getColorParts(palette[0]);
   const [h1, s1, l1] = getColorParts(palette[1]);
 
-  palette[2] = `hsl(${+h0 + degree}, ${s0}%, ${l0}%)`;
-  palette[3] = `hsl(${+h1 + degree}, ${s1}%, ${l1}%)`;
+  palette[2] = `hsl(${limit360(+h0 + degree)}, ${s0}%, ${l0}%)`;
+  palette[3] = `hsl(${limit360(+h1 + degree)}, ${s1}%, ${l1}%)`;
 
   return palette;
 }
@@ -145,8 +146,8 @@ export function getTriad(colorString) {
   triad2 = (triad2 < 0) ? (360 + triad2) : triad2;
 
   palette[0] = cs;
-  palette[1] = `hsl(${triad1}, ${s}%, ${l}%)`;
-  palette[2] = `hsl(${triad2}, ${s}%, ${l}%)`;
+  palette[1] = `hsl(${limit360(triad1)}, ${s}%, ${l}%)`;
+  palette[2] = `hsl(${limit360(triad2)}, ${s}%, ${l}%)`;
 
   return palette;
 }

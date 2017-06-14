@@ -6,6 +6,11 @@ export const hex2Dec = (hexInteger) => {
   return parseInt(hexInteger, 16);
 };
 
+export const limit360 = (num) => {
+  return (num > 360) ? num - 360 : num;
+};
+
+
 export const percentToFloat = (percentString) => {
   return parseInt(percentString, 10) / 100;
 };
