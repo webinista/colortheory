@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import Clipboard from 'clipboard';
 
 class CopyButton extends React.Component {
-
   componentDidMount() {
     this.clipboard = new Clipboard(this.copybutton, {
       text: (trigger) => {

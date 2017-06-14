@@ -18,7 +18,7 @@ export function getAnalogous(colorString, colors = 4) {
   let hue;
 
   while (i < colors) {
-    hue = increment * i;
+    hue = +hsl[0] + (increment * i);
     palette[i] = `hsl(${hue}, ${hsl[1]}%, ${hsl[2]}%)`;
     i++;
   }
