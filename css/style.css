@@ -167,6 +167,7 @@ select {
 
 button {
   border-color: hsl(204, 12%, 25%);
+  cursor: pointer;
 }
 
 
@@ -404,12 +405,10 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
 
 .button-modal-trigger {
   color: #2196f3;
+  cursor: pointer;
+  font-size: .8rem;
   text-decoration: underline hsl(117, 70%, 54%);
   text-decoration-skip: ink;
-}
-
-.button-modal-trigger {
-  color: #2196f3;
 }
 
 dt {
