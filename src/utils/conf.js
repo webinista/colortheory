@@ -6,32 +6,39 @@ export const OPTIONS_COLOR_SCHEME = [
     value: 'complementary',
     definition: 'Colors that sit opposite each other (180\u00B0 apart) on the color wheel.'
   },
-  { label: 'Analogous',
+  {
+    label: 'Analogous',
     value: 'analogous',
-    definition: 'Adjacent colors on the color wheel.'
+    definition: 'Adjacent colors (60\u00B0 apart) on the color wheel.'
   },
-  { label: 'Triad',
+  {
+    label: 'Triad',
     value: 'triad',
     definition: 'Three colors that are equidistant from each other.'
   },
-  { label: 'Split complementary',
+  {
+    label: 'Split complementary',
     value: 'splitcomp',
     definition: 'A three-color scheme in which two of the colors are adjacent to the complement of the first.'
   },
-  { label: 'Square',
+  {
+    label: 'Square',
     value: 'square',
     definition: 'Four colors that are equidistant from each other.'
   },
   // Two complementary pairs
-  { label: 'Tetrad',
+  {
+    label: 'Tetrad',
     value: 'tetrad',
     definition: 'A four-color scheme made of pairs of complementary colors.'
   },
-  { label: 'Diad',
+  {
+    label: 'Diad',
     value: 'diad',
     definition: 'Scheme in which colors are two colors apart on the color wheel.'
   },
-  { label: 'Random',
+  {
+    label: 'Random',
     value: 'random',
     definition: 'Four hues with the same saturation and lightness values, chosen randomly.'
   }

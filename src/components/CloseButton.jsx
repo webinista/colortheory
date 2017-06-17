@@ -12,7 +12,7 @@ class CloseButton extends React.Component {
         id={this.props.id}
         onClick={this.props.onClickHandler}
         type="button">
-        <svg pointerEvents="none" width="83" height="83" viewBox="0 0 83 83">
+        <svg focusable="false" pointerEvents="none" width="83" height="83" viewBox="0 0 83 83">
           <title>{this.props.assistiveText}</title>
           <g id="icongroup" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <circle fill={this.props.colorBackground} cx="41.5" cy="41.5" r="41.5" />

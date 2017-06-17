@@ -139,7 +139,7 @@ a:hover {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: inherit url(../img/chevron.svg) right 1rem center no-repeat;
+  background: rgba(255, 255, 255, .9) url(../img/chevron.svg) right 1rem center no-repeat;
   background-size: 1rem auto;
 }
 
@@ -161,7 +161,7 @@ select {
 }
 
 [type=text] {
-  background: inherit;
+  background: rgba(255, 255, 255, .9);
   border-radius: 2px 0 0 2px;
 }
 
@@ -173,13 +173,14 @@ button {
 
 .input-button-wrap {
   flex: 0 0 100%;
-  margin: 1rem 0 0;
+  margin: .5rem 0 1rem;
+  padding: 0 .5rem;
 }
 
 @media (min-width: 50rem) {
   .input-button-wrap {
     flex: 1 1 140px;
-    margin: .25rem 0;
+    margin: .75rem 0;
   }
 }
 
@@ -207,7 +208,6 @@ button {
 [id=controls] {
   background: rgba(255,255,255,.98);
   display: flex;
-  padding: .5rem;
   position: relative;
   z-index: 1;
 }
@@ -228,15 +228,15 @@ button {
 
 .input-color-linked {
   flex: 1 1 100%;
-  margin-bottom: 1rem;
+  margin: 0 0 .5rem;
+  padding: .5rem;
   transition: background 250ms ease-in;
 }
 
 @media (min-width: 50rem) {
 	.input-color-linked {
     flex-basis: 40%;
-    margin-bottom: 0;
-    padding: 0 1rem 0 0;
+    margin: 0;
   }
 }
 
@@ -293,14 +293,15 @@ legend {
 }
 
 .input-select {
-  padding: 0;
+  margin-bottom: .5rem;
+  padding: .5rem;
   flex: 0 1 100%;
 }
 
 
 @media (min-width: 50rem) {
   .input-select {
-    padding: 0 1rem 0 0;
+    padding: .5rem;
     flex-basis: 40%;
   }
 }
@@ -376,8 +377,13 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
 
 .modal-block-content-overflow {
   height: 100%;
-  margin: 0 3rem;
+  margin: 0 3rem 0 1rem;
   overflow-y: auto;
+}
+
+.modal-block-content-overflow h1,
+.modal-block-content-overflow h2 {
+  margin-top: 0;
 }
 
 .modal-button-close {
@@ -388,6 +394,11 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
   right: 1rem;
   height: 2rem;
   width: 2rem;
+}
+
+.modal-button-close:focus circle,
+.modal-button-close:hover circle {
+  fill: rgba(62, 70, 76, .75);
 }
 
 .modal-button-close svg {
@@ -411,8 +422,13 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
   text-decoration-skip: ink;
 }
 
+dl {
+  max-width: 550px;
+}
+
 dt {
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 dd {
