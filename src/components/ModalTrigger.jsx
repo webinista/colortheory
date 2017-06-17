@@ -21,7 +21,7 @@ class ModalTrigger extends React.Component {
         data-show={this.props.opens}
         id={this.props.id}
         onClick={this.openModal}
-        type="button">What does this mean?</button>
+        type="button">What do these mean?</button>
     );
   }
 }

@@ -139,7 +139,7 @@ a:hover {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: transparent url(../img/chevron.svg) right 1rem center no-repeat;
+  background: inherit url(../img/chevron.svg) right 1rem center no-repeat;
   background-size: 1rem auto;
 }
 
@@ -161,7 +161,7 @@ select {
 }
 
 [type=text] {
-  background: transparent;
+  background: inherit;
   border-radius: 2px 0 0 2px;
 }
 
@@ -181,8 +181,6 @@ button {
     margin: .25rem 0;
   }
 }
-
-
 
 .input-button {
   background: hsl(204, 12%, 25%);
@@ -357,13 +355,13 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .modal-block-content {
   background: #fff;
   border-radius: .3rem;
-  height: 80%;
+  height: 90%;
   margin: 2rem auto;
   padding: 1rem;
   position: absolute;
@@ -412,4 +410,16 @@ input[type="color"]:-moz-system-metric(color-picker-available) {
 
 .button-modal-trigger {
   color: #2196f3;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+dd + dt {
+  margin-top: 1rem;
 }

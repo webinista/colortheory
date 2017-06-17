@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 import Controls from '../components/Controls';
 import Palette from '../components/Palette';
+import Glossary from '../components/Glossary';
 import Modal from '../components/Modal';
 
 import {
   OPTIONS_COLOR_SCHEME,
-  OPTIONS_GLOSSARY
 } from '../utils/conf';
 
 import {
@@ -21,6 +21,8 @@ import {
 
 class AppDisplay extends React.Component {
   render() {
+    const glossary = <Glossary terms={OPTIONS_COLOR_SCHEME} />;
+
     return (
       <div>
         <div>
@@ -36,9 +38,9 @@ class AppDisplay extends React.Component {
           <Palette swatches={this.props.swatches} />
         </div>
         <Modal
-          id="glossary"
+          id="modal"
           onClose={this.props.closeModal}
-          content={OPTIONS_GLOSSARY}
+          content={glossary}
           visible={this.props.modal.isVisible} />
       </div>
     );

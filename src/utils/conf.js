@@ -1,15 +1,40 @@
 export const OPTIONS_START_COLOR = '#000000';
 
 export const OPTIONS_COLOR_SCHEME = [
-  { label: 'Complementary', value: 'complementary' },
-  { label: 'Analogous', value: 'analogous' },
-  { label: 'Triad', value: 'triad' },
-  { label: 'Split complementary', value: 'splitcomp' },
-  { label: 'Square', value: 'square' },
+  {
+    label: 'Complementary',
+    value: 'complementary',
+    definition: 'Colors that sit opposite each other (180\u00B0 apart) on the color wheel.'
+  },
+  { label: 'Analogous',
+    value: 'analogous',
+    definition: 'Adjacent colors on the color wheel.'
+  },
+  { label: 'Triad',
+    value: 'triad',
+    definition: 'Three colors that are equidistant from each other.'
+  },
+  { label: 'Split complementary',
+    value: 'splitcomp',
+    definition: 'A three-color scheme in which two of the colors are adjacent to the complement of the first.'
+  },
+  { label: 'Square',
+    value: 'square',
+    definition: 'Four colors that are equidistant from each other.'
+  },
   // Two complementary pairs
-  { label: 'Tetrad', value: 'tetrad' },
-  { label: 'Diad', value: 'diad' },
-  { label: 'Random', value: 'random' }
+  { label: 'Tetrad',
+    value: 'tetrad',
+    definition: 'A four-color scheme made of pairs of complementary colors.'
+  },
+  { label: 'Diad',
+    value: 'diad',
+    definition: 'Scheme in which colors are two colors apart on the color wheel.'
+  },
+  { label: 'Random',
+    value: 'random',
+    definition: 'Four hues with the same saturation and lightness values, chosen randomly.'
+  }
 ];
 
 export const OPTIONS_CSS_NAMED_COLORS = [
@@ -165,5 +190,3 @@ export const OPTIONS_CSS_NAMED_COLORS = [
 
 export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb(), and hsl() values. No alpha support. No named colors.';
 export const OPTIONS_COLOR_INPUT_ERROR_MESSAGE = "The value you entered isn't supported.";
-
-export const OPTIONS_GLOSSARY = [];
