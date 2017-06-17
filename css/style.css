@@ -90,7 +90,7 @@ a:hover {
 }
 
 .component-copy {
-  background: rgb(255,255,255);
+  background: rgba(255,255,255,.95);
   bottom: 0;
   border: 0;
   cursor: pointer;
@@ -138,7 +138,7 @@ a:hover {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: #fff url(../img/chevron.svg) right 1rem center no-repeat;
+  background: transparent url(../img/chevron.svg) right 1rem center no-repeat;
   background-size: 1rem auto;
 }
 
@@ -160,6 +160,7 @@ select {
 }
 
 [type=text] {
+  background: transparent;
   border-radius: 2px 0 0 2px;
 }
 

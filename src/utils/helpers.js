@@ -67,3 +67,9 @@ export function sortOptions(a, b) {
   return 0;
 }
 
+// Returns true if the browser supports input[type=color]
+export function isColorTypeSupported() {
+  const inp = document.createElement('input');
+  inp.setAttribute('type', 'color');
+  return inp.type === 'color';
+}
