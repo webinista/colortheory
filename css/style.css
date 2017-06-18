@@ -45,6 +45,12 @@ footer p {
   margin: 0;
 }
 
+#app {
+  background: url(../img/loader.svg) center no-repeat;
+  background-size: 10rem auto;
+  height: 100%;
+}
+
 h1 {
   background: rgba(255,255,255,.98);
   display: inline-block;
