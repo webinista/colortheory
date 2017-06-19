@@ -9,7 +9,7 @@ export const OPTIONS_COLOR_SCHEME = [
   {
     label: 'Analogous',
     value: 'analogous',
-    definition: 'Adjacent colors (60\u00B0 apart) on the color wheel.'
+    definition: 'Adjacent colors (30\u00B0 apart) on the color wheel.'
   },
   {
     label: 'Triad',
