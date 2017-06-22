@@ -20,7 +20,7 @@ describe('<Button />', () => {
   });
 
   it(`its className should contain ${props.cssClass}`, () => {
-    expect(button.props.className).to.include(props.cssClass);
+    expect(tree.props.className).to.include(props.cssClass);
   });
 
   it(`its text should read "${props.text}"`, () => {

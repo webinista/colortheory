@@ -15,8 +15,7 @@ const props = {
 describe('<Modal />', () => {
   const tree = SkinDeep.shallowRender(<Modal {...props} />);
 
-  it('should have an h1 and a text of Hi', () => {
-    expect(tree.subTree('h1')).to.equal(true);
+  it('should have an h1, with text of "Hi"', () => {
     expect(tree.subTree('h1').text()).to.equal('Hi');
   });
 
@@ -25,14 +24,14 @@ describe('<Modal />', () => {
   });
 
   it(`its className should contain ${props.cssClass}`, () => {
-    expect(tree.className).to.include(props.cssClass);
+    expect(tree.props.className).to.include(props.cssClass);
   });
 
   it(`its id should be "${props.id}"`, () => {
-    expect(tree.id).to.equal(props.id);
+    expect(tree.props.id).to.equal(props.id);
   });
 
   it('it should be visible', () => {
-    expect(tree.visible).to.equal(props.visible);
+    expect(tree.props.hidden).to.equal(!props.visible);
   });
 });
