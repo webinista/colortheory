@@ -12,7 +12,7 @@ const props = {
 describe('<ColorSwatch />', () => {
   const tree = SkinDeep.shallowRender(<ColorSwatch {...props} />);
   const swatch = tree.subTree('svg');
- 
+
   it(`its className should contain ${props.cssClass}`, () => {
     expect(swatch.props.className).to.include(props.cssClass);
   });
