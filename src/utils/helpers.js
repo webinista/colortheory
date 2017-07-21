@@ -1,5 +1,12 @@
 export const dec2Hex = (integer) => {
-  return (+integer).toString(16);
+  const hx = (+integer).toString(16);
+
+  // If the integer is less than 16, it will return
+  // a single digit number instead of a 2 digit one.
+  // So we need to left pad
+  const hxstring = (+integer < 16) ? `0${hx}` : hx;
+
+  return hxstring;
 };
 
 export const hex2Dec = (hexInteger) => {
@@ -71,4 +78,34 @@ export function isColorTypeSupported() {
   const inp = document.createElement('input');
   inp.setAttribute('type', 'color');
   return inp.type === 'color';
+}
+
+// Finds numbers *between* the min and max
+// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function pickRandom(min, max) {
+  const minb = Math.ceil(min);
+  const maxb = Math.floor(max);
+  return Math.floor(Math.random() * ((maxb - minb) + 1)) + minb;
+}
+
+export function randomColor() {
+  let i = 0;
+  const rgb = [];
+
+  // Pick 3 random color component values
+  while (i < 3) {
+    rgb[i] = pickRandom(0, 255);
+    i++;
+  }
+
+  // Convert each decimal channel value to a hex value
+  const rgbhex = rgb.map((channel) => {
+    return dec2Hex(channel);
+  });
+
+  // Add a # as the beginning of the array
+  rgbhex.unshift('#');
+
+  // Return a #rrggbb color
+  return rgbhex.join('');
 }

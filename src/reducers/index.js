@@ -33,6 +33,9 @@ import {
  * value for UI consistency's sake.
  */
 
+
+// TODO: Refactor this so that we're not repeating values in
+// currentColor and swatches
 const initialState = {
   currentColor: OPTIONS_START_COLOR,
   modal: {
@@ -78,7 +81,7 @@ const makePalette = (startColor, type) => {
       break;
 
     default:
-      palette = ['#000000'];
+      palette = ['#ff0000'];
   }
   return palette;
 };

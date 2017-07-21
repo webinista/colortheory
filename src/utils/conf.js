@@ -1,4 +1,9 @@
-export const OPTIONS_START_COLOR = '#000000';
+import {
+  randomColor
+} from '../utils/helpers';
+
+
+export const OPTIONS_START_COLOR = randomColor();
 
 export const OPTIONS_COLOR_SCHEME = [
   {
