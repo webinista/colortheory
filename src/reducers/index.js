@@ -39,8 +39,7 @@ const initialState = {
     isVisible: false
   },
   options: OPTIONS_COLOR_SCHEME,
-  swatches: [OPTIONS_START_COLOR],
-  scheme: ''
+  swatches: [OPTIONS_START_COLOR]
 };
 
 const makePalette = (startColor, type) => {
