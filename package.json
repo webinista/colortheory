@@ -60,7 +60,7 @@
     "clipboard": "^1.7.1",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
-    "react": "^15.6.0",
+    "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "redux": "^3.6.0",
