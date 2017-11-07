@@ -59,7 +59,7 @@ export function rgbToHsl(string) {
 
   // getColorParts returns an array. Sets each item [r,g,b] to the
   // corresponding part of the getColorParts(string) array.
-  const [rval, gval, bval] = getColorParts(col);
+  const [rval, gval, bval] = getColorParts(col, true);
 
   const rgb = [rval / RGB_MAX, gval / RGB_MAX, bval / RGB_MAX];
 
@@ -91,17 +91,13 @@ export function hexToRGB(string) {
   return `rgb(${rr}, ${gg}, ${bb})`;
 }
 
-/**
-* Does not yet handle space-separated rgb values
-*/
-
 export function rgbToHex(string) {
   // Add commas if there aren't any
   const color = normalizeColorString(string);
 
   // getColorParts returns an array. Sets each item [r,g,b] to the
   // corresponding part of the getColorParts(string) array.
-  const [r, g, b] = getColorParts(color);
+  const [r, g, b] = getColorParts(color, true);
 
   // Convert each component to a number so that we can do === instead of
   // === comparisons. (thanks, eslint!)

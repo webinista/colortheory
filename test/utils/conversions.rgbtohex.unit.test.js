@@ -20,7 +20,23 @@ const colors = [
   {
     color: 'rgb(204, 204, 204)',
     expectation: '#cccccc'
-  }
+  },
+  {
+    color: 'rgb(100%, 100%, 100%)',
+    expectation: '#ffffff'
+  },
+  {
+    color: 'rgb(0%, 0%, 0%)',
+    expectation: '#000000'
+  },
+  {
+    color: 'rgb(90%, 50%, 50%)',
+    expectation: '#e68080'
+  },
+  {
+    color: 'rgb(0%, 80%, 0%)',
+    expectation: '#00cc00'
+  },
 ];
 
 const rgbToHexTest = (vals) => {
