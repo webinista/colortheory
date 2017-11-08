@@ -6,11 +6,6 @@ import TextInput from './TextInput';
 import ColorInput from './ColorInput';
 
 import {
-  OPTIONS_COLOR_INPUT_MESSAGE,
-  OPTIONS_COLOR_INPUT_ERROR_MESSAGE
-} from '../utils/conf';
-
-import {
   convertToHex
 } from '../utils/conversions';
 
@@ -41,8 +36,8 @@ class LinkedColorInput extends React.Component {
               onChangeHandler={this.props.onChangeHandler}
               value={convertToHex(this.props.value)} />
           </div>
-          <p className="error-message" role="alert" hidden={!this.props.error}>{OPTIONS_COLOR_INPUT_ERROR_MESSAGE}</p>
-          <p className="input-notice">{OPTIONS_COLOR_INPUT_MESSAGE}</p>
+          <p className="error-message" role="alert" hidden={!this.props.error}>{this.props.errorText}</p>
+          <p className="input-notice">{this.props.helpText}</p>
         </div>
       </fieldset>);
   }
@@ -50,6 +45,7 @@ class LinkedColorInput extends React.Component {
 
 LinkedColorInput.defaultProps = {
   error: false,
+  errorText: null,
   cssClass: null,
   id: null
 };
@@ -57,9 +53,11 @@ LinkedColorInput.defaultProps = {
 LinkedColorInput.propTypes = {
   id: PropTypes.string,
   error: PropTypes.bool.isRequired,
+  errorText: PropTypes.string,
   labelTextInput: PropTypes.string.isRequired,
   labelColorInput: PropTypes.string.isRequired,
   legendText: PropTypes.string.isRequired,
+  helpText: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func.isRequired,

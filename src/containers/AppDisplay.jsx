@@ -9,6 +9,8 @@ import Modal from '../components/Modal';
 
 import {
   OPTIONS_COLOR_SCHEME,
+  OPTIONS_COLOR_INPUT_MESSAGE,
+  OPTIONS_COLOR_INPUT_ERROR_MESSAGE
 } from '../utils/conf';
 
 import {
@@ -31,7 +33,7 @@ class AppDisplay extends React.Component {
             onModalTriggerClickHandler={this.props.openModal}
             onSelectChangeHandler={this.props.updateSchemeType}
             onSubmitHandler={this.props.updatePalette}
-            error="error message!"
+            errorMsg={OPTIONS_COLOR_INPUT_MESSAGE}
             options={this.props.options}
             color={this.props.currentColor}
             scheme={this.props.scheme} />

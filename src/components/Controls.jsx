@@ -7,6 +7,11 @@ import LinkedColorInput from '../components/LinkedColorInput';
 
 import { isValidColor } from '../utils/validators';
 
+import {
+  OPTIONS_COLOR_INPUT_MESSAGE,
+  OPTIONS_COLOR_INPUT_ERROR_MESSAGE
+} from '../utils/conf';
+
 class Controls extends React.Component {
   constructor(props) {
     super(props);
@@ -29,9 +34,11 @@ class Controls extends React.Component {
         <LinkedColorInput
           cssClass="input-color-linked"
           error={!isValidColor(this.props.color)}
+          errorText={OPTIONS_COLOR_INPUT_ERROR_MESSAGE}
           labelColorInput="Or use the color picker"
           labelTextInput="Enter a CSS color value"
           legendText="Pick a starting color: "
+          helpText={this.props.errorMsg}
           name="color"
           onChangeHandler={this.props.onColorChangeHandler}
           value={this.props.color} />
@@ -49,6 +56,7 @@ class Controls extends React.Component {
 }
 
 Controls.defaultProps = {
+  errorMsg: OPTIONS_COLOR_INPUT_MESSAGE,
   onSubmitHandler: (domEvent) => {
     domEvent.preventDefault();
   },
@@ -60,6 +68,7 @@ Controls.defaultProps = {
 
 Controls.propTypes = {
   color: PropTypes.string.isRequired,
+  errorMsg: PropTypes.string,
   onSubmitHandler: PropTypes.func,
   onColorChangeHandler: PropTypes.func.isRequired,
   onSelectChangeHandler: PropTypes.func.isRequired,
