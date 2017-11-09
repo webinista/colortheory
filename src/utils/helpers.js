@@ -21,36 +21,10 @@ export const percentToFloat = (percentString) => {
   return parseInt(percentString, 10) / 100;
 };
 
-/**
- * Convert an HSL, RGB, etc string to an array
- * @colorString string of color either RGB, RGB hexadecimal or HSL
- * @isRGB Boolean. Allow for the possibility that we're dealing with RGB
- * percent values such as rgb(100%, 100%,100%)
- */
-export const getColorParts = (colorString, isRGB = false) => {
-  // Remove all characters except , %, and 0-9 and split into an array
-  const colorComponents = colorString.replace(/[^,%0-9]/g, '').split(',');
-  let colorParts;
-
-  if (!isRGB) {
-    colorParts = colorComponents;
-  } else {
-    /*
-      For each R, G, or B value, determine whether there's a percentage sign
-      in the string. If so, convert it to a decimal/float number. Then multiply
-      it by 255.
-    */
-    colorParts = colorComponents.map((value) => {
-      let val;
-      if (value.indexOf('%') > -1) {
-        val = Math.round(255 * (parseInt(value, 10) / 100));
-      } else {
-        val = value;
-      }
-      return val;
-    });
-  }
-  return colorParts;
+// Convert an HSL, RGB, etc string to an array
+export const getColorParts = (colorString) => {
+  // Remove all characters except , and 0-9
+  return colorString.replace(/[^,0-9]/g, '').split(',');
 };
 
 // Add commas if there aren't any.
@@ -61,7 +35,6 @@ export const normalizeColorString = (colorString) => {
   // Otherwise return a string with commas
   return colorString.replace(/\s/g, ', ');
 };
-
 
 /**
  * Expand an RGB value to an RRGGB value
