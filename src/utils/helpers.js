@@ -23,8 +23,17 @@ export const percentToFloat = (percentString) => {
 
 // Convert an HSL, RGB, etc string to an array
 export const getColorParts = (colorString) => {
-  // Remove all characters except , and 0-9
-  return colorString.replace(/[^,0-9]/g, '').split(',');
+  // Remove all characters except ,% and 0-9
+  let colorParts = colorString.replace(/[^,%0-9]/g, '').split(',');
+
+  // Convert rgb() percentage values to a 0-255 range
+  if (colorString.indexOf('rgb') > -1 && colorString.indexOf('%') > -1) {
+    colorParts = colorParts.map((value) => {
+      const v = value.replace('%', '') / 100;
+      return Math.round(v * 255);
+    });
+  }
+  return colorParts;
 };
 
 // Add commas if there aren't any.
@@ -75,13 +84,15 @@ export function sortOptions(a, b) {
 
 // Returns true if the browser supports input[type=color]
 export function isColorTypeSupported() {
-  if(typeof document !== "undefined") {
+  let isSupported;
+  if (typeof document !== 'undefined') {
     const inp = document.createElement('input');
     inp.setAttribute('type', 'color');
-    return inp.type === 'color';
+    isSupported = inp.type === 'color';
   } else {
-    return false
+    isSupported = false;
   }
+  return isSupported;
 }
 
 // Finds numbers *between* the min and max
