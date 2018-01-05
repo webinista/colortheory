@@ -11,6 +11,6 @@ May not finish it though ¯\_(ツ)_/¯.
 - Run `npm install` to install packages.
 - Run `npm run watch` to start a webpack server that reloads when you save changes.
 - Run `npm run test` to run tests.
-- Run `npm build:production` to create a production build.
+- Run `npm build:prod` to create a production build.
 
 
