@@ -102,9 +102,13 @@ export function sortOptions(a, b) {
 
 // Returns true if the browser supports input[type=color]
 export function isColorTypeSupported() {
-  const inp = document.createElement('input');
-  inp.setAttribute('type', 'color');
-  return inp.type === 'color';
+  if(typeof document !== "undefined") {
+    const inp = document.createElement('input');
+    inp.setAttribute('type', 'color');
+    return inp.type === 'color';
+  } else {
+    return false
+  }
 }
 
 // Finds numbers *between* the min and max
