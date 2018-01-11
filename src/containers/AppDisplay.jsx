@@ -10,7 +10,6 @@ import Modal from '../components/Modal';
 import {
   OPTIONS_COLOR_SCHEME,
   OPTIONS_COLOR_INPUT_MESSAGE,
-  OPTIONS_COLOR_INPUT_ERROR_MESSAGE
 } from '../utils/conf';
 
 import {
