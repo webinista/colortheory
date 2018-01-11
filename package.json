@@ -7,12 +7,12 @@
     "build:dev": "webpack -p --config config/webpack.development.js",
     "build:prod": "webpack -p --config config/webpack.prod.js",
     "lint:js": "eslint --quiet --ext .js --ext .jsx .",
-    "test": "mocha --recursive --compilers js:babel-core/register './test/**/*.unit.test.js?(x)'",
-    "test:components": "mocha --recursive --compilers js:babel-core/register './test/components/*.unit.test.jsx'",
-    "test:validators": "mocha --recursive --compilers js:babel-core/register './test/utils/validators.unit.test.js'",
-    "test:helpers": "mocha --recursive --compilers js:babel-core/register './test/utils/helpers.*.unit.test.js'",
-    "test:conversions": "mocha --recursive --compilers js:babel-core/register './test/utils/conversions.*.unit.test.js'",
-    "test:colorschemes": "mocha --recursive --compilers js:babel-core/register './test/utils/colorschemes.*.unit.test.js'",
+    "test": "mocha --recursive --require babel-core/register './test/**/*.unit.test.js?(x)'",
+    "test:components": "mocha --recursive --require babel-core/register './test/components/*.unit.test.jsx'",
+    "test:validators": "mocha --recursive --require babel-core/register './test/utils/validators.unit.test.js'",
+    "test:helpers": "mocha --recursive --require babel-core/register './test/utils/helpers.*.unit.test.js'",
+    "test:conversions": "mocha --recursive --require babel-core/register './test/utils/conversions.*.unit.test.js'",
+    "test:colorschemes": "mocha --recursive --require babel-core/register './test/utils/colorschemes.*.unit.test.js'",
     "watch": "webpack-dev-server --open --config config/webpack.development.js"
   },
   "repository": {
