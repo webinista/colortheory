@@ -7,11 +7,12 @@ import {
   limit360
 } from './helpers';
 
-export function getAnalogous(colorString, colors = 4) {
-  const increment = 30;
+export function getAnalogous(colorString, plus30 = true, colors = 4) {
   const palette = [];
   const cs = convertToHsl(colorString);
   const hsl = getColorParts(cs);
+
+  const increment = plus30 ? 30 : -30;
 
   palette[0] = cs;
 

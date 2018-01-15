@@ -14,7 +14,20 @@ export const hex2Dec = (hexInteger) => {
 };
 
 export const limit360 = (num) => {
-  return (num > 360) ? num - 360 : num;
+  const limit = 360;
+  let angle;
+
+  // This works, but I think it can be improved.
+  // If num is negative, we need to subtract it from limit.
+  if (num < 0) {
+    angle = limit + (num);
+  } else if (num > limit) {
+    angle = num - limit;
+  } else {
+    angle = num;
+  }
+
+  return angle;
 };
 
 export const percentToFloat = (percentString) => {

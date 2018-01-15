@@ -17,6 +17,11 @@ export const OPTIONS_COLOR_SCHEME = [
     definition: 'Adjacent colors (30\u00B0 apart) on the color wheel.'
   },
   {
+    label: 'Analogous B',
+    value: 'analogous_b',
+    definition: 'Adjacent colors (-30\u00B0 apart) on the color wheel.'
+  },
+  {
     label: 'Triad',
     value: 'triad',
     definition: 'Three colors that are equidistant from each other.'

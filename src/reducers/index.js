@@ -52,6 +52,10 @@ const makePalette = (startColor, type) => {
       palette = getAnalogous(startColor);
       break;
 
+    case 'analogous_b':
+      palette = getAnalogous(startColor, false);
+      break;
+
     case 'complementary':
       palette = getComplement(startColor);
       break;
