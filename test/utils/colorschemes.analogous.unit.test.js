@@ -28,9 +28,12 @@ const colors = [
 const getAnalogousTest = (vals) => {
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(getAnalogous(v.color)[0]).to.equal(v.expectation[0]);
-      expect(getAnalogous(v.color)[1]).to.equal(v.expectation[1]);
-      expect(getAnalogous(v.color)[2]).to.equal(v.expectation[2]);
+      const scheme = getAnalogous(v.color);
+
+      expect(scheme[0]).to.equal(v.expectation[0]);
+      expect(scheme[1]).to.equal(v.expectation[1]);
+      expect(scheme[2]).to.equal(v.expectation[2]);
+      expect(scheme[3]).to.equal(v.expectation[3]);
     });
   });
 };
