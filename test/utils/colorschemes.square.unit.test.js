@@ -28,10 +28,12 @@ const colors = [
 const getSquareTest = (vals) => {
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(getSquare(v.color)[0]).to.equal(v.expectation[0]);
-      expect(getSquare(v.color)[1]).to.equal(v.expectation[1]);
-      expect(getSquare(v.color)[2]).to.equal(v.expectation[2]);
-      expect(getSquare(v.color)[3]).to.equal(v.expectation[3]);
+      const scheme = getSquare(v.color);
+
+      expect(scheme[0]).to.equal(v.expectation[0]);
+      expect(scheme[1]).to.equal(v.expectation[1]);
+      expect(scheme[2]).to.equal(v.expectation[2]);
+      expect(scheme[3]).to.equal(v.expectation[3]);
     });
   });
 };

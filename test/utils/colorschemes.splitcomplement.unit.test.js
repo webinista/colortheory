@@ -26,9 +26,11 @@ const colors = [
 const getSplitComplementTest = (vals) => {
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(getSplitComplement(v.color)[0]).to.equal(v.expectation[0]);
-      expect(getSplitComplement(v.color)[1]).to.equal(v.expectation[1]);
-      expect(getSplitComplement(v.color)[2]).to.equal(v.expectation[2]);
+      const scheme = getSplitComplement(v.color);
+
+      expect(scheme[0]).to.equal(v.expectation[0]);
+      expect(scheme[1]).to.equal(v.expectation[1]);
+      expect(scheme[2]).to.equal(v.expectation[2]);
     });
   });
 };

@@ -24,8 +24,10 @@ const colors = [
 const getDiadTest = (vals) => {
   vals.forEach((v) => {
     it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(getDiad(v.color)[0]).to.equal(v.expectation[0]);
-      expect(getDiad(v.color)[1]).to.equal(v.expectation[1]);
+      const scheme = getDiad(v.color);
+
+      expect(scheme[0]).to.equal(v.expectation[0]);
+      expect(scheme[1]).to.equal(v.expectation[1]);
     });
   });
 };
