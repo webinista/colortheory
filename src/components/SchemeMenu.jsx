@@ -25,8 +25,7 @@ class SchemeMenu extends React.Component {
         <SelectOption
           value={o.value}
           key={x.toString()}
-          label={o.label}
-          selected={o.label === this.props.value} />
+          label={o.label} />
       );
     });
   }
@@ -41,10 +40,10 @@ class SchemeMenu extends React.Component {
       <div className={cssClasses}>
         <label htmlFor={id}>{this.props.labelText}</label>
         <select
+          defaultValue={this.props.value}
           id={id}
           name={this.props.name}
-          onChange={this.handleChange}
-          value={this.props.value}>
+          onChange={this.handleChange}>
           <option>Select</option>
           {options}
         </select>

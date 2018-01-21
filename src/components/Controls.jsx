@@ -48,7 +48,7 @@ class Controls extends React.Component {
           onChangeHandler={this.props.onSelectChangeHandler}
           onModalClickHandler={this.props.onModalTriggerClickHandler}
           options={this.props.options}
-          value={this.props.scheme} />
+          defaultValue={this.props.value} />
         <Button type="submit" text="Generate scheme" />
       </form>
     );
@@ -63,7 +63,7 @@ Controls.defaultProps = {
   onSelectChangeHandler: (domEvent) => {
     domEvent.preventDefault();
   },
-  scheme: ''
+  value: ''
 };
 
 Controls.propTypes = {
@@ -77,7 +77,7 @@ Controls.propTypes = {
     label: PropTypes.string,
     value: PropTypes.string
   })).isRequired,
-  scheme: PropTypes.string
+  value: PropTypes.string
 };
 
 export default Controls;

@@ -40,8 +40,7 @@ const initialState = {
     isVisible: false
   },
   options: OPTIONS_COLOR_SCHEME,
-  swatches: [OPTIONS_START_COLOR],
-  scheme: ''
+  swatches: [OPTIONS_START_COLOR]
 };
 
 const makePalette = (startColor, type) => {
@@ -113,7 +112,6 @@ const dataSource = (state = initialState, action) => {
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
       colors = makePalette(state.currentColor, action.value);
       newState = set('swatches', colors, state);
-      newState = set('scheme', action.value, newState);
       return newState;
 
     case UPDATE_PALETTE:

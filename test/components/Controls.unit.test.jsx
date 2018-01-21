@@ -19,8 +19,7 @@ const propsGood = {
   {
     label: 'Option B',
     value: 'option_b'
-  }],
-  scheme: 'option_b'
+  }]
 };
 
 describe('<Controls />', () => {
@@ -73,9 +72,5 @@ describe('<Controls />', () => {
 
   it('For the select menu to have two <SelectOption /> children', () => {
     expect(selectControl.everySubTree('SelectOption').length).to.equal(2);
-  });
-
-  it(`scheme to equal ${propsGood.scheme}`, () => {
-    expect(selectControl.props.value).to.equal(propsGood.scheme);
   });
 });
