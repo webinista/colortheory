@@ -4,24 +4,25 @@ import SkinDeep from 'skin-deep';
 
 import SelectOption from '../../src/components/SelectOption';
 
-const props = [{
-  option: 'Color 1',
-  value: 'color_1',
-  selected: false,
-},
-{
-  option: 'Color 2',
-  value: 'color_2',
-  selected: true,
-}];
+const props = {
+  label: 'Color 1',
+  value: 'color_1'
+};
 
 
 describe('<SelectOption />', () => {
   const tree = SkinDeep.shallowRender(<SelectOption {...props} />);
-  const options = tree.everySubTree('option');
+  const opt = tree.subTree('option');
 
-  // Duplicates a test from Controls, but I'm okay with that.
-  it(`should have ${props.length} options`, () => {
-    expect(options.length).to.equal('2');
+  it('<SelectOption /> should have a single <option> child.', () => {
+    expect(opt.type).to.equal('option');
+  });
+
+  it(`Option label should be ${props.label}`, () => {
+    expect(opt.props.children).to.equal(props.label);
+  });
+
+  it(`Option value should be ${props.value}`, () => {
+    expect(opt.props.value).to.equal(props.value);
   });
 });
