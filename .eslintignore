@@ -2,3 +2,5 @@ script/*
 file-original.js
 webpack*.js
 package.json
+headers.js
+stats.js
