@@ -77,7 +77,8 @@ const mapStateToProps = (state) => {
     currentColor: state.currentColor,
     modal: state.modal,
     options: OPTIONS_COLOR_SCHEME,
-    swatches: state.swatches
+    swatches: state.swatches,
+    scheme: state.scheme
   };
 };
 

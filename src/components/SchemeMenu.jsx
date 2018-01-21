@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import SelectOption from '../components/SelectOption';
 import ModalTrigger from '../components/ModalTrigger';
 
 import { sortOptions } from '../utils/helpers';
@@ -19,9 +20,14 @@ class SchemeMenu extends React.Component {
 
   makeOptions(arrayOfObjects) {
     const ao = arrayOfObjects.sort(sortOptions);
-
     return ao.map((o, x) => {
-      return <option value={o.value} key={x.toString()}>{o.label}</option>;
+      return (
+        <SelectOption
+          value={o.value}
+          key={x.toString()}
+          label={o.label}
+          selected={o.label === this.props.value} />
+      );
     });
   }
 
@@ -37,7 +43,8 @@ class SchemeMenu extends React.Component {
         <select
           id={id}
           name={this.props.name}
-          onChange={this.handleChange}>
+          onChange={this.handleChange}
+          value={this.props.value}>
           <option>Select</option>
           {options}
         </select>
@@ -54,7 +61,8 @@ SchemeMenu.defaultProps = {
   id: null,
   onChangeHandler: null,
   onModalClickHandler: null,
-  options: [{ label: 'Empty Menu', value: '' }]
+  options: [{ label: 'Empty Menu', value: '' }],
+  value: ''
 };
 
 SchemeMenu.propTypes = {
@@ -67,7 +75,8 @@ SchemeMenu.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
-  })).isRequired
+  })).isRequired,
+  value: PropTypes.string.isRequired
 };
 
 export default SchemeMenu;

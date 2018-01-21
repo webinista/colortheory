@@ -32,8 +32,6 @@ import {
  * currentColor and the first item in swatches need to have the
  * value for UI consistency's sake.
  */
-
-
 // TODO: Refactor this so that we're not repeating values in
 // currentColor and swatches
 const initialState = {
@@ -42,7 +40,8 @@ const initialState = {
     isVisible: false
   },
   options: OPTIONS_COLOR_SCHEME,
-  swatches: [OPTIONS_START_COLOR]
+  swatches: [OPTIONS_START_COLOR],
+  scheme: ''
 };
 
 const makePalette = (startColor, type) => {
@@ -114,6 +113,7 @@ const dataSource = (state = initialState, action) => {
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
       colors = makePalette(state.currentColor, action.value);
       newState = set('swatches', colors, state);
+      newState = set('scheme', action.value, newState);
       return newState;
 
     case UPDATE_PALETTE:
