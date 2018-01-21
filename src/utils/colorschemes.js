@@ -43,9 +43,9 @@ export function getComplement(colorString) {
   return palette;
 }
 
-export function getDiad(colorString) {
+export function getDiad(colorString, plus60 = true) {
   // Each color is 30 degrees. Two colors apart = 60 degrees
-  const degree = 60;
+  const degree = plus60 ? 60 : -60;
   const palette = [];
   const cs = convertToHsl(colorString);
   const [h, s, l] = getColorParts(cs);

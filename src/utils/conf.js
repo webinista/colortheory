@@ -2,6 +2,7 @@ import {
   randomColor
 } from '../utils/helpers';
 
+export const HSL_MAX = 360;
 
 export const OPTIONS_START_COLOR = randomColor();
 
@@ -19,7 +20,7 @@ export const OPTIONS_COLOR_SCHEME = [
   {
     label: 'Analogous B',
     value: 'analogous_b',
-    definition: 'Adjacent colors (-30\u00B0 apart) on the color wheel.'
+    definition: 'Adjacent colors (-30\u00B0 apart) on the color wheel (counter-clockwise).'
   },
   {
     label: 'Triad',
@@ -46,6 +47,11 @@ export const OPTIONS_COLOR_SCHEME = [
     label: 'Diad',
     value: 'diad',
     definition: 'Scheme in which colors are two colors apart on the color wheel.'
+  },
+  {
+    label: 'Diad B',
+    value: 'diad_b',
+    definition: 'Scheme in which colors are two colors apart on the color wheel (counter-clockwise).'
   },
   {
     label: 'Random',

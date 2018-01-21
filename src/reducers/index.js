@@ -64,6 +64,10 @@ const makePalette = (startColor, type) => {
       palette = getDiad(startColor);
       break;
 
+    case 'diad_b':
+      palette = getDiad(startColor, false);
+      break;
+
     case 'random':
       palette = getRandom(startColor);
       break;
