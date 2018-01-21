@@ -53,7 +53,8 @@
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
     "skin-deep": "^1.2.0",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
