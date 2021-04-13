@@ -37,7 +37,7 @@ export const percentToFloat = (percentString) => {
 // Convert an HSL, RGB, etc string to an array
 export const getColorParts = (colorString) => {
   // Remove all characters except ,% and 0-9
-  let colorParts = colorString.replace(/[^,%0-9]/g, '').split(',');
+  let colorParts = colorString.replace(/[^,.%0-9]/g, '').split(',');
 
   // Convert rgb() percentage values to a 0-255 range
   if (colorString.indexOf('rgb') > -1 && colorString.indexOf('%') > -1) {
