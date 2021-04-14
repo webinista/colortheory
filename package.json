@@ -61,7 +61,7 @@
     "classnames": "^2.2.5",
     "clipboard": "^1.7.1",
     "is-path-inside": "^1.0.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
