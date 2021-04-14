@@ -48,7 +48,7 @@
     "jsdom": "^11.6.1",
     "loglevel": "^1.4.1",
     "mocha": "^4.1.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.13.1",
     "react-test-renderer": "^16.2.0",
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
