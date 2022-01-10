@@ -7,8 +7,8 @@ import dataSource from './reducers';
 
 import App from './containers/App.jsx';
 
-import './css/ibm-plex-mono.css';
-import './css/ibm-plex-sans.css';
+// import './css/ibm-plex-mono.css';
+// import './css/ibm-plex-sans.css';
 import './css/style.css';
 
 const store = createStore( dataSource );
