@@ -3,8 +3,9 @@ node_modules/**
 **.log
 **.txt
 node_modules
-application/**
+application
 **.DS_Store
 **.md
 **.eot
 src/fonts/**/**.css
+fonts/css/**
