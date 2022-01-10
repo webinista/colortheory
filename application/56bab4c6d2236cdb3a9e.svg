@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="312" height="312" viewBox="0 0 312 312" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style type="text/css">
+  <![CDATA[
+    @keyframes flashy {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: .3;
+      }
+    }
+
+    rect {
+      animation: flashy 500ms infinite;
+    }
+
+    #aqua {
+      animation-delay: 600ms;
+    }
+
+    #red {
+      animation-delay: 200ms;
+    }
+
+    #green {
+      animation-delay: 400ms;
+    }
+  ]]>
+  </style>
+  <g id="loading-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(156.000000, 156.000000) rotate(45.000000) translate(-156.000000, -156.000000) translate(46.000000, 46.000000)">
+    <!-- top -->
+    <rect id="purple" fill="#BD0FE1" x="0" y="0" width="103" height="103" />
+    <!-- left -->
+    <rect id="aqua" fill="#0EE1BE" x="0" y="117" width="103" height="103" />
+    <!-- right -->
+    <rect id="red" fill="#E10E32" x="117" y="0" width="103" height="103" />
+    <!-- bottom -->
+    <rect id="green" fill="#32E10E" x="117" y="117" width="103" height="103" />
+  </g>
+</svg>
