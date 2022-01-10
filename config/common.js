@@ -1,4 +1,6 @@
 const path = require('path');  // Include path module from node.js
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 
 const entryConf = [
     'clipboard',
@@ -11,31 +13,37 @@ const entryConf = [
 
 const config = {
     context: path.resolve(__dirname, '../'),
-    entry: entryConf,
+    entry: './src/',
     output: {
         path: path.resolve(__dirname, '../application'),
-        filename: '[name].js',
-        publicPath: 'scripties/',
+        filename: '[name].output.js',
         asyncChunks: true,
         compareBeforeEmit: true,
     },
     module: {
         rules: [
           {
-            test: /\.(js|jsx)$/,
+            test: /\.(jsx|js)$/,
             exclude: /node_modules/,
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: '.babelcache',
-              presets: ['@babel/preset-env', '@babel/preset-react'],
-              plugins: ['@babel/plugin-transform-runtime', 'lodash']
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: [
+                  '@babel/preset-env',
+                  '@babel/preset-react'
+                ]
+              }
             }
           }
         ]
-      },
-    resolve: {
-        extensions: ['.js', '.jsx']
     },
+
+    plugins: [
+      new HtmlWebpackPlugin({
+          template: path.join(__dirname, "../src", "index.html"),
+      }),
+    ],
+
     target: 'web'
 }
 
