@@ -26,7 +26,29 @@ const config = {
           template: path.join(__dirname, "../src", "index.html"),
       }),
     ],
-
+    module: {
+        rules: [
+            {
+                test: /\.(jsx|js)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react'
+                        ]
+                    }
+                }
+            },
+            {
+                test: /\.(woff|woff2)$/,
+                use: {
+                    loader: 'url-loader',
+                },
+            },
+        ]
+    },
     target: 'web'
 }
 
