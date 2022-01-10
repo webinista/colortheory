@@ -73,6 +73,7 @@ a:hover {
 }
 
 .component-palette {
+  background-color: #eee;
   align-items: stretch;
   display: flex;
   height: 15rem;
@@ -81,7 +82,6 @@ a:hover {
 
 @media (min-width: 50rem) {
   .component-palette {
-    background: #eee;
     height: 100%;
     left: 0;
     padding: 0;
@@ -97,7 +97,7 @@ a:hover {
 }
 
 .component-copy {
-  background: rgba(255,255,255,.95);
+  background: rgba(255,255,255,1);
   bottom: 0;
   border: 0;
   cursor: pointer;

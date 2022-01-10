@@ -11,7 +11,7 @@ class ColorSwatch extends React.Component {
     return (
       <div className="component-swatch-holder">
         <svg className={cssClasses} pointerEvents="none">
-          <rect x="0" y="0" width="100%" height="100%" fill={this.props.fill} />
+          <circle cx="50%" cy="50%" r="25%" fill={this.props.fill} />
         </svg>
         <CopyButton text={this.props.fill} />
       </div>

@@ -7,6 +7,9 @@ import dataSource from './reducers';
 
 import App from './containers/App.jsx';
 
+import './css/normalize.min.css';
+import './css/style.css';
+
 const store = createStore( dataSource );
 
 const init = () => {
