@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import SelectOption from '../components/SelectOption';
-import ModalTrigger from '../components/ModalTrigger';
+import SelectOption from '../components/SelectOption.jsx';
+import ModalTrigger from '../components/ModalTrigger.jsx';
 
 import { sortOptions } from '../utils/helpers';
 

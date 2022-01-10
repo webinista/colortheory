@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import ColorSwatch from '../../src/components/ColorSwatch';
+import ColorSwatch from '../../src/components/ColorSwatch.jsx';
 
 const props = {
   fill: '#0c0',

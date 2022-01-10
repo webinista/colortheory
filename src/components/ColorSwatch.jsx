@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import CopyButton from './CopyButton';
+import CopyButton from './CopyButton.jsx';
 
 class ColorSwatch extends React.Component {
   render() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../components/Button';
-import SchemeMenu from '../components/SchemeMenu';
-import LinkedColorInput from '../components/LinkedColorInput';
+import Button from '../components/Button.jsx';
+import SchemeMenu from '../components/SchemeMenu.jsx';
+import LinkedColorInput from '../components/LinkedColorInput.jsx';
 
 import { isValidColor } from '../utils/validators';
 

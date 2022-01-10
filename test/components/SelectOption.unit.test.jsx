@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import SelectOption from '../../src/components/SelectOption';
+import SelectOption from '../../src/components/SelectOption.jsx';
 
 const props = {
   label: 'Color 1',
