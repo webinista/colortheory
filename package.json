@@ -7,7 +7,8 @@
   "scripts": {
     "build:dev": "webpack --config config/dev.js",
     "build:prod": "webpack --config config/prod.js",
-    "watch": "webpack-dev-server --open --config config/dev.js"
+    "watch": "webpack-dev-server --open --config config/dev.js",
+    "deploy": "./deploy.sh"
   },
   "repository": {
     "type": "git",
