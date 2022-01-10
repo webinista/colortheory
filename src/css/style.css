@@ -2,12 +2,13 @@
   box-sizing: border-box;
 }
 
-html, body {
+:root {
   height: 100%;
+  font: normal 500 120% / 1.5 'IBM Plex Sans', sans-serif;
 }
 
-html {
-  font: 120% / 1.5 'Source Sans Pro',sans-serif;
+html, body {
+  height: inherit;
 }
 
 body {
@@ -101,6 +102,7 @@ a:hover {
   bottom: 0;
   border: 0;
   cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
   height: 2rem;
   left: 0;
   margin: auto auto 5rem auto;
@@ -174,6 +176,7 @@ select {
 button {
   border-color: hsl(204, 12%, 25%);
   cursor: pointer;
+
 }
 
 
