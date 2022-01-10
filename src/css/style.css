@@ -3,8 +3,10 @@
 }
 
 :root {
+  background: #fff;
+  color: #121212;
   height: 100%;
-  font: normal 500 120% / 1.5 'IBM Plex Sans', sans-serif;
+  font: normal 120% / 1.5 'IBM Plex Sans', sans-serif;
 }
 
 html, body {
@@ -13,10 +15,7 @@ html, body {
 
 body {
   font-size: 1rem;
-  background: #fff;
-  color: #121212;
 }
-
 
 header,
 footer {
@@ -66,16 +65,9 @@ a {
   padding: 0 4px;
 }
 
-a:focus,
-a:hover {
-  background: #00bcd4;
-  color: #fff;
-  text-decoration: none;
-}
-
 .component-palette {
+  align-content: center;
   background-color: #eee;
-  align-items: stretch;
   display: flex;
   height: 15rem;
   width: 100%;
@@ -132,7 +124,6 @@ a:hover {
   }
 }
 
-
 .component-swatch {
   display: block;
   width: 100%;
@@ -145,8 +136,7 @@ a:hover {
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   background: rgba(255, 255, 255, .9) url(../img/chevron.svg) right 1rem center no-repeat;
   background-size: 1rem auto;
 }
@@ -158,8 +148,8 @@ select::-ms-expand {
 input, select, button {
   border-radius: 3px;
   border: 1px solid hsl(204, 12%, 65%);
-  height: 3rem;
   font-family: inherit;
+  font-size: 1rem;
   padding: .5rem;
 }
 
@@ -255,6 +245,7 @@ button {
 
 .input-color-linked-group {
   display: flex;
+  align-items: stretch;
 }
 
 .input-color-linked-group > div:first-child {
@@ -293,12 +284,12 @@ legend {
   cursor: pointer;
   width: 3rem;
   padding: 0;
+  height: 100%;
 }
 
-[type=color]:hover,
-[type=color]:focus {
-  outline: none;
-  box-shadow: 0 0 5px 4px rgb(51,153,255);
+:is(a, input, select, button):is(:hover, :focus) {
+  outline: 1px solid rgb(51,153,255);
+  box-shadow: 0 0 3px 4px rgb(51,153,255);
 }
 
 .input-select {
