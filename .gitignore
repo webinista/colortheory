@@ -1,3 +1,10 @@
 node_modules/**
 .babelcache
 **.log
+**.txt
+node_modules
+application/**
+**.DS_Store
+**.md
+**.eot
+src/fonts/**/**.css
