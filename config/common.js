@@ -21,36 +21,6 @@ const config = {
         compareBeforeEmit: true,
         clean: true,
     },
-    module: {
-        rules: [
-          {
-            test: /\.(jsx|js)$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-              options: {
-                presets: [
-                  '@babel/preset-env',
-                  '@babel/preset-react'
-                ]
-              }
-            }
-          },
-          {
-            test: /\.css$/,
-            use: [
-              { loader: 'style-loader' },
-              {
-                loader: 'css-loader',
-                options: {
-                  modules: true
-                }
-              }
-            ]
-          }
-        ]
-    },
-
     plugins: [
       new HtmlWebpackPlugin({
           template: path.join(__dirname, "../src", "index.html"),
