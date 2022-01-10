@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import TextInput from '../../src/components/TextInput';
+import TextInput from '../../src/components/TextInput.jsx';
 
 const props = {
   cssClass: 'hoopla',

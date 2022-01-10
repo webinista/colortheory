@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import ModalTrigger from '../../src/components/ModalTrigger';
+import ModalTrigger from '../../src/components/ModalTrigger.jsx';
 
 const props = {
   onClickHandler: () => { return 'baywatch'; },

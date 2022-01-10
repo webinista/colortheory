@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import CloseButton from '../../src/components/CloseButton';
+import CloseButton from '../../src/components/CloseButton.jsx';
 
 const props = {
   colorBackground: '#000',

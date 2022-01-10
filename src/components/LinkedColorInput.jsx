@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import TextInput from './TextInput';
-import ColorInput from './ColorInput';
+import TextInput from './TextInput.jsx';
+import ColorInput from './ColorInput.jsx';
 
 import {
   convertToHex

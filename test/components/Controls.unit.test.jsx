@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 import { JSDOM } from 'jsdom';
 
-import Controls from '../../src/components/Controls';
+import Controls from '../../src/components/Controls.jsx';
 
 const propsGood = {
   color: '#ff0000',

@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import Button from '../../src/components/Button';
+import Button from '../../src/components/Button.jsx';
 
 const props = {
   type: 'reset',

@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import SkinDeep from 'skin-deep';
 
-import Modal from '../../src/components/Modal';
+import Modal from '../../src/components/Modal.jsx';
 
 const props = {
   content: (<div><h1>Hi</h1><p>Bye</p></div>),
