@@ -19,6 +19,7 @@ const config = {
         filename: '[name].output.js',
         asyncChunks: true,
         compareBeforeEmit: true,
+        clean: true,
     },
     module: {
         rules: [
