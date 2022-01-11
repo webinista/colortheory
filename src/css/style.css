@@ -3,7 +3,7 @@
 }
 
 :root {
-  background: #fff;
+  background: #eee;
   color: #121212;
   height: 100%;
   font: normal 120% / 1.5 'IBM Plex Sans', sans-serif;
@@ -130,9 +130,8 @@ a {
   height: 100%;
 }
 
-.component-swatch > rect {
-  height: 100%;
-  width: 100%;
+.component-swatch > circle {
+  filter: drop-shadow( 2px, 2px, 3px, rgba(0, 0, 0, .8) );
 }
 
 select {
