@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Controls from '../components/Controls.jsx';
-import Palette from '../components/Palette.jsx';
-import Glossary from '../components/Glossary.jsx';
-import Modal from '../components/Modal.jsx';
+import Controls from '../components/Controls';
+import Palette from '../components/Palette';
+import Glossary from '../components/Glossary';
+import Modal from '../components/Modal';
 
 import {
   OPTIONS_COLOR_SCHEME,
@@ -18,7 +18,7 @@ import {
   updateInputColor,
   updateSchemeType,
   updatePalette
-} from '../actions/';
+} from '../actions';
 
 class AppDisplay extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ColorSwatch from '../components/ColorSwatch.jsx';
+import ColorSwatch from './ColorSwatch';
 
 class Palette extends React.Component {
   constructor(props) {

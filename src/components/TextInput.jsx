@@ -31,7 +31,6 @@ class TextInput extends React.Component {
 
 TextInput.defaultProps = {
   cssClass: null,
-  id: null,
   onChangeHandler: null,
   onBlurHandler: null,
   onFocusHandler: null,
@@ -39,8 +38,8 @@ TextInput.defaultProps = {
 };
 
 TextInput.propTypes = {
-  id: PropTypes.string,
-  labelText: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  labelText: PropTypes.string,
   name: PropTypes.string.isRequired,
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,

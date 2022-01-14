@@ -1,6 +1,6 @@
 import {
   randomColor
-} from '../utils/helpers';
+} from './helpers';
 
 export const HSL_MAX = 360;
 

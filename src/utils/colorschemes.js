@@ -151,4 +151,3 @@ export function getTriad(colorString) {
 
   return palette;
 }
-

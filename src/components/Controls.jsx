@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../components/Button.jsx';
-import SchemeMenu from '../components/SchemeMenu.jsx';
-import LinkedColorInput from '../components/LinkedColorInput.jsx';
+import Button from './Button';
+import SchemeMenu from './SchemeMenu';
+import LinkedColorInput from './LinkedColorInput';
 
 import { isValidColor } from '../utils/validators';
 
@@ -12,7 +12,7 @@ import {
   OPTIONS_COLOR_INPUT_ERROR_MESSAGE
 } from '../utils/conf';
 
-class Controls extends React.Component {
+class Controls extends React.PureComponent {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -71,7 +71,7 @@ Controls.propTypes = {
   errorMsg: PropTypes.string,
   onSubmitHandler: PropTypes.func,
   onColorChangeHandler: PropTypes.func.isRequired,
-  onSelectChangeHandler: PropTypes.func.isRequired,
+  onSelectChangeHandler: PropTypes.func,
   onModalTriggerClickHandler: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
