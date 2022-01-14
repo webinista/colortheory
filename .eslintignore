@@ -1,6 +1,9 @@
 script/*
 file-original.js
 webpack*.js
+config/*
 package.json
 headers.js
 stats.js
+.eslintrc.js
+application/*

@@ -8,7 +8,8 @@
     "build:dev": "webpack --config config/dev.js",
     "build:prod": "webpack --config config/prod.js",
     "watch": "webpack-dev-server --open --config config/dev.js",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "lint:js": "eslint --quiet --ext .js --ext .jsx ."
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,12 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-lodash": "^3.3.4",
     "css-loader": "^6.5.1",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.6",
