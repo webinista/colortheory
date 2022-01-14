@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import CopyButton from './CopyButton.jsx';
+import CopyButton from './CopyButton';
 
 class ColorSwatch extends React.Component {
   render() {
@@ -25,7 +25,7 @@ ColorSwatch.defaultProps = {
 };
 
 ColorSwatch.propTypes = {
-  fill: PropTypes.string.isRequired,
+  fill: PropTypes.string,
   cssClass: PropTypes.string
 };
 

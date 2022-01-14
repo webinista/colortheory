@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Glossary extends React.Component {
+class Glossary extends React.PureComponent {
   render() {
     const termsList = [];
     let tKey = 0;
-    const terms = this.props.terms;
+    const { terms } = this.props;
 
     /*
       Using push so that React doesn't fuss at us about adjacent elements

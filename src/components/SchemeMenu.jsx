@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import SelectOption from '../components/SelectOption.jsx';
-import ModalTrigger from '../components/ModalTrigger.jsx';
+import SelectOption from './SelectOption';
+import ModalTrigger from './ModalTrigger';
 
 import { sortOptions } from '../utils/helpers';
 
@@ -74,8 +74,8 @@ SchemeMenu.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
-  })).isRequired,
-  value: PropTypes.string.isRequired
+  })),
+  value: PropTypes.string
 };
 
 export default SchemeMenu;

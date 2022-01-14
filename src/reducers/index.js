@@ -38,7 +38,7 @@ const initialState = {
     isVisible: false
   },
   options: OPTIONS_COLOR_SCHEME,
-  swatches: [ OPTIONS_START_COLOR ]
+  swatches: [OPTIONS_START_COLOR]
 };
 
 const makePalette = (startColor, type) => {
@@ -86,7 +86,7 @@ const makePalette = (startColor, type) => {
       break;
 
     default:
-      palette = [ initialState.currentColor ];
+      palette = [initialState.currentColor];
   }
   return palette;
 };
@@ -127,4 +127,3 @@ const dataSource = (state = initialState, action) => {
 };
 
 export default dataSource;
-

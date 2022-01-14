@@ -20,14 +20,15 @@ class CopyButton extends React.Component {
   render() {
     const cssClasses = classNames('component-copy', this.props.cssClass);
 
-    return (<button
-      className={cssClasses}
-      type="button"
-      ref={(copybutton) => { this.copybutton = copybutton; }}
-      data-show-text={this.props.text}>
-      <span>Copy</span>
-      <b>{this.props.text}</b>
-    </button>
+    return (
+      <button
+        className={cssClasses}
+        type="button"
+        ref={(copybutton) => { this.copybutton = copybutton; }}
+        data-show-text={this.props.text}>
+        <span>Copy</span>
+        <b>{this.props.text}</b>
+      </button>
     );
   }
 }

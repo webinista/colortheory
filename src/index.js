@@ -5,20 +5,18 @@ import { Provider } from 'react-redux';
 
 import dataSource from './reducers';
 
-import App from './containers/App.jsx';
+import App from './containers/App';
 
-// import './css/ibm-plex-mono.css';
-// import './css/ibm-plex-sans.css';
 import './css/style.css';
 
-const store = createStore( dataSource );
+const store = createStore(dataSource);
 
 const init = () => {
   render(
-    <Provider store={ store }>
+    <Provider store={store}>
       <App />
     </Provider>,
-    document.getElementById( 'app' )
+    document.getElementById('app')
   );
 };
 

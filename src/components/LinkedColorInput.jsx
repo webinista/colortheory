@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import TextInput from './TextInput.jsx';
-import ColorInput from './ColorInput.jsx';
+import TextInput from './TextInput';
+import ColorInput from './ColorInput';
 
 import {
   convertToHex
 } from '../utils/conversions';
 
-
-class LinkedColorInput extends React.Component {
+class LinkedColorInput extends React.PureComponent {
   render() {
     const id = this.props.id || this.props.name;
     const cssClasses = classNames(
@@ -39,7 +38,8 @@ class LinkedColorInput extends React.Component {
           <p className="error-message" role="alert" hidden={!this.props.error}>{this.props.errorText}</p>
           <p className="input-notice">{this.props.helpText}</p>
         </div>
-      </fieldset>);
+      </fieldset>
+    );
   }
 }
 
@@ -52,7 +52,7 @@ LinkedColorInput.defaultProps = {
 
 LinkedColorInput.propTypes = {
   id: PropTypes.string,
-  error: PropTypes.bool.isRequired,
+  error: PropTypes.bool,
   errorText: PropTypes.string,
   labelTextInput: PropTypes.string.isRequired,
   labelColorInput: PropTypes.string.isRequired,

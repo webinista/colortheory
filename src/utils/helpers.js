@@ -1,6 +1,6 @@
 import {
   isNamedColor,
-  getHexForNamed 
+  getHexForNamed
 } from './named-colors';
 
 export const dec2Hex = (integer) => {
@@ -65,8 +65,8 @@ export const normalizeColorString = (colorString) => {
     normalized = colorString.replace(/\s/g, ', ');
   }
 
-  if( isNamedColor( colorString ) ) {
-    normalized = getHexForNamed( colorString );
+  if (isNamedColor(colorString)) {
+    normalized = getHexForNamed(colorString);
   }
   // Otherwise return a string with commas
   return normalized;

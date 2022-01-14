@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import CloseButton from './CloseButton.jsx';
+import CloseButton from './CloseButton';
 
 class Modal extends React.Component {
   constructor(props) {

@@ -37,7 +37,6 @@ class ColorInput extends React.Component {
 
 ColorInput.defaultProps = {
   cssClass: null,
-  labelText: null,
   id: null,
   onChangeHandler: null,
   onBlurHandler: null,

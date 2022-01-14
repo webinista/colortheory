@@ -1,5 +1,5 @@
 import React from 'react';
-import AppDisplay from '../containers/AppDisplay.jsx';
+import AppDisplay from './AppDisplay';
 
 const App = () => {
   return <AppDisplay />;
