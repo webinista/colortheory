@@ -1,8 +1,7 @@
-const webpack   = require('webpack');
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-const common    = require('./common.js');
+const common = require('./common');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 
 const prodRules = [
   {
@@ -14,11 +13,10 @@ const prodRules = [
   },
 ];
 
-
-const prodConfig = { 
+const prodConfig = {
   mode: "production",
   module: {
-    rules: common.module.rules.concat( prodRules )
+    rules: common.module.rules.concat(prodRules)
   },
   plugins: [
     new MiniCssExtractPlugin(),

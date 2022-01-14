@@ -49,6 +49,9 @@ const config = {
             },
         ]
     },
+    resolve: {
+      extensions: ['', '.js', '.jsx'],
+    },
     target: 'web'
 }
 
