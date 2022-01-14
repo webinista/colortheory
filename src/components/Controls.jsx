@@ -49,6 +49,7 @@ class Controls extends React.Component {
           onModalClickHandler={this.props.onModalTriggerClickHandler}
           options={this.props.options}
           defaultValue={this.props.value} />
+        <Button type="submit" text="Generate scheme" />
       </form>
     );
   }
