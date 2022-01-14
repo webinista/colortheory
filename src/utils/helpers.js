@@ -1,3 +1,8 @@
+import {
+  isNamedColor,
+  getHexForNamed 
+} from './named-colors';
+
 export const dec2Hex = (integer) => {
   const hx = (+integer).toString(16);
 
@@ -51,11 +56,20 @@ export const getColorParts = (colorString) => {
 
 // Add commas if there aren't any.
 export const normalizeColorString = (colorString) => {
-  // if there's a comma, return the color
-  if (colorString.indexOf(',') > -1) return colorString;
+  let normalized = '';
 
+  // if there's a comma, return the color
+  if (colorString.indexOf(',') > -1) {
+    normalized = colorString;
+  } else {
+    normalized = colorString.replace(/\s/g, ', ');
+  }
+
+  if( isNamedColor( colorString ) ) {
+    normalized = getHexForNamed( colorString );
+  }
   // Otherwise return a string with commas
-  return colorString.replace(/\s/g, ', ');
+  return normalized;
 };
 
 /**
