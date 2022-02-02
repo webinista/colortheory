@@ -21,8 +21,8 @@
     "url": "https://github.com/webinista/colors/issues"
   },
   "engines": {
-    "node": "17.3.0",
-    "npm": "8.3.0"
+    "node": "^17.3.1",
+    "npm": "^8.4.0"
   },
   "homepage": "https://github.com/webinista/colors#readme",
   "devDependencies": {
