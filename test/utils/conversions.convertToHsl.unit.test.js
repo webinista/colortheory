@@ -1,5 +1,3 @@
-import { expect } from 'chai';
-
 import {
   convertToHsl,
 } from '../../src/utils/conversions';
@@ -39,15 +37,10 @@ const colors = [
   },
 ];
 
-const convertToHslTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(convertToHsl(v.color)).to.equal(v.expectation);
-    });
+describe.each( rgb )( '[hexToRGB] Does this correctly convert hex and rgb() values to hsl() ones?', ({ color, expectation }) => {
+  test(`should return ${ expectation } for ${ color }`, () => {
+    expect( convertToHsl( color ) ).toBe( expectation );
   });
-};
-
-describe('convertToHsl helper function', () => {
-  convertToHslTest(colors);
 });
+
 
