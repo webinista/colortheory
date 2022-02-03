@@ -4,7 +4,7 @@ I was bored, researching color theory and decided to build a thing. But it's rea
 
 May not finish it though ¯\_(ツ)_/¯. 
 
-# Setup (mostly for me, since I work on it as I have time)
+# Setup (mostly for me, since I work on it as the mood strikes)
 
 - Clone this repository.
 - Navigate to the `colortheory` directory
