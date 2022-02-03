@@ -1,5 +1,3 @@
-import { expect } from 'chai';
-
 import {
   hexToRGB,
 } from '../../src/utils/conversions';
@@ -23,15 +21,8 @@ const colors = [
   }
 ];
 
-const hexToRGBTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(hexToRGB(v.color)).to.equal(v.expectation);
-    });
+describe.each( rgb )( '[hexToRGB] Does this correctly convert hex to rgb() values?', ({ color, expectation }) => {
+  test(`should return ${ expectation } for ${ color }`, () => {
+    expect( hexToRGB( color ) ).toBe( expectation );
   });
-};
-
-describe('hexToRGB helper function', () => {
-  hexToRGBTest(colors);
 });
-
