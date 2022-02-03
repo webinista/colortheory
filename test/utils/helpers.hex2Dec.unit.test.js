@@ -1,5 +1,3 @@
-import { expect } from 'chai';
-
 import {
   hex2Dec,
 } from '../../src/utils/helpers';
@@ -19,15 +17,11 @@ const hexNum = [
   },
 ];
 
-const testHex2Dec = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.number}`, () => {
-      expect(hex2Dec(v.number)).to.equal(v.expectation);
+describe.each( hexNum )(
+  `[hex2Dec] Does this correctly convert hexadecimal to decimal values?`,
+  ({ number, expectation }) => {
+    test( `should return ${ expectation } for ${ number }`, () => {
+      expect( hex2Dec( number ) ).toBe( expectation );
     });
-  });
-};
-
-describe('hex2Dec helper function', () => {
-  testHex2Dec(hexNum);
-});
-
+  }
+);

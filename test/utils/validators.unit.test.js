@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
- 
+
 import {
   isRoughlyValid,
   isValidInputColor,

@@ -1,5 +1,3 @@
-import { expect } from 'chai';
-
 import {
   normalizeColorString,
 } from '../../src/utils/helpers';
@@ -15,15 +13,8 @@ const colorStrings = [
   }
 ];
 
-const normalizeColorStringTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(normalizeColorString(v.color)).to.equal(v.expectation);
-    });
+describe.each( colorStrings )( 'normalizeColorString helper function', ({ color, expectation }) => {
+  test(`should return ${ expectation } for ${ color }`, () => {
+    expect( normalizeColorString( color ) ).toBe( expectation );
   });
-};
-
-describe('normalizeColorString helper function', () => {
-  normalizeColorStringTest(colorStrings);
 });
-
