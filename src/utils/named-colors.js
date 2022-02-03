@@ -149,15 +149,15 @@ const namedColors = {
   yellowgreen: '#9acd32',
 };
 
-export const isNamedColor = (named = '') => {
-  const names = Object.keys(namedColors);
-  return names.indexOf(named) > -1;
+export const isNamedColor = ( named = '' ) => {
+  const names = Object.keys( namedColors );
+  return names.indexOf( named ) > -1;
 };
 
-export const getHexForNamed = (named = 'white') => {
+export const getHexForNamed = ( named = 'white' ) => {
   let hex = '#000';
-  if (isNamedColor(named)) {
-    hex = namedColors[named];
+  if ( isNamedColor( named ) ) {
+    hex = namedColors[ named ];
   }
   return hex;
 };

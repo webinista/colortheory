@@ -25,19 +25,11 @@ const colors = [
   }
 ];
 
-const getSquareTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      const scheme = getSquare(v.color);
-
-      expect(scheme[0]).to.equal(v.expectation[0]);
-      expect(scheme[1]).to.equal(v.expectation[1]);
-      expect(scheme[2]).to.equal(v.expectation[2]);
-      expect(scheme[3]).to.equal(v.expectation[3]);
+describe.each( colors )(
+  '[getSquare] Does this correctly return an square color scheme?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( getSquare( color ) ).toStrictEqual( expectation );
     });
-  });
-};
-
-describe('getSquare helper function', () => {
-  getSquareTest(colors);
-});
+  }
+);

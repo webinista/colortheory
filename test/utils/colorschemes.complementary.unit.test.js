@@ -1,8 +1,12 @@
 /* global describe, test, expect */
 
 import {
-  getComplement,
+  getComplement
 } from '../../src/utils/colorschemes';
+
+import {
+  convertToHsl
+} from '../../src/utils/conversions';
 
 const colors = [
   {
@@ -35,14 +39,12 @@ const colors = [
   }
 ];
 
-const getComplementTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(getComplement(v.color)[1]).to.equal(v.expectation);
+describe.each( colors )(
+  '[getComplement] Does this correctly return the color and its complement?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( getComplement( color ) )
+        .toStrictEqual( [ convertToHsl( color ), expectation ] );
     });
-  });
-};
-
-describe('getComplement helper function', () => {
-  getComplementTest(colors);
-});
+  }
+);

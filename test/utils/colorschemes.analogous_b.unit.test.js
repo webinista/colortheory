@@ -25,19 +25,11 @@ const colors = [
   }
 ];
 
-const getAnalogousTestB = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      const scheme = getAnalogous(v.color, false);
-
-      expect(scheme[0]).to.equal(v.expectation[0]);
-      expect(scheme[1]).to.equal(v.expectation[1]);
-      expect(scheme[2]).to.equal(v.expectation[2]);
-      expect(scheme[3]).to.equal(v.expectation[3]);
+describe.each( colors )(
+  '[getAnalogous] Does this correctly return an analogous color scheme?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( getAnalogous( color, false ) ).toStrictEqual( expectation );
     });
-  });
-};
-
-describe('getAnalogous helper function, version B', () => {
-  getAnalogousTestB(colors);
-});
+  }
+);
