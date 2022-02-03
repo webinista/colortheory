@@ -1,3 +1,5 @@
+/* global describe, test, expect */
+
 import {
   convertToHsl,
 } from '../../src/utils/conversions';
@@ -37,10 +39,11 @@ const colors = [
   },
 ];
 
-describe.each( rgb )( '[hexToRGB] Does this correctly convert hex and rgb() values to hsl() ones?', ({ color, expectation }) => {
-  test(`should return ${ expectation } for ${ color }`, () => {
-    expect( convertToHsl( color ) ).toBe( expectation );
-  });
-});
-
-
+describe.each( colors )(
+  '[hexToRGB] Does this correctly convert hex and rgb() values to hsl() ones?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( convertToHsl( color ) ).toBe( expectation );
+    });
+  }
+);

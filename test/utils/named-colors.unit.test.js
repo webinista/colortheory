@@ -1,3 +1,5 @@
+/* global describe, test, expect */
+
 import {
   isNamedColor,
   getHexForNamed
@@ -37,14 +39,20 @@ const hexes = [
   }
 ];
 
-describe.each( isNamed )( 'Is this a named color?', ({ color, expectation }) => {
-  test( `returns ${expectation}`, () => {
-    expect( isNamedColor( color ) ).toBe( expectation );
-  });
-});
+describe.each( isNamed )(
+  'Is this a named color?',
+  ({ color, expectation }) => {
+    test( `returns ${ expectation }`, () => {
+      expect( isNamedColor( color ) ).toBe( expectation );
+    });
+  }
+);
 
-describe.each( hexes )( 'Does it return the correct hexadecimal value?', ({ color, expectation }) => {
-  test( `returns ${expectation}`, () => {
-    expect( getHexForNamed( color ) ).toBe( expectation );
-  });
-});
+describe.each( hexes )(
+  'Does it return the correct hexadecimal value?',
+  ({ color, expectation }) => {
+    test( `returns ${ expectation }`, () => {
+      expect( getHexForNamed( color ) ).toBe( expectation );
+    });
+  }
+);

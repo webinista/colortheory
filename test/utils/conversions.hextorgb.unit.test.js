@@ -1,3 +1,5 @@
+/* global describe, test, expect */
+
 import {
   hexToRGB,
 } from '../../src/utils/conversions';
@@ -21,8 +23,11 @@ const colors = [
   }
 ];
 
-describe.each( rgb )( '[hexToRGB] Does this correctly convert hex to rgb() values?', ({ color, expectation }) => {
-  test(`should return ${ expectation } for ${ color }`, () => {
-    expect( hexToRGB( color ) ).toBe( expectation );
-  });
-});
+describe.each( colors )(
+  '[hexToRGB] Does this correctly convert hex to rgb() values?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( hexToRGB( color ) ).toBe( expectation );
+    });
+  }
+);

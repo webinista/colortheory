@@ -1,3 +1,5 @@
+/* global describe, test, expect */
+
 import {
   normalizeColorString,
 } from '../../src/utils/helpers';
@@ -13,8 +15,11 @@ const colorStrings = [
   }
 ];
 
-describe.each( colorStrings )( 'normalizeColorString helper function', ({ color, expectation }) => {
-  test(`should return ${ expectation } for ${ color }`, () => {
-    expect( normalizeColorString( color ) ).toBe( expectation );
-  });
-});
+describe.each( colorStrings )(
+  'normalizeColorString helper function',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( normalizeColorString( color ) ).toBe( expectation );
+    });
+  }
+);

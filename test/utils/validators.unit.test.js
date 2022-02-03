@@ -1,10 +1,11 @@
 /**
  * @jest-environment jsdom
  */
+/* global describe, test, expect */
 
 import {
   isRoughlyValid,
-  isValidInputColor,
+  // isValidInputColor,
   isValidColor,
 } from '../../src/utils/validators';
 
@@ -35,7 +36,7 @@ const roughlyValid = [
   }
 ];
 
-const browserValid = [
+/* const browserValid = [
   {
     color: '#0c0',
     expectation: true,
@@ -60,7 +61,7 @@ const browserValid = [
     color: 'hsla(0,10%,90%,.5)',
     expectation: false,
   }
-];
+]; */
 
 const isValid = [
   {
@@ -93,20 +94,29 @@ const isValid = [
   }
 ];
 
-describe.each( roughlyValid )( '[isRoughlyValid] Does this match an accepted syntax?', ({ color, expectation }) => {
-  test( `should return ${expectation} for ${color}`, () => {
-    expect( isRoughlyValid( color ) ).toBe( expectation );
-  });
-});
+describe.each( roughlyValid )(
+  '[isRoughlyValid] Does this match an accepted syntax?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( isRoughlyValid( color ) ).toBe( expectation );
+    });
+  }
+);
 
-/* describe.each( browserValid )( '[isValidInputColor] Does the color input type accept this value?', ({ color, expectation }) => {
-  test( `should return ${expectation} for ${color}`, () => {
-    expect( isValidInputColor( color ) ).toBe( expectation );
-  });
-}); */
+/* describe.each( browserValid )(
+  '[isValidInputColor] Does the color input type accept this value?',
+  ({ color, expectation }) => {
+    test( `should return ${expectation} for ${color}`, () => {
+      expect( isValidInputColor( color ) ).toBe( expectation );
+    });
+  }
+); */
 
-describe.each( isValid )( '[isValidColor] Is this a valid color?', ({ color, expectation }) => {
-  test( `should return ${expectation} for ${color}`, () => {
-    expect( isValidColor( color ) ).toBe( expectation );
-  });
-});
+describe.each( isValid )(
+  '[isValidColor] Is this a valid color?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( isValidColor( color ) ).toBe( expectation );
+    });
+  }
+);

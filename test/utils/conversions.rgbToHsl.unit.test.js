@@ -1,3 +1,5 @@
+/* global describe, test, expect */
+
 import {
   rgbToHsl,
 } from '../../src/utils/conversions';
@@ -25,10 +27,12 @@ const rgb = [
   },
 ];
 
-
-describe.each( rgb )( '[rgbToHsl] Does this correctly convert rgb() to hsl() values?', ({ color, expectation }) => {
-  test(`should return ${ expectation } for ${ color }`, () => {
-    expect( rgbToHsl( color ) ).toBe( expectation );
-  });
-});
+describe.each( rgb )(
+  '[rgbToHsl] Does this correctly convert rgb() to hsl() values?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( rgbToHsl( color ) ).toBe( expectation );
+    });
+  }
+);
 
