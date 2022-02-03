@@ -35,6 +35,7 @@ module.exports = {
     'react/forbid-prop-types': [1, {'forbid': ['any','object']}],
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '', '.jsx'] }],
     'react/destructuring-assignment': [1, 'never'],
-    'react/function-component-definition': [2, { "namedComponents": "arrow-function" }]
+    'react/function-component-definition': [2, { "namedComponents": "arrow-function" }],
+    'space-in-parens': ['error', 'always', { 'exceptions': ['{}'] } ],
   },
 };
