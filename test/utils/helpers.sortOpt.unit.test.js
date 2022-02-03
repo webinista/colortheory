@@ -40,4 +40,3 @@ test( 'should return objects in the correct order, Aardvark to Egret', () => {
   expect( so[4].label ).toBe( 'Dog' );
   expect( so[5].label ).toBe( 'Egret' );
 });
-

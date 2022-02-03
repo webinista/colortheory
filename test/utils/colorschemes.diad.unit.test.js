@@ -21,17 +21,11 @@ const colors = [
   }
 ];
 
-const getDiadTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      const scheme = getDiad(v.color);
-
-      expect(scheme[0]).to.equal(v.expectation[0]);
-      expect(scheme[1]).to.equal(v.expectation[1]);
+describe.each( colors )(
+  '[getDiad] Does this correctly return a diad?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( getDiad( color ) ).toStrictEqual( expectation );
     });
-  });
-};
-
-describe('getDiad helper function', () => {
-  getDiadTest(colors);
-});
+  }
+);

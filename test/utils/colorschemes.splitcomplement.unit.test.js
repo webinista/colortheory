@@ -23,18 +23,11 @@ const colors = [
   }
 ];
 
-const getSplitComplementTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      const scheme = getSplitComplement(v.color);
-
-      expect(scheme[0]).to.equal(v.expectation[0]);
-      expect(scheme[1]).to.equal(v.expectation[1]);
-      expect(scheme[2]).to.equal(v.expectation[2]);
+describe.each( colors )(
+  '[getSplitComplement] Does this return a split complementary scheme?',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( getSplitComplement( color ) ).toStrictEqual( expectation );
     });
-  });
-};
-
-describe('getSplitComplement helper function', () => {
-  getSplitComplementTest(colors);
-});
+  }
+);

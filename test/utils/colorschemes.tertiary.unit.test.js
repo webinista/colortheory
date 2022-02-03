@@ -23,16 +23,12 @@ const colors = [
   }
 ];
 
-describe.each( isNamed )(
-  'Does this return a triad color scheme',
+describe.each( colors )(
+  '[getTriad] Does this return a triad color scheme?',
   ({ color, expectation }) => {
-    test( `should return ${ expectation } for ${ color }`, ({}) => {
-      const scheme = getTriad( color );
-      expect( scheme[0] )toBe( expectation[0] );
-      expect( scheme[1] )toBe( expectation[1] );
-      expect( scheme[2] )toBe( expectation[2] );
+    test( `should return ${ expectation } for ${ color }`, () => {
+      expect( getTriad( color ) ).toStrictEqual( expectation );
     });
   }
 );
-
 
