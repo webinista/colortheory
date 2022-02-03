@@ -6,54 +6,45 @@ import {
 const isNamed = [
   {
     color: 'yellow',
-    expectation: true
+    expected: true
   },
   {
     color: 'green',
-    expectation: true
+    expected: true
   },
   {
     color: 'pineapple',
-    expectation: false
+    expected: false
   }
 ];
 
 const hexes = [
   {
     color: 'yellow',
-    expectation: '#ffff00'
+    expected: '#ffff00'
   },
   {
     color: 'green',
-    expectation: '#008000'
+    expected: '#008000'
   },
   {
     color: 'black',
-    expectation: '#000000'
+    expected: '#000000'
   },
   {
     color: 'papaya',
-    expectation: '#000'
+    expected: '#000'
   }
 ];
 
-
-const isItANamedColor = ( colors ) => {
-  colors.forEach(( c ) => {
-    expect( isNamedColor( c.color ) ).toBe( c.expectation );
+describe.each( isNamed )( 'Is this a named color?', ({ color, expected }) => {
+  test( `returns ${expected}`, () => {
+    expect( isNamedColor( color ) ).toBe( expected );
   });
-};
-
-const doesItGetTheCorrectHexVal = ( colors ) => {
-  hexes.forEach(( c ) => {
-    expect( getHexForNamed( c.color ) ).toBe( c.expectation );
-  });
-};
-
-test( 'Is this a named color?', () => {
-  isItANamedColor( isNamed ); 
 });
 
-test( 'Does it return the correct hexadecimal value?', () => {
-  doesItGetTheCorrectHexVal( isNamed ); 
+describe.each( hexes )( 'Does it return the correct hexadecimal value?', ({ color, expected }) => {
+  test( `returns ${expected}`, () => {
+    expect( getHexForNamed( color ) ).toBe( expected );
+  });
 });
