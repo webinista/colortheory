@@ -102,6 +102,7 @@ a {
   position: absolute;
   right: 0;
   z-index: 2;
+  width: max-content;
 }
 
 .component-copy b {
@@ -134,7 +135,8 @@ a {
 }
 
 select {
-  appearance: none;
+  -webkit-appearance: none;
+  appearance: none; 
   background: rgba(255, 255, 255, .9) url(../img/chevron.svg) right 1rem center no-repeat;
   background-size: 1rem auto;
 }
@@ -209,18 +211,15 @@ button {
   z-index: 1;
 }
 
+[id=controls] > div:last-child {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 50rem) {
 	[id=controls] {
     flex-wrap: wrap;
   }
-}
-
-[id=controls]::after {
-  clear: both;
-  content: '\00a0';
-  display: block;
-  height: 0;
-  padding: 0;
 }
 
 .input-color-linked {
@@ -285,7 +284,7 @@ legend {
   height: 100%;
 }
 
-:is(a, input, select, button):is(:hover, :focus) {
+:is(a, input, select, button):focus {
   outline: 1px solid rgb(51,153,255);
   box-shadow: 0 0 3px 4px rgb(51,153,255);
 }
@@ -312,9 +311,7 @@ label {
 
 @media (min-width: 50rem) {
   .input-button {
-    margin: 0;
-    position: relative;
-    top: 1.45rem;
+    margin: -10px 0 0 0;
     width: auto;
   }
 
