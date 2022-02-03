@@ -1,10 +1,11 @@
-import { expect } from 'chai';
-import { JSDOM } from 'jsdom';
-
+/**
+ * @jest-environment jsdom
+ */
+ 
 import {
   isRoughlyValid,
+  isValidInputColor,
   isValidColor,
-  isValidInputColor
 } from '../../src/utils/validators';
 
 const roughlyValid = [
@@ -92,44 +93,20 @@ const isValid = [
   }
 ];
 
-const isRoughlyValidTests = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(isRoughlyValid(v.color)).to.equal(v.expectation);
-    });
+describe.each( roughlyValid )( '[isRoughlyValid] Does this match an accepted syntax?', ({ color, expectation }) => {
+  test( `should return ${expectation} for ${color}`, () => {
+    expect( isRoughlyValid( color ) ).toBe( expectation );
   });
-};
-
-describe('isRoughlyValid function helper', () => {
-  isRoughlyValidTests(roughlyValid);
 });
 
-const isValidInputColorTests = (vals) => {
-  const window = (new JSDOM('...')).window;
-  global.document = window.document;
-
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(isValidInputColor(v.color)).to.equal(v.expectation);
-    });
+/* describe.each( browserValid )( '[isValidInputColor] Does the color input type accept this value?', ({ color, expectation }) => {
+  test( `should return ${expectation} for ${color}`, () => {
+    expect( isValidInputColor( color ) ).toBe( expectation );
   });
-};
+}); */
 
-describe('isValidInputColor helper function ', () => {
-  isValidInputColorTests(browserValid);
-});
-
-const isValidColorTests = (vals) => {
-  const window = (new JSDOM('...')).window;
-  global.document = window.document;
-
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      expect(isValidColor(v.color)).to.equal(v.expectation);
-    });
+describe.each( isValid )( '[isValidColor] Is this a valid color?', ({ color, expectation }) => {
+  test( `should return ${expectation} for ${color}`, () => {
+    expect( isValidColor( color ) ).toBe( expectation );
   });
-};
-
-describe('isValidColor helper function', () => {
-  isValidColorTests(isValid);
 });
