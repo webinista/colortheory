@@ -1,6 +1,9 @@
+
+/* global describe, test, expect */
 import React from 'react';
-import { expect } from 'chai';
-import SkinDeep from 'skin-deep';
+import {render, fireEvent, waitFor, screen} from '@testing-library/react'
+import '@testing-library/jest-dom'
+
 
 import Button from '../../src/components/Button.jsx';
 

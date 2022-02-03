@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+/* global describe, test, expect */
 
 import {
   getTriad,
@@ -23,18 +23,16 @@ const colors = [
   }
 ];
 
-const getTriadTest = (vals) => {
-  vals.forEach((v) => {
-    it(`should return ${v.expectation} for ${v.color}`, () => {
-      const scheme = getTriad(v.color);
-
-      expect(scheme[0]).to.equal(v.expectation[0]);
-      expect(scheme[1]).to.equal(v.expectation[1]);
-      expect(scheme[2]).to.equal(v.expectation[2]);
+describe.each( isNamed )(
+  'Does this return a triad color scheme',
+  ({ color, expectation }) => {
+    test( `should return ${ expectation } for ${ color }`, ({}) => {
+      const scheme = getTriad( color );
+      expect( scheme[0] )toBe( expectation[0] );
+      expect( scheme[1] )toBe( expectation[1] );
+      expect( scheme[2] )toBe( expectation[2] );
     });
-  });
-};
+  }
+);
 
-describe('getTriad helper function', () => {
-  getTriadTest(colors);
-});
+

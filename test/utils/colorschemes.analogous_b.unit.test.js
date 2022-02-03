@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+/* global describe, test, expect */
 
 import {
   getAnalogous,
