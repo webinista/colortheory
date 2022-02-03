@@ -1,3 +1,5 @@
+/* global describe, test, expect */
+
 import {
   dec2Hex,
 } from '../../src/utils/helpers';
@@ -18,11 +20,10 @@ const decimalNum = [
 ];
 
 describe.each( decimalNum )(
-  `[dec2Hex] Does this correctly convert decimal to hex values?`,
+  '[dec2Hex] Does this correctly convert decimal to hex values?',
   ({ number, expectation }) => {
     test( `should return ${ expectation } for ${ number }`, () => {
       expect( dec2Hex( number ) ).toBe( expectation );
     });
   }
 );
-

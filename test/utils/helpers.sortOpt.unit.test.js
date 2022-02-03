@@ -1,3 +1,5 @@
+/* global test, expect */
+
 import {
   sortOptions
 } from '../../src/utils/helpers';
@@ -29,7 +31,7 @@ const objs = [
   }
 ];
 
-test('should return objects in the correct order, Aardvark to Egret', () => {
+test( 'should return objects in the correct order, Aardvark to Egret', () => {
   const so = objs.sort( sortOptions );
   expect( so[0].label ).toBe( 'Aardvark' );
   expect( so[1].label ).toBe( 'Ant' );
