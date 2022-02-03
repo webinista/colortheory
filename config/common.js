@@ -1,6 +1,5 @@
 const path = require('path');  // Include path module from node.js
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryConf = [
     'clipboard',
@@ -24,7 +23,7 @@ const config = {
     plugins: [
       new HtmlWebpackPlugin({
           template: path.join(__dirname, "../src", "index.html"),
-      }),
+      })
     ],
     module: {
         rules: [
