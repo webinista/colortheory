@@ -37,5 +37,6 @@ module.exports = {
     'react/destructuring-assignment': [1, 'never'],
     'react/function-component-definition': [2, { "namedComponents": "arrow-function" }],
     'space-in-parens': ['error', 'always', { 'exceptions': ['{}'] } ],
+    'max-len': ['error', { 'code': 80 }]
   },
 };
