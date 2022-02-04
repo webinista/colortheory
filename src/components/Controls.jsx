@@ -13,42 +13,42 @@ import {
 } from '../utils/conf';
 
 class Controls extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleSubmit = this.handleSubmit.bind( this );
   }
 
-  handleSubmit(domEvent) {
-    domEvent.preventDefault();
-    this.props.onSubmitHandler(domEvent.target);
+  handleSubmit( domEvent ) {
+    domEvent.preventDefault( );
+    this.props.onSubmitHandler( domEvent.target );
   }
 
-  render() {
+  render( ) {
     return (
       <form
         className="component-controls"
         id="controls"
         method="post"
         name="controls"
-        onSubmit={this.handleSubmit}>
+        onSubmit={ this.handleSubmit }>
         <LinkedColorInput
           cssClass="input-color-linked"
-          error={!isValidColor(this.props.color)}
-          errorText={OPTIONS_COLOR_INPUT_ERROR_MESSAGE}
+          error={ !isValidColor( this.props.color ) }
+          errorText={ OPTIONS_COLOR_INPUT_ERROR_MESSAGE }
           labelColorInput="Or use the color picker"
           labelTextInput="Enter a CSS color value"
           legendText="Pick a starting color: "
-          helpText={this.props.errorMsg}
+          helpText={ this.props.errorMsg }
           name="color"
-          onChangeHandler={this.props.onColorChangeHandler}
-          value={this.props.color} />
+          onChangeHandler={ this.props.onColorChangeHandler }
+          value={ this.props.color } />
         <SchemeMenu
           labelText="Choose a scheme type: "
           name="scheme"
-          onChangeHandler={this.props.onSelectChangeHandler}
-          onModalClickHandler={this.props.onModalTriggerClickHandler}
-          options={this.props.options}
-          defaultValue={this.props.value} />
+          onChangeHandler={ this.props.onSelectChangeHandler }
+          onModalClickHandler={ this.props.onModalTriggerClickHandler }
+          options={ this.props.options }
+          defaultValue={ this.props.value } />
         <Button type="submit" text="Generate scheme" />
       </form>
     );
@@ -57,11 +57,11 @@ class Controls extends React.PureComponent {
 
 Controls.defaultProps = {
   errorMsg: OPTIONS_COLOR_INPUT_MESSAGE,
-  onSubmitHandler: (domEvent) => {
-    domEvent.preventDefault();
+  onSubmitHandler: ( domEvent ) => {
+    domEvent.preventDefault( );
   },
-  onSelectChangeHandler: (domEvent) => {
-    domEvent.preventDefault();
+  onSelectChangeHandler: ( domEvent ) => {
+    domEvent.preventDefault( );
   },
   value: ''
 };
@@ -73,10 +73,10 @@ Controls.propTypes = {
   onColorChangeHandler: PropTypes.func.isRequired,
   onSelectChangeHandler: PropTypes.func,
   onModalTriggerClickHandler: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(PropTypes.shape({
+  options: PropTypes.arrayOf( PropTypes.shape( {
     label: PropTypes.string,
     value: PropTypes.string
-  })).isRequired,
+  } ) ).isRequired,
   value: PropTypes.string
 };
 

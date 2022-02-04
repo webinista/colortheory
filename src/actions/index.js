@@ -11,11 +11,11 @@ import {
   getHexForNamed
 } from '../utils/named-colors';
 
-export function updateInputColor(input) {
+export function updateInputColor( input ) {
   let value = input;
 
-  if (isNamedColor(input)) {
-    value = getHexForNamed(input);
+  if ( isNamedColor( input ) ) {
+    value = getHexForNamed( input );
   }
 
   return {
@@ -24,27 +24,27 @@ export function updateInputColor(input) {
   };
 }
 
-export function updateSchemeType(value) {
+export function updateSchemeType( value ) {
   return {
     type: UPDATE_FORM_COLOR_SCHEME_VALUE,
     value
   };
 }
 
-export function updatePalette(form) {
+export function updatePalette( form ) {
   return {
     type: UPDATE_PALETTE,
     form
   };
 }
 
-export function openModal() {
+export function openModal( ) {
   return {
     type: OPEN_MODAL
   };
 }
 
-export function closeModal() {
+export function closeModal( ) {
   return {
     type: CLOSE_MODAL
   };

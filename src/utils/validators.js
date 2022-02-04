@@ -3,11 +3,11 @@
  * =================================== */
 
 /**
- * Tests whether this is a supported (for the purposes of this project)
+ * Tests whether this is a supported (for the purposes of this project )
  * color value without checking whether it's an actual valid value.
  */
 export const isRoughlyValid = ( string ) => {
-  const pattern = /(?:lab|gray|hwb|hsla|rgba)\(|#[a-f0-9]{8}$|#[a-f0-9]{4}$/i;
+  const pattern = /(?:lab|gray|hwb|hsla|rgba )\(|#[a-f0-9]{8 }$|#[a-f0-9]{4 }$/i;
   const wontWork = ( pattern ).test( string );
   return !wontWork;
 };

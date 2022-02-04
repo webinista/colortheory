@@ -157,7 +157,7 @@ export const isNamedColor = ( named = '' ) => {
 export const getHexForNamed = ( named = 'white' ) => {
   let hex = '#000';
   if ( isNamedColor( named ) ) {
-    hex = namedColors[ named ];
+    hex = namedColors[named];
   }
   return hex;
 };

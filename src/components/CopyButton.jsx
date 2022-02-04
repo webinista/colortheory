@@ -5,29 +5,29 @@ import classNames from 'classnames';
 import Clipboard from 'clipboard';
 
 class CopyButton extends React.Component {
-  componentDidMount() {
-    this.clipboard = new Clipboard(this.copybutton, {
-      text: (trigger) => {
+  componentDidMount( ) {
+    this.clipboard = new Clipboard( this.copybutton, {
+      text: ( trigger ) => {
         return trigger.dataset.showText;
       }
-    });
+    } );
   }
 
-  componentWillUnmount() {
-    this.clipboard.destroy();
+  componentWillUnmount( ) {
+    this.clipboard.destroy( );
   }
 
-  render() {
-    const cssClasses = classNames('component-copy', this.props.cssClass);
+  render( ) {
+    const cssClasses = classNames( 'component-copy', this.props.cssClass );
 
     return (
       <button
-        className={cssClasses}
+        className={ cssClasses }
         type="button"
-        ref={(copybutton) => { this.copybutton = copybutton; }}
-        data-show-text={this.props.text}>
+        ref={ ( copybutton ) => { this.copybutton = copybutton; } }
+        data-show-text={ this.props.text }>
         <span>Copy</span>
-        <b>{this.props.text}</b>
+        <b>{ this.props.text }</b>
       </button>
     );
   }

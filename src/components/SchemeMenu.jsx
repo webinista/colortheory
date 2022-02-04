@@ -8,47 +8,47 @@ import ModalTrigger from './ModalTrigger';
 import { sortOptions } from '../utils/helpers';
 
 class SchemeMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.makeOptions = this.makeOptions.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleChange = this.handleChange.bind( this );
+    this.makeOptions = this.makeOptions.bind( this );
   }
 
-  handleChange(domEvent) {
-    this.props.onChangeHandler(domEvent.target.value);
+  handleChange( domEvent ) {
+    this.props.onChangeHandler( domEvent.target.value );
   }
 
-  makeOptions(arrayOfObjects) {
-    const ao = arrayOfObjects.sort(sortOptions);
-    return ao.map((o, x) => {
+  makeOptions( arrayOfObjects ) {
+    const ao = arrayOfObjects.sort( sortOptions );
+    return ao.map( (o, x ) => {
       return (
         <SelectOption
-          value={o.value}
-          key={x.toString()}
-          label={o.label} />
+          value={ o.value }
+          key={ x.toString( ) }
+          label={ o.label } />
       );
-    });
+    } );
   }
 
-  render() {
-    const cssClasses = classNames('input-select', this.props.cssClass);
+  render( ) {
+    const cssClasses = classNames( 'input-select', this.props.cssClass );
     const id = this.props.id || this.props.name;
 
-    const options = this.makeOptions(this.props.options);
+    const options = this.makeOptions( this.props.options );
 
     return (
-      <div className={cssClasses}>
-        <label htmlFor={id}>{this.props.labelText}</label>
+      <div className={ cssClasses }>
+        <label htmlFor={ id }>{ this.props.labelText }</label>
         <select
-          defaultValue={this.props.value}
-          id={id}
-          name={this.props.name}
-          onChange={this.handleChange}>
+          defaultValue={ this.props.value }
+          id={ id }
+          name={ this.props.name }
+          onChange={ this.handleChange }>
           <option>Select</option>
-          {options}
+          { options }
         </select>
         <ModalTrigger
-          onClickHandler={this.props.onModalClickHandler}
+          onClickHandler={ this.props.onModalClickHandler }
           opens="modal" />
       </div>
     );
@@ -71,10 +71,10 @@ SchemeMenu.propTypes = {
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,
   onModalClickHandler: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.shape({
+  options: PropTypes.arrayOf( PropTypes.shape( {
     label: PropTypes.string,
     value: PropTypes.string
-  })),
+  } ) ),
   value: PropTypes.string
 };
 

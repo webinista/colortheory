@@ -10,7 +10,7 @@ import {
 } from '../utils/conversions';
 
 class LinkedColorInput extends React.PureComponent {
-  render() {
+  render( ) {
     const id = this.props.id || this.props.name;
     const cssClasses = classNames(
       this.props.cssClass,
@@ -18,25 +18,25 @@ class LinkedColorInput extends React.PureComponent {
     );
 
     return (
-      <fieldset className={cssClasses}>
+      <fieldset className={cssClasses }>
         <div>
-          <legend>{this.props.legendText}</legend>
-          <div className={`${this.props.cssClass}-group`}>
+          <legend>{this.props.legendText }</legend>
+          <div className={`${this.props.cssClass }-group` }>
             <TextInput
-              id={id}
-              labelText={this.props.labelTextInput}
-              name={this.props.name}
-              onChangeHandler={this.props.onChangeHandler}
-              value={this.props.value} />
+              id={id }
+              labelText={this.props.labelTextInput }
+              name={this.props.name }
+              onChangeHandler={this.props.onChangeHandler }
+              value={this.props.value } />
             <ColorInput
-              id={`${id}-vis`}
-              labelText={this.props.labelColorInput}
-              name={this.props.name}
-              onChangeHandler={this.props.onChangeHandler}
-              value={convertToHex(this.props.value)} />
+              id={`${id }-vis` }
+              labelText={this.props.labelColorInput }
+              name={this.props.name }
+              onChangeHandler={this.props.onChangeHandler }
+              value={convertToHex(this.props.value ) } />
           </div>
-          <p className="error-message" role="alert" hidden={!this.props.error}>{this.props.errorText}</p>
-          <p className="input-notice">{this.props.helpText}</p>
+          <p className="error-message" role="alert" hidden={!this.props.error }>{this.props.errorText }</p>
+          <p className="input-notice">{this.props.helpText }</p>
         </div>
       </fieldset>
     );

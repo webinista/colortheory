@@ -9,15 +9,16 @@ import App from './containers/App';
 
 import './css/style.css';
 
-const store = createStore(dataSource);
+const store = createStore( dataSource );
 
-const init = () => {
+const init = ( ) => {
   render(
-    <Provider store={store}>
+    <Provider store={ store }>
       <App />
     </Provider>,
-    document.getElementById('app')
+    document.getElementById( 'app' )
   );
 };
 
-init();
+init( );
+ 

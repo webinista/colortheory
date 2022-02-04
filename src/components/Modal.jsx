@@ -5,26 +5,26 @@ import classNames from 'classnames';
 import CloseButton from './CloseButton';
 
 class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.close = this.close.bind(this);
+  constructor( props ) {
+    super( props );
+    this.close = this.close.bind( this );
   }
 
-  close() {
-    this.props.onClose();
+  close( ) {
+    this.props.onClose( );
   }
 
-  render() {
-    const cssClass = classNames('modal-block', this.props.cssClass);
+  render( ) {
+    const cssClass = classNames( 'modal-block', this.props.cssClass );
 
     return (
-      <div id={this.props.id} className={cssClass} hidden={!this.props.visible}>
+      <div id={ this.props.id } className={ cssClass } hidden={ !this.props.visible }>
         <div className="modal-block-content">
           <CloseButton
             cssClass="modal-button-close"
-            onClickHandler={this.close} />
+            onClickHandler={ this.close } />
           <div className="modal-block-content-overflow">
-            {this.props.content}
+            { this.props.content }
           </div>
         </div>
       </div>

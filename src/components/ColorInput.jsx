@@ -4,32 +4,32 @@ import PropTypes from 'prop-types';
 import { isColorTypeSupported } from '../utils/helpers';
 
 class ColorInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleChange = this.handleChange.bind( this );
   }
 
-  handleChange(domEvent) {
-    this.props.onChangeHandler(domEvent.target.value);
+  handleChange( domEvent ) {
+    this.props.onChangeHandler( domEvent.target.value );
   }
 
-  render() {
+  render( ) {
     const id = this.props.id || this.props.name;
 
     return (
-      <div className={this.props.cssClass}>
-        <label htmlFor={id}>{this.props.labelText}</label>
+      <div className={ this.props.cssClass }>
+        <label htmlFor={ id }>{ this.props.labelText }</label>
         <input
-          ref={(colorinput) => { this.input = colorinput; }}
-          hidden={!isColorTypeSupported()}
-          disabled={!isColorTypeSupported()}
-          id={id}
-          name={this.props.name}
-          onChange={this.handleChange}
-          onFocus={this.props.onFocusHandler}
-          onBlur={this.props.onBlurHandler}
+          ref={ ( colorinput ) => { this.input = colorinput; } }
+          hidden={ !isColorTypeSupported( ) }
+          disabled={ !isColorTypeSupported( ) }
+          id={ id }
+          name={ this.props.name }
+          onChange={ this.handleChange }
+          onFocus={ this.props.onFocusHandler }
+          onBlur={ this.props.onBlurHandler }
           type="color"
-          value={this.props.value} />
+          value={ this.props.value } />
       </div>
     );
   }

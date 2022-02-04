@@ -41,48 +41,48 @@ const initialState = {
   swatches: [OPTIONS_START_COLOR]
 };
 
-const makePalette = (startColor, type) => {
+const makePalette = ( startColor, type ) => {
   let palette = [];
 
-  switch (type) {
+  switch ( type ) {
     case 'analogous':
-      palette = getAnalogous(startColor);
+      palette = getAnalogous( startColor );
       break;
 
     case 'analogous_b':
-      palette = getAnalogous(startColor, false);
+      palette = getAnalogous( startColor, false );
       break;
 
     case 'complementary':
-      palette = getComplement(startColor);
+      palette = getComplement( startColor );
       break;
 
     case 'diad':
-      palette = getDiad(startColor);
+      palette = getDiad( startColor );
       break;
 
     case 'diad_b':
-      palette = getDiad(startColor, false);
+      palette = getDiad( startColor, false );
       break;
 
     case 'random':
-      palette = getRandom(startColor);
+      palette = getRandom( startColor );
       break;
 
     case 'splitcomp':
-      palette = getSplitComplement(startColor);
+      palette = getSplitComplement( startColor );
       break;
 
     case 'square':
-      palette = getSquare(startColor);
+      palette = getSquare( startColor );
       break;
 
     case 'tetrad':
-      palette = getTetrad(startColor);
+      palette = getTetrad( startColor );
       break;
 
     case 'triad':
-      palette = getTriad(startColor);
+      palette = getTriad( startColor );
       break;
 
     default:
@@ -91,32 +91,32 @@ const makePalette = (startColor, type) => {
   return palette;
 };
 
-const dataSource = (state = initialState, action) => {
+const dataSource = ( state = initialState, action ) => {
   let newState;
   let colors;
 
-  switch (action.type) {
+  switch ( action.type ) {
     case CLOSE_MODAL:
-      newState = set('modal.isVisible', false, state);
+      newState = set( 'modal.isVisible', false, state );
       break;
 
     case OPEN_MODAL:
-      newState = set('modal.isVisible', true, state);
+      newState = set( 'modal.isVisible', true, state );
       break;
 
     case UPDATE_FORM_COLOR_VALUE:
-      newState = set('currentColor', action.value, state);
-      newState = set('swatches', [normalizeColorString(action.value)], newState);
+      newState = set( 'currentColor', action.value, state );
+      newState = set( 'swatches', [normalizeColorString( action.value )], newState );
       break;
 
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
-      colors = makePalette(state.currentColor, action.value);
-      newState = set('swatches', colors, state);
+      colors = makePalette( state.currentColor, action.value );
+      newState = set( 'swatches', colors, state );
       break;
 
     case UPDATE_PALETTE:
-      colors = makePalette(state.currentColor, action.form.scheme.value);
-      newState = set('swatches', colors, state);
+      colors = makePalette( state.currentColor, action.form.scheme.value );
+      newState = set( 'swatches', colors, state );
       break;
 
     default:

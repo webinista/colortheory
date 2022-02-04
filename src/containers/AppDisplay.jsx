@@ -21,28 +21,28 @@ import {
 } from '../actions';
 
 class AppDisplay extends React.Component {
-  render() {
-    const glossary = <Glossary terms={OPTIONS_COLOR_SCHEME} />;
+  render( ) {
+    const glossary = <Glossary terms={ OPTIONS_COLOR_SCHEME } />;
 
     return (
       <div>
         <div>
           <Controls
-            onColorChangeHandler={this.props.updateInputColor}
-            onModalTriggerClickHandler={this.props.openModal}
-            onSelectChangeHandler={this.props.updateSchemeType}
-            onSubmitHandler={this.props.updatePalette}
-            errorMsg={OPTIONS_COLOR_INPUT_MESSAGE}
-            options={this.props.options}
-            color={this.props.currentColor}
-            scheme={this.props.scheme} />
-          <Palette swatches={this.props.swatches} />
+            onColorChangeHandler={ this.props.updateInputColor }
+            onModalTriggerClickHandler={ this.props.openModal }
+            onSelectChangeHandler={ this.props.updateSchemeType }
+            onSubmitHandler={ this.props.updatePalette }
+            errorMsg={ OPTIONS_COLOR_INPUT_MESSAGE }
+            options={ this.props.options }
+            color={ this.props.currentColor }
+            scheme={ this.props.scheme } />
+          <Palette swatches={ this.props.swatches } />
         </div>
         <Modal
           id="modal"
-          onClose={this.props.closeModal}
-          content={glossary}
-          visible={this.props.modal.isVisible} />
+          onClose={ this.props.closeModal }
+          content={ glossary }
+          visible={ this.props.modal.isVisible } />
       </div>
     );
   }
@@ -59,9 +59,9 @@ AppDisplay.defaultProps = {
 
 AppDisplay.propTypes = {
   closeModal: PropTypes.func.isRequired,
-  modal: PropTypes.shape({
+  modal: PropTypes.shape( {
     isVisible: PropTypes.bool
-  }).isRequired,
+  } ).isRequired,
   openModal: PropTypes.func.isRequired,
   updateInputColor: PropTypes.func.isRequired,
   updatePalette: PropTypes.func.isRequired,
@@ -72,7 +72,7 @@ AppDisplay.propTypes = {
   swatches: PropTypes.array.isRequired
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ( state ) => {
   return {
     currentColor: state.currentColor,
     modal: state.modal,
@@ -89,4 +89,4 @@ const mapDispatchToProps = {
   updatePalette
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppDisplay);
+export default connect( mapStateToProps, mapDispatchToProps )( AppDisplay );

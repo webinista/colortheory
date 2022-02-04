@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Glossary extends React.PureComponent {
-  render() {
+  render( ) {
     const termsList = [];
     let tKey = 0;
     const { terms } = this.props;
@@ -12,16 +12,16 @@ class Glossary extends React.PureComponent {
       and wrappers. These will all be children of a <dl> and don't need a
       wrapper.
     */
-    terms.forEach((term) => {
-      termsList.push(<dt key={++tKey} id={term.value}>{term.label}</dt>);
-      termsList.push(<dd key={++tKey}>{term.definition}</dd>);
-    });
+    terms.forEach( ( term ) => {
+      termsList.push( <dt key={ ++tKey } id={ term.value }>{ term.label }</dt> );
+      termsList.push( <dd key={ ++tKey }>{ term.definition }</dd> );
+    } );
 
     return (
       <div>
         <h2>Color scheme definitions</h2>
         <dl className="glossary">
-          {termsList}
+          { termsList }
         </dl>
       </div>
     );
@@ -29,11 +29,11 @@ class Glossary extends React.PureComponent {
 }
 
 Glossary.propTypes = {
-  terms: PropTypes.arrayOf(PropTypes.shape({
+  terms: PropTypes.arrayOf( PropTypes.shape( {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     definition: PropTypes.string.isRequired
-  })).isRequired,
+  } ) ).isRequired,
 };
 
 export default Glossary;

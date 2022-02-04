@@ -4,23 +4,23 @@ import {
 
 export const HSL_MAX = 360;
 
-export const OPTIONS_START_COLOR = randomColor();
+export const OPTIONS_START_COLOR = randomColor( );
 
 export const OPTIONS_COLOR_SCHEME = [
   {
     label: 'Complementary',
     value: 'complementary',
-    definition: 'Colors that sit opposite each other (180\u00B0 apart) on the color wheel.'
+    definition: 'Colors that sit opposite each other (180\u00B0 apart ) on the color wheel.'
   },
   {
     label: 'Analogous',
     value: 'analogous',
-    definition: 'Adjacent colors (30\u00B0 apart) on the color wheel.'
+    definition: 'Adjacent colors (30\u00B0 apart ) on the color wheel.'
   },
   {
     label: 'Analogous B',
     value: 'analogous_b',
-    definition: 'Adjacent colors (-30\u00B0 apart) on the color wheel (counter-clockwise).'
+    definition: 'Adjacent colors (-30\u00B0 apart ) on the color wheel (counter-clockwise ).'
   },
   {
     label: 'Triad',
@@ -51,7 +51,7 @@ export const OPTIONS_COLOR_SCHEME = [
   {
     label: 'Diad B',
     value: 'diad_b',
-    definition: 'Scheme in which colors are two colors apart on the color wheel (counter-clockwise).'
+    definition: 'Scheme in which colors are two colors apart on the color wheel (counter-clockwise ).'
   },
   {
     label: 'Random',
@@ -60,5 +60,5 @@ export const OPTIONS_COLOR_SCHEME = [
   }
 ];
 
-export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb(), hsl() values, and named colors. No alpha support (yet).';
+export const OPTIONS_COLOR_INPUT_MESSAGE = 'Accepts #rgb, #rrggbb, rgb( ), hsl( ) values, and named colors. No alpha support ( yet ).';
 export const OPTIONS_COLOR_INPUT_ERROR_MESSAGE = "The value you entered isn't supported.";

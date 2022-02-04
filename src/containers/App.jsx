@@ -1,7 +1,7 @@
 import React from 'react';
 import AppDisplay from './AppDisplay';
 
-const App = () => {
+const App = ( ) => {
   return <AppDisplay />;
 };
 

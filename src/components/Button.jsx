@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export const Button = (props) => {
-  const { cssClasses } = classNames('input-button-wrap', props.cssClass);
+export const Button = ( props ) => {
+  const { cssClasses } = classNames( 'input-button-wrap', props.cssClass );
 
   return (
-    <div className={cssClasses}>
+    <div className={ cssClasses }>
       <button
         className="input-button"
-        id={props.id}
-        onClick={props.onClickHandler}
-        onFocus={props.onFocusHandler}
-        type={props.type ? props.type : 'button'}>
-        {props.text}
+        id={ props.id }
+        onClick={ props.onClickHandler }
+        onFocus={ props.onFocusHandler }
+        type={ props.type ? props.type : 'button' }>
+        { props.text }
       </button>
     </div>
   );
