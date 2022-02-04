@@ -7,3 +7,6 @@ headers.js
 stats.js
 .eslintrc.js
 application/*
+*.woff
+*.txt
+README*
