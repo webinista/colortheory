@@ -32,19 +32,18 @@ import {
  * currentColor and the first item in swatches need to have the
  * value for UI consistency's sake.
  */
-// TODO: Refactor this so that we're not repeating values in
-// currentColor and swatches
 const initialState = {
   currentColor: OPTIONS_START_COLOR,
   modal: {
     isVisible: false
   },
   options: OPTIONS_COLOR_SCHEME,
-  swatches: [OPTIONS_START_COLOR]
+  swatches: [ OPTIONS_START_COLOR ]
 };
 
 const makePalette = (startColor, type) => {
-  let palette;
+  let palette = [];
+
   switch (type) {
     case 'analogous':
       palette = getAnalogous(startColor);
@@ -87,7 +86,7 @@ const makePalette = (startColor, type) => {
       break;
 
     default:
-      palette = ['#ff0000'];
+      palette = [ initialState.currentColor ];
   }
   return palette;
 };
@@ -99,29 +98,32 @@ const dataSource = (state = initialState, action) => {
   switch (action.type) {
     case CLOSE_MODAL:
       newState = set('modal.isVisible', false, state);
-      return newState;
+      break;
 
     case OPEN_MODAL:
-      return set('modal.isVisible', true, state);
+      newState = set('modal.isVisible', true, state);
+      break;
 
     case UPDATE_FORM_COLOR_VALUE:
       newState = set('currentColor', action.value, state);
       newState = set('swatches', [normalizeColorString(action.value)], newState);
-      return newState;
+      break;
 
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
       colors = makePalette(state.currentColor, action.value);
       newState = set('swatches', colors, state);
-      return newState;
+      break;
 
     case UPDATE_PALETTE:
       colors = makePalette(state.currentColor, action.form.scheme.value);
       newState = set('swatches', colors, state);
-      return newState;
+      break;
 
     default:
-      return state;
+      newState = state;
   }
+
+  return newState;
 };
 
 export default dataSource;

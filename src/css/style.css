@@ -101,7 +101,6 @@ a {
   padding: 2px .5rem;
   position: absolute;
   right: 0;
-  width: 3.2rem;
   z-index: 2;
 }
 
@@ -110,10 +109,9 @@ a {
   left: -9999rem;
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 1000px) {
   .component-copy {
     box-shadow: 0 0 20px -6px #000;
-    width: 12rem;
   }
   .component-copy b {
     position: static;
