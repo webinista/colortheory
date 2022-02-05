@@ -7,7 +7,7 @@ import ModalTrigger from './ModalTrigger';
 
 import { sortOptions } from '../utils/helpers';
 
-class SchemeMenu extends React.Component {
+class SchemeMenu extends React.PureComponent {
   constructor( props ) {
     super( props );
     this.handleChange = this.handleChange.bind( this );
