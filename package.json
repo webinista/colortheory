@@ -10,6 +10,7 @@
     "watch": "webpack-dev-server --open --config config/dev.js",
     "deploy": "./deploy.sh",
     "lint:js": "eslint --quiet --ext .js --ext .jsx .",
+    "fix:js": "npx eslint ./src/**/*.js ./src/**/*.jsx --fix",
     "test": "jest",
     "prepare": "husky install"
   },
