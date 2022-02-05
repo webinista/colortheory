@@ -3,10 +3,11 @@
 }
 
 :root {
-  background: #fff;
+  background: #eee;
   color: #121212;
   height: 100%;
   font: normal 120% / 1.5 'IBM Plex Sans', sans-serif;
+  overflow: hidden;
 }
 
 html, body {
@@ -52,7 +53,7 @@ footer p {
 }
 
 h1 {
-  background: rgba(255,255,255,.98);
+  background: #fff;
   display: inline-block;
   font-size: .8rem;
   margin: 0;
