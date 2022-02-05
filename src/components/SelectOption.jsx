@@ -1,13 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class SelectOption extends React.PureComponent {
-  render() {
-    return (
-      <option value={this.props.value}>{this.props.label}</option>
-    );
-  }
-}
+const SelectOption = ({ value, label }) => {
+  return <option value={value}>{ label }</option>;
+};
 
 SelectOption.defaultProps = {
   value: '',

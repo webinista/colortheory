@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { isColorTypeSupported } from '../utils/helpers';
 
-class ColorInput extends React.Component {
+class ColorInput extends React.PureComponent {
   constructor( props ) {
     super( props );
     this.handleChange = this.handleChange.bind( this );

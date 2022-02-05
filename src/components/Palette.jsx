@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ColorSwatch from './ColorSwatch';
 
-class Palette extends React.Component {
+class Palette extends React.PureComponent {
   constructor( props ) {
     super( props );
     this.makeSwatches = this.makeSwatches.bind( this );
