@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class TextInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleChange = this.handleChange.bind( this );
   }
 
-  handleChange(domEvent) {
-    this.props.onChangeHandler(domEvent.target.value);
+  handleChange( domEvent ) {
+    this.props.onChangeHandler( domEvent.target.value );
   }
 
   render() {

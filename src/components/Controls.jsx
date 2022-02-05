@@ -13,14 +13,14 @@ import {
 } from '../utils/conf';
 
 class Controls extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleSubmit = this.handleSubmit.bind( this );
   }
 
-  handleSubmit(domEvent) {
+  handleSubmit( domEvent ) {
     domEvent.preventDefault();
-    this.props.onSubmitHandler(domEvent.target);
+    this.props.onSubmitHandler( domEvent.target );
   }
 
   render() {
@@ -33,7 +33,7 @@ class Controls extends React.PureComponent {
         onSubmit={this.handleSubmit}>
         <LinkedColorInput
           cssClass="input-color-linked"
-          error={!isValidColor(this.props.color)}
+          error={!isValidColor( this.props.color )}
           errorText={OPTIONS_COLOR_INPUT_ERROR_MESSAGE}
           labelColorInput="Or use the color picker"
           labelTextInput="Enter a CSS color value"
@@ -49,7 +49,7 @@ class Controls extends React.PureComponent {
           onModalClickHandler={this.props.onModalTriggerClickHandler}
           options={this.props.options}
           defaultValue={this.props.value} />
-        <Button type="submit" text="Generate scheme" />
+        <Button text="Generate scheme" />
       </form>
     );
   }
@@ -57,10 +57,10 @@ class Controls extends React.PureComponent {
 
 Controls.defaultProps = {
   errorMsg: OPTIONS_COLOR_INPUT_MESSAGE,
-  onSubmitHandler: (domEvent) => {
+  onSubmitHandler: ( domEvent ) => {
     domEvent.preventDefault();
   },
-  onSelectChangeHandler: (domEvent) => {
+  onSelectChangeHandler: ( domEvent ) => {
     domEvent.preventDefault();
   },
   value: ''
@@ -73,10 +73,10 @@ Controls.propTypes = {
   onColorChangeHandler: PropTypes.func.isRequired,
   onSelectChangeHandler: PropTypes.func,
   onModalTriggerClickHandler: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(PropTypes.shape({
+  options: PropTypes.arrayOf( PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
-  })).isRequired,
+  }) ).isRequired,
   value: PropTypes.string
 };
 

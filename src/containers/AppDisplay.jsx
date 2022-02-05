@@ -72,7 +72,7 @@ AppDisplay.propTypes = {
   swatches: PropTypes.array.isRequired
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ( state ) => {
   return {
     currentColor: state.currentColor,
     modal: state.modal,
@@ -89,4 +89,4 @@ const mapDispatchToProps = {
   updatePalette
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppDisplay);
+export default connect( mapStateToProps, mapDispatchToProps )( AppDisplay );

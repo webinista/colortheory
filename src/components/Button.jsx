@@ -1,28 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
-export const Button = (props) => {
-  const { cssClasses } = classNames('input-button-wrap', props.cssClass);
+const Button = ( props ) => {
+  const {
+    id,
+    text,
+    onClickHandler,
+    onFocusHandler
+  } = props;
 
   return (
-    <div className={cssClasses}>
+    <div className="input-button-wrap">
       <button
         className="input-button"
-        id={props.id}
-        onClick={props.onClickHandler}
-        onFocus={props.onFocusHandler}
-        type={props.type ? props.type : 'button'}>
-        {props.text}
+        id={id}
+        onClick={onClickHandler}
+        onFocus={onFocusHandler}
+        type="submit">
+        { text }
       </button>
     </div>
   );
 };
 
 Button.defaultProps = {
-  type: 'button',
   text: 'Change default text',
-  cssClass: null,
   id: null,
   onClickHandler: null,
   onFocusHandler: null
@@ -30,9 +32,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   id: PropTypes.string,
-  type: PropTypes.string,
   text: PropTypes.string,
-  cssClass: PropTypes.string,
   onClickHandler: PropTypes.func,
   onFocusHandler: PropTypes.func,
 };

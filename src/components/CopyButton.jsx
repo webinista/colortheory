@@ -6,8 +6,8 @@ import Clipboard from 'clipboard';
 
 class CopyButton extends React.Component {
   componentDidMount() {
-    this.clipboard = new Clipboard(this.copybutton, {
-      text: (trigger) => {
+    this.clipboard = new Clipboard( this.copybutton, {
+      text: ( trigger ) => {
         return trigger.dataset.showText;
       }
     });
@@ -18,13 +18,13 @@ class CopyButton extends React.Component {
   }
 
   render() {
-    const cssClasses = classNames('component-copy', this.props.cssClass);
+    const cssClasses = classNames( 'component-copy', this.props.cssClass );
 
     return (
       <button
         className={cssClasses}
         type="button"
-        ref={(copybutton) => { this.copybutton = copybutton; }}
+        ref={( copybutton ) => { this.copybutton = copybutton; }}
         data-show-text={this.props.text}>
         <span>Copy</span>
         <b>{this.props.text}</b>

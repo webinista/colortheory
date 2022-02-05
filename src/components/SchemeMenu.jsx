@@ -8,19 +8,19 @@ import ModalTrigger from './ModalTrigger';
 import { sortOptions } from '../utils/helpers';
 
 class SchemeMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.makeOptions = this.makeOptions.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleChange = this.handleChange.bind( this );
+    this.makeOptions = this.makeOptions.bind( this );
   }
 
-  handleChange(domEvent) {
-    this.props.onChangeHandler(domEvent.target.value);
+  handleChange( domEvent ) {
+    this.props.onChangeHandler( domEvent.target.value );
   }
 
-  makeOptions(arrayOfObjects) {
-    const ao = arrayOfObjects.sort(sortOptions);
-    return ao.map((o, x) => {
+  makeOptions( arrayOfObjects ) {
+    const ao = arrayOfObjects.sort( sortOptions );
+    return ao.map( ( o, x ) => {
       return (
         <SelectOption
           value={o.value}
@@ -31,10 +31,10 @@ class SchemeMenu extends React.Component {
   }
 
   render() {
-    const cssClasses = classNames('input-select', this.props.cssClass);
+    const cssClasses = classNames( 'input-select', this.props.cssClass );
     const id = this.props.id || this.props.name;
 
-    const options = this.makeOptions(this.props.options);
+    const options = this.makeOptions( this.props.options );
 
     return (
       <div className={cssClasses}>
@@ -71,10 +71,10 @@ SchemeMenu.propTypes = {
   cssClass: PropTypes.string,
   onChangeHandler: PropTypes.func,
   onModalClickHandler: PropTypes.func,
-  options: PropTypes.arrayOf(PropTypes.shape({
+  options: PropTypes.arrayOf( PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.string
-  })),
+  }) ),
   value: PropTypes.string
 };
 

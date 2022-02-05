@@ -21,7 +21,7 @@ class LinkedColorInput extends React.PureComponent {
       <fieldset className={cssClasses}>
         <div>
           <legend>{this.props.legendText}</legend>
-          <div className={`${this.props.cssClass}-group`}>
+          <div className={`${ this.props.cssClass }-group`}>
             <TextInput
               id={id}
               labelText={this.props.labelTextInput}
@@ -29,13 +29,15 @@ class LinkedColorInput extends React.PureComponent {
               onChangeHandler={this.props.onChangeHandler}
               value={this.props.value} />
             <ColorInput
-              id={`${id}-vis`}
+              id={`${ id }-vis`}
               labelText={this.props.labelColorInput}
               name={this.props.name}
               onChangeHandler={this.props.onChangeHandler}
-              value={convertToHex(this.props.value)} />
+              value={convertToHex( this.props.value )} />
           </div>
-          <p className="error-message" role="alert" hidden={!this.props.error}>{this.props.errorText}</p>
+          <p className="error-message" role="alert" hidden={!this.props.error}>
+            {this.props.errorText}
+          </p>
           <p className="input-notice">{this.props.helpText}</p>
         </div>
       </fieldset>

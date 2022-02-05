@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import CloseButton from './CloseButton';
+import { CloseButton } from './CloseButton';
 
 class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.close = this.close.bind(this);
+  constructor( props ) {
+    super( props );
+    this.close = this.close.bind( this );
   }
 
   close() {
@@ -15,7 +15,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    const cssClass = classNames('modal-block', this.props.cssClass);
+    const cssClass = classNames( 'modal-block', this.props.cssClass );
 
     return (
       <div id={this.props.id} className={cssClass} hidden={!this.props.visible}>

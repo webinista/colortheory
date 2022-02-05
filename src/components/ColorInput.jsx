@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import { isColorTypeSupported } from '../utils/helpers';
 
 class ColorInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
+  constructor( props ) {
+    super( props );
+    this.handleChange = this.handleChange.bind( this );
+    this.input = React.createRef();
   }
 
-  handleChange(domEvent) {
-    this.props.onChangeHandler(domEvent.target.value);
+  handleChange( domEvent ) {
+    this.props.onChangeHandler( domEvent.target.value );
   }
 
   render() {
@@ -20,7 +21,7 @@ class ColorInput extends React.Component {
       <div className={this.props.cssClass}>
         <label htmlFor={id}>{this.props.labelText}</label>
         <input
-          ref={(colorinput) => { this.input = colorinput; }}
+          ref={this.input}
           hidden={!isColorTypeSupported()}
           disabled={!isColorTypeSupported()}
           id={id}

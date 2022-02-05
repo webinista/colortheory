@@ -3,17 +3,21 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 class ModalTrigger extends React.Component {
-  constructor(props) {
-    super(props);
-    this.openModal = this.openModal.bind(this);
+  constructor( props ) {
+    super( props );
+    this.openModal = this.openModal.bind( this );
   }
 
-  openModal(domEvent) {
-    this.props.onClickHandler(domEvent);
+  openModal( domEvent ) {
+    this.props.onClickHandler( domEvent );
   }
 
   render() {
-    const cssClasses = classNames('button-stripped', 'button-modal-trigger', this.props.cssClass);
+    const cssClasses = classNames(
+      'button-stripped',
+      'button-modal-trigger',
+      this.props.cssClass
+    );
 
     return (
       <button

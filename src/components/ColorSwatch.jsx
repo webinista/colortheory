@@ -6,7 +6,7 @@ import CopyButton from './CopyButton';
 
 class ColorSwatch extends React.Component {
   render() {
-    const cssClasses = classNames('component-swatch', this.props.cssClass);
+    const cssClasses = classNames( 'component-swatch', this.props.cssClass );
 
     return (
       <div className="component-swatch-holder">
