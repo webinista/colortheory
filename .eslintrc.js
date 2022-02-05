@@ -36,8 +36,8 @@ module.exports = {
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '', '.jsx'] }],
     'react/destructuring-assignment': [1, 'never'],
     'react/function-component-definition': [2, { 'namedComponents': 'arrow-function' }],
-    'space-in-parens': [ 'error', 'always', { 'exceptions': ['{}'] } ],
-    'max-len': [ 'error', { 'code': 80 }],
+    'space-in-parens': [ 'error', 'always', { 'exceptions': ['{}'] }],
+    'max-len': [ 'error', { 'code': 80 } ],
     'template-curly-spacing': ['error', 'always'],
     'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 1, 'maxBOF': 0 } ],
     'array-bracket-spacing': [
@@ -47,6 +47,7 @@ module.exports = {
         'objectsInArrays': false,
         'arraysInArrays': false
       }
-    ]
+    ],
+    'react/destructuring-assignment': 0,
   },
 };
