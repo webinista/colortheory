@@ -46,11 +46,17 @@ const config = {
                     loader: 'url-loader',
                 },
             },
+            {
+              test: /\.js$/,
+              enforce: "pre",
+              use: ["source-map-loader"],
+            },
         ]
     },
     resolve: {
       extensions: ['', '.js', '.jsx'],
     },
+    devtool: 'source-map',
     target: 'web'
 }
 
