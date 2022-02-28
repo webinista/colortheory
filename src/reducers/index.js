@@ -1,5 +1,3 @@
-import set from 'lodash/fp/set';
-
 import {
   CLOSE_MODAL,
   OPEN_MODAL,
@@ -97,27 +95,44 @@ const dataSource = ( state = initialState, action ) => {
 
   switch ( action.type ) {
     case CLOSE_MODAL:
-      newState = set( 'modal.isVisible', false, state );
+      newState = {
+        ...state,
+        modal: {
+          ...state.modal,
+          isVisible: false
+        }
+      };
       break;
 
     case OPEN_MODAL:
-      newState = set( 'modal.isVisible', true, state );
+      newState = {
+        ...state,
+        modal: {
+          ...state.modal,
+          isVisible: true
+        }
+      };
       break;
 
     case UPDATE_FORM_COLOR_VALUE:
-      newState = set( 'currentColor', action.value, state );
-      // eslint-disable-next-line max-len
-      newState = set( 'swatches', [ normalizeColorString( action.value ) ], newState );
+
+      newState = {
+        ...state,
+        currentColor: action.value,
+        swatches: [ normalizeColorString( action.value ) ]
+      };
       break;
 
     case UPDATE_FORM_COLOR_SCHEME_VALUE:
-      colors = makePalette( state.currentColor, action.value );
-      newState = set( 'swatches', colors, state );
+      newState = {
+        ...state,
+        swatches: makePalette( state.currentColor, action.value )
+      };
       break;
 
     case UPDATE_PALETTE:
       colors = makePalette( state.currentColor, action.form.scheme.value );
-      newState = set( 'swatches', colors, state );
+      newState = { ...state, swatches: colors };
       break;
 
     default:
